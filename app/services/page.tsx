@@ -6,7 +6,6 @@ import { ArrowRight, BarChart2, Database, Server, Shield, Code, CheckCircle } fr
 
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
-import Preloader from "@/components/preloader"
 import ScrollReveal from "@/components/scroll-reveal"
 import StaggeredReveal from "@/components/staggered-reveal"
 import MagneticButton from "@/components/magnetic-button"
@@ -39,9 +38,7 @@ export default function ServicesPage() {
 
   return (
     <>
-      <Preloader />
       <Navigation />
-
       <main className="pt-20">
         {/* Hero Section */}
         <section className="py-20 md:py-28 lg:py-32 bg-gradient-to-b from-gray-50 to-white">
