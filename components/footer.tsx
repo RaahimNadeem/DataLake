@@ -103,21 +103,21 @@ export default function Footer() {
             <h3 className="font-medium text-lg mb-4">Contact</h3>
             <ul className="space-y-3">
               <li className="text-gray-400 text-sm">
-                123 Tech Avenue <br />
-                Innovation District <br />
-                San Francisco, CA 94107
+                123 Dummy Street <br />
+                Dummy Address District <br />
+                Dummy City, Dummy Country
               </li>
               <li>
                 <Link
                   href="mailto:info@datalake.tech"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  info@datalake.tech
+                  placeholder@email.com
                 </Link>
               </li>
               <li>
                 <Link href="tel:+14155550123" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  +1 (415) 555-0123
+                  +1 (23) 567-0123
                 </Link>
               </li>
             </ul>

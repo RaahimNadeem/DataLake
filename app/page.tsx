@@ -282,8 +282,8 @@ export default function Home() {
                           </div>
                         </div>
                         <div>
-                          <h4 className="font-medium">Sarah Johnson</h4>
-                          <p className="text-sm text-gray-500">CTO, TechCorp</p>
+                          <h4 className="font-medium">Client 1</h4>
+                          <p className="text-sm text-gray-500">Position 1</p>
                         </div>
                       </div>
                       <p className="text-gray-600 mb-6">
@@ -308,8 +308,8 @@ export default function Home() {
                           </div>
                         </div>
                         <div>
-                          <h4 className="font-medium">Michael Chen</h4>
-                          <p className="text-sm text-gray-500">CIO, Global Retail Inc.</p>
+                          <h4 className="font-medium">Client 2</h4>
+                          <p className="text-sm text-gray-500">Position 2</p>
                         </div>
                       </div>
                       <p className="text-gray-600 mb-6">
@@ -334,8 +334,8 @@ export default function Home() {
                           </div>
                         </div>
                         <div>
-                          <h4 className="font-medium">Emily Rodriguez</h4>
-                          <p className="text-sm text-gray-500">Data Director, FinTech Solutions</p>
+                          <h4 className="font-medium">Client 3</h4>
+                          <p className="text-sm text-gray-500">Position 3</p>
                         </div>
                       </div>
                       <p className="text-gray-600 mb-6">
