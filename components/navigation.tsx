@@ -62,10 +62,7 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             <div className="relative w-8 h-8">
-              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M50 10L90 30V70L50 90L10 70V30L50 10Z" stroke="black" strokeWidth="2" fill="white" />
-                <path d="M50 30L70 40V60L50 70L30 60V40L50 30Z" stroke="black" strokeWidth="2" fill="none" />
-              </svg>
+             
             </div>
             <span className="font-bold text-xl tracking-tight">Datalake</span>
           </Link>
