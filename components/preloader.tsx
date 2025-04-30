@@ -45,13 +45,13 @@ export default function Preloader({ onLoadingComplete }: { onLoadingComplete: ()
           initial={{ opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-primary"
         >
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
               {greetings[currentGreeting].text}
             </h1>
-            <p className="text-gray-400 text-sm">{greetings[currentGreeting].lang}</p>
+            <p className="text-accent text-base font-semibold tracking-wide">{greetings[currentGreeting].lang}</p>
           </div>
         </motion.div>
       )}

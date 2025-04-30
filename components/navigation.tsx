@@ -5,6 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X, ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -52,19 +53,16 @@ export default function Navigation() {
 
   return (
     <>
-      <div className="scroll-indicator" style={{ width: `${scrollProgress}%` }}></div>
+      <div className="scroll-indicato" style={{ width: `${scrollProgress}%` }}></div>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 md:px-10 py-4 md:py-6",
+          "fixed top-0 left-0 right-0 z-[100] transition-all duration-300 px-6 md:px-10 py-4 md:py-6",
           isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : "bg-transparent",
         )}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="relative w-8 h-8">
-             
-            </div>
-            <span className="font-bold text-xl tracking-tight">Datalake</span>
+          <Link href="/">
+            <Image src="logo-removebg-preview.png" alt="Datalake Logo" width={180} height={60} priority className="h-12 w-auto" />
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
@@ -86,7 +84,7 @@ export default function Navigation() {
           <Link
             href="/cta"
             className={cn(
-              "hidden md:inline-flex items-center px-4 py-2 ml-4 text-sm font-medium rounded-full bg-black text-white hover:bg-black/80 transition-colors duration-300",
+              "hidden md:inline-flex items-center px-4 py-2 ml-4 text-sm font-medium rounded-full bg-primary text-white glow-animated relative overflow-visible hover:bg-primary/90 transition-colors duration-300",
               isScrolled ? "shadow-sm" : "",
             )}
           >
@@ -102,7 +100,7 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-white pt-20 px-6 flex flex-col md:hidden">
+        <div className="fixed inset-0 z-[99] bg-white pt-20 px-6 flex flex-col md:hidden">
           <nav className="flex flex-col space-y-8 py-8">
             {navLinks.map((link) => (
               <Link
