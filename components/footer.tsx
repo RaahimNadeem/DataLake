@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import Image from "next/image"
 
 export default function Footer() {
   return (
@@ -9,7 +10,7 @@ export default function Footer() {
           <div className="space-y-6">
             <Link href="/" className="flex items-center space-x-2">
               <div className="relative w-8 h-8">
-                
+                <Image src="/logo-removebg-preview.png" alt="Datalake Logo" fill className="object-contain" />
               </div>
               <span className="font-bold text-xl tracking-tight">Datalake</span>
             </Link>
