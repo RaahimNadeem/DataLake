@@ -1,13 +1,25 @@
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import type React from "react"
 import "./globals.css"
-import SmoothScrollProvider from "@/components/smooth-scroll-provider"
+import type { Metadata } from "next"
+import { Georama as Georgia, Inter } from "next/font/google"
+import { ThemeProvider } from "@/components/theme-provider"
+import { cn } from "@/lib/utils"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
+
+const georgia = Georgia({
+  weight: ["400"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+  subsets: ["latin"],
+})
 
 export const metadata: Metadata = {
-  title: "DataLake - Your Data Management Solution",
-  description: "Streamline your data management with DataLake's powerful platform",
+  title: "Datalake",
+  description:""
 }
 
 export default function RootLayout({
@@ -16,11 +28,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <SmoothScrollProvider offset={80}>
+    <html lang="en" className="scroll-smooth">
+      <body className={cn("min-h-screen font-sans antialiased", inter.variable, georgia.variable)}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           {children}
-        </SmoothScrollProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

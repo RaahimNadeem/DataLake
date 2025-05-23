@@ -92,26 +92,3 @@ body {
     @apply bg-background text-foreground;
   }
 }
-
-.glow-animated::before {
-  content: "";
-  position: absolute;
-  inset: -8px;
-  border-radius: 9999px;
-  z-index: 0;
-  background: radial-gradient(circle, #F49B2D 0%, #2A7AC3 60%, transparent 100%);
-  opacity: 0.7;
-  filter: blur(8px);
-  animation: glow-animated-keyframes 2s ease-in-out infinite;
-  pointer-events: none;
-}
-@keyframes glow-animated-keyframes {
-  0%, 100% {
-    opacity: 0.7;
-    filter: blur(8px) brightness(1);
-  }
-  50% {
-    opacity: 1;
-    filter: blur(16px) brightness(1.3);
-  }
-}

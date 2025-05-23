@@ -1,145 +1,187 @@
-import Link from "next/link"
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
-import Image from "next/image"
+import React from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
 
-export default function Footer() {
-  return (
-    <footer className="bg-[#0d0d0d] text-white py-16 md:py-24">
-      <div className="container mx-auto px-6 md:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div className="space-y-6">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="relative w-8 h-8">
-                <Image src="/logo-removebg-preview.png" alt="Datalake Logo" fill className="object-contain" />
-              </div>
-              <span className="font-bold text-xl tracking-tight">Datalake</span>
-            </Link>
-            <p className="text-gray-400 text-sm">
-              Expertise, commitment, and efficiency are the values of our consultants, making Datalake your partner for
-              the success of your projects.
-            </p>
-            <div className="flex space-x-4">
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </Link>
-            </div>
-          </div>
+const services = [
+  { name: "Data Engineering", href: "/services/data-engineering" },
+  { name: "Machine Learning", href: "/services/machine-learning" },
+  { name: "Data Analytics", href: "/services/data-analytics" },
+  { name: "AI Solutions", href: "/services/ai" },
+  { name: "Data Infrastructure", href: "/services/data-infrastructure" },
+  { name: "Business Intelligence", href: "/services/business-intelligence" },
+  { name: "Custom Analytics", href: "/services/custom-analytics" },
+  { name: "Data Strategy", href: "/services/data-strategy" },
+  { name: "Cloud Solutions", href: "/services/cloud" },
+];
 
-          <div>
-            <h3 className="font-medium text-lg mb-4">Navigation</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/cta" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Call to Action
-                </Link>
-              </li>
-              <li>
-                <Link href="/clients" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Clients
-                </Link>
-              </li>
-            </ul>
-          </div>
+const company = [
+  { name: "Case Studies", href: "/case-studies" },
+  { name: "Blog", href: "/blog" },
+  { name: "About Us", href: "/about" },
+  { name: "Contact", href: "/contact" },
+  { name: "Careers", href: "/careers" },
+  { name: "Get Started", href: "/#contact" },
+];
 
-          <div>
-            <h3 className="font-medium text-lg mb-4">Services</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/services#consulting" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  IT Consulting
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#development" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Development
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#engineering" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  IT Production Engineering
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#bigdata" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Big Data Solutions
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#security" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Security Management
-                </Link>
-              </li>
-            </ul>
-          </div>
+const Footer = () => (
+  <footer className="w-full bg-[#19232e] text-white pt-12 md:pt-16 pb-6 px-4 md:px-12">
+    <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-0 justify-between items-start">
+      {/* Left: Heading and Button */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="flex-1 flex flex-col items-start justify-between h-full min-h-[280px] md:min-h-[320px]"
+      >
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-3xl md:text-4xl lg:text-6xl font-light leading-tight mb-6 md:mb-8"
+        >
+          Ready to transform<br />your data?
+        </motion.h2>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex flex-col items-center mb-8"
+        >
+          <Link href="/contact">
+            <button className="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full border border-white flex flex-col items-center justify-center text-center text-base md:text-lg font-semibold tracking-wide transition-all duration-300 hover:bg-white hover:text-[#101424] hover:scale-105">
+              START YOUR<br />JOURNEY
+              <span className="mt-2 text-2xl">&darr;</span>
+            </button>
+          </Link>
+        </motion.div>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="text-xs text-gray-400 flex flex-wrap gap-4 mt-8"
+        >
+          <span>© 2024 Datalake. All rights reserved.</span>
+          <Link href="/privacy" className="hover:text-white transition-colors duration-300">Privacy Policy</Link>
+          <Link href="/cookies" className="hover:text-white transition-colors duration-300">Cookie Policy</Link>
+        </motion.div>
+        <div className="mt-6 text-sm text-gray-400">
+          <span className="block">Datalake AI Solutions</span>
+          <span className="block">123 Innovation Drive, Suite 100, San Francisco, CA</span>
+          <span className="block">Email: <a href="mailto:hello@datalake.com" className="underline hover:text-white">hello@datalake.com</a></span>
+        </div>
+      </motion.div>
 
-          <div>
-            <h3 className="font-medium text-lg mb-4">Contact</h3>
-            <ul className="space-y-3">
-              <li className="text-gray-400 text-sm">
-                123 Dummy Street <br />
-                Dummy Address District <br />
-                Dummy City, Dummy Country
-              </li>
-              <li>
-                <Link
-                  href="mailto:info@datalake.tech"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+      {/* Right: Links and Reviews */}
+      <motion.div 
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="flex-1 flex flex-col md:flex-row justify-between w-full md:w-auto gap-8 md:gap-24"
+      >
+        <div className="flex flex-col md:flex-row gap-8 md:gap-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <div className="font-bold mb-4">SERVICES</div>
+            <ul className="space-y-2 text-gray-200">
+              {services.map((item, index) => (
+                <motion.li 
+                  key={item.name}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.1 * index }}
+                  className="hover:text-white transition-colors duration-300 cursor-pointer"
                 >
-                  placeholder@email.com
-                </Link>
-              </li>
-              <li>
-                <Link href="tel:+14155550123" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  +1 (23) 567-0123
-                </Link>
-              </li>
+                  <Link href={item.href}>{item.name}</Link>
+                </motion.li>
+              ))}
             </ul>
-          </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <div className="font-bold mb-4">COMPANY</div>
+            <ul className="space-y-2 text-gray-200">
+              {company.map((item, index) => (
+                <motion.li 
+                  key={item.name}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.1 * index }}
+                  className="hover:text-white transition-colors duration-300 cursor-pointer"
+                >
+                  <Link href={item.href}>{item.name}</Link>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
+      </motion.div>
+    </div>
 
-        <div className="mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">© {new Date().getFullYear()} Datalake. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors text-sm">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-gray-400 hover:text-white transition-colors text-sm">
-              Terms of Service
-            </Link>
-            <Link href="/cookies" className="text-gray-400 hover:text-white transition-colors text-sm">
-              Cookie Policy
-            </Link>
-          </div>
-        </div>
-      </div>
-    </footer>
-  )
-}
+    {/* Social Icons */}
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.8 }}
+      className="max-w-7xl mx-auto flex justify-end items-center gap-4 mt-8 pr-2"
+    >
+      <motion.a 
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        href="https://linkedin.com/company/datalake-ai" 
+        target="_blank" rel="noopener noreferrer"
+        className="text-gray-400 hover:text-white transition-colors duration-300"
+        aria-label="LinkedIn"
+      >
+        <FaLinkedin size={24} />
+      </motion.a>
+      <motion.a 
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        href="https://twitter.com/datalakeai" 
+        target="_blank" rel="noopener noreferrer"
+        className="text-gray-400 hover:text-white transition-colors duration-300"
+        aria-label="Twitter"
+      >
+        <FaTwitter size={24} />
+      </motion.a>
+      <motion.a 
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        href="https://github.com/datalake-ai" 
+        target="_blank" rel="noopener noreferrer"
+        className="text-gray-400 hover:text-white transition-colors duration-300"
+        aria-label="GitHub"
+      >
+        <FaGithub size={24} />
+      </motion.a>
+      <motion.a 
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        href="mailto:hello@datalake.com" 
+        className="text-gray-400 hover:text-white transition-colors duration-300"
+        aria-label="Email"
+      >
+        <FaEnvelope size={24} />
+      </motion.a>
+    </motion.div>
+  </footer>
+);
+
+export default Footer;
