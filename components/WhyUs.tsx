@@ -2,16 +2,33 @@
 
 import React, { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { useLanguage } from '@/contexts/LanguageContext';
 
-const words = [
-  "Expertise",
-  "Innovation",
-  "Insight",
-  "Trust"
-];
+const translations = {
+  en: {
+    words: [
+      "Expertise",
+      "Innovation",
+      "Insight",
+      "Trust"
+    ]
+  },
+  ar: {
+    words: [
+      "الخبرة",
+      "الابتكار",
+      "البصيرة",
+      "الثقة"
+    ]
+  }
+};
 
 const WhyUs = () => {
   const sectionRef = useRef(null);
+  const { language } = useLanguage();
+  const currentLang = translations[language];
+  const words = currentLang.words;
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"]
@@ -63,6 +80,7 @@ const WhyUs = () => {
     <section
       ref={sectionRef}
       className="relative w-full min-h-[200vh] flex justify-center overflow-hidden"
+      dir={language === 'ar' ? 'rtl' : 'ltr'}
     >
       {/* Background Container */}
       <div className="absolute inset-0 w-full h-full">
@@ -100,7 +118,6 @@ const WhyUs = () => {
             </motion.div>
           );
         })}
-  
       </motion.div>
     </section>
   );
