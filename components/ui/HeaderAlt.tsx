@@ -6,6 +6,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [language, setLanguage] = useState('en');
+
+  const toggleLanguage = () => {
+    setLanguage(prev => prev === 'en' ? 'ar' : 'en');
+  };
 
   return (
     <motion.header 
@@ -29,13 +34,35 @@ const Header = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
-        className="hidden md:flex gap-6 lg:gap-8 text-[#101424] font-semibold text-base lg:text-lg"
+        className="hidden md:flex items-center gap-6 lg:gap-8 text-[#101424] font-semibold text-base lg:text-lg"
       >
         <Link href="/about" className="hover:text-[#4a6d8c] transition-colors duration-300">About</Link>
         <Link href="/#services" className="hover:text-[#4a6d8c] transition-colors duration-300">Our Services</Link>
         <Link href="/consulting" className="hover:text-[#4a6d8c] transition-colors duration-300">Consulting</Link>
         <Link href="/careers" className="hover:text-[#4a6d8c] transition-colors duration-300">Careers</Link>
         <Link href="/contact" className="hover:text-[#4a6d8c] transition-colors duration-300">Contact</Link>
+        {/* Language Toggle */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          className="flex items-center gap-2 ml-4"
+        >
+          <span className="text-sm text-[#101424]">EN</span>
+          <motion.button
+            onClick={toggleLanguage}
+            className="relative w-14 h-7 bg-[#4a6d8c]/20 rounded-full focus:outline-none"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <motion.div
+              className="absolute top-1 left-1 w-5 h-5 bg-[#4a6d8c] rounded-full"
+              animate={{ x: language === 'ar' ? 28 : 0 }}
+              transition={{ type: "spring", stiffness: 500, damping: 30 }}
+            />
+          </motion.button>
+          <span className="text-sm text-[#101424]">عربي</span>
+        </motion.div>
       </motion.nav>
 
       {/* Hamburger for Mobile */}
@@ -89,6 +116,28 @@ const Header = () => {
               <Link href="/consulting" onClick={() => setMenuOpen(false)} className="hover:text-gray-300 transition-colors duration-300">Consulting</Link>
               <Link href="/careers" onClick={() => setMenuOpen(false)} className="hover:text-gray-300 transition-colors duration-300">Careers</Link>
               <Link href="/contact" onClick={() => setMenuOpen(false)} className="hover:text-gray-300 transition-colors duration-300">Contact</Link>
+              {/* Mobile Language Toggle */}
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className="flex items-center gap-2 mt-4"
+              >
+                <span className="text-sm text-white">EN</span>
+                <motion.button
+                  onClick={toggleLanguage}
+                  className="relative w-14 h-7 bg-white/20 rounded-full focus:outline-none"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <motion.div
+                    className="absolute top-1 left-1 w-5 h-5 bg-white rounded-full"
+                    animate={{ x: language === 'ar' ? 28 : 0 }}
+                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                  />
+                </motion.button>
+                <span className="text-sm text-white">عربي</span>
+              </motion.div>
             </motion.nav>
           </motion.div>
         )}

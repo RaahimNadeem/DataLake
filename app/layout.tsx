@@ -4,6 +4,7 @@ import type { Metadata } from "next"
 import { Georama as Georgia, Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
+import { LanguageProvider } from '@/contexts/LanguageContext'
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,8 +19,8 @@ const georgia = Georgia({
 })
 
 export const metadata: Metadata = {
-  title: "Datalake",
-  description:""
+  title: "DataLake - Data Analytics for Modern Enterprises",
+  description: "Enterprise-grade data solutions for innovators and industry leaders",
 }
 
 export default function RootLayout({
@@ -30,9 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={cn("min-h-screen font-sans antialiased", inter.variable, georgia.variable)}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          {children}
-        </ThemeProvider>
+        <LanguageProvider>
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+            {children}
+          </ThemeProvider>
+        </LanguageProvider>
       </body>
     </html>
   )
