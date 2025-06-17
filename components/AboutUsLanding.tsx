@@ -2,21 +2,41 @@
 
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const translations = {
+  en: {
+    journey: "Our journey",
+    heading: "Where Innovation Meets Excellence",
+    description: "At Datalake, we believe that every insight starts with a question and every breakthrough begins with a team. Our people are passionate about turning data into opportunity, and together, we're building the future of analytics for modern enterprises."
+  },
+  ar: {
+    journey: "رحلتنا",
+    heading: "حيث يلتقي الابتكار بالتميز",
+    description: "في داتاليك، نؤمن بأن كل بصيرة تبدأ بسؤال وكل اختراق يبدأ بفريق. فريقنا شغوف بتحويل البيانات إلى فرص، ومعًا، نبني مستقبل التحليلات للشركات الحديثة."
+  }
+};
 
 const AboutUsLanding = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { language } = useLanguage();
+  const currentLang = translations[language];
 
   return (
-    <section ref={ref} className="w-full min-h-[80vh] md:min-h-[100vh] bg-white font-sans">
+    <section 
+      ref={ref} 
+      className="w-full min-h-[80vh] md:min-h-[100vh] bg-white font-sans"
+      dir={language === 'ar' ? 'rtl' : 'ltr'}
+    >
       {/* First Row: 80vh, 2 columns */}
       <div className="w-full min-h-[60vh] md:h-[70vh] flex flex-col md:flex-row items-stretch gap-8 md:gap-0 py-12 md:py-0">
         {/* Left Column */}
         <motion.div 
-          initial={{ opacity: 0, x: -50 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: language === 'ar' ? 50 : -50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: language === 'ar' ? 50 : -50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex-1 flex flex-col justify-center items-center pl-8 md:pl-24 lg:pl-64"
+          className={`flex-1 flex flex-col justify-center items-center ${language === 'ar' ? 'pr-8 md:pr-24 lg:pr-64' : 'pl-8 md:pl-24 lg:pl-64'}`}
         >
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
@@ -24,7 +44,7 @@ const AboutUsLanding = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg text-black mb-2 text-left w-full"
           >
-            Our journey
+            {currentLang.journey}
           </motion.span>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -32,15 +52,15 @@ const AboutUsLanding = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight whitespace-pre-line text-left w-full"
           >
-            Where Innovation Meets Excellence
+            {currentLang.heading}
           </motion.h2>
         </motion.div>
         {/* Right Column */}
         <motion.div 
-          initial={{ opacity: 0, x: 50 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+          initial={{ opacity: 0, x: language === 'ar' ? -50 : 50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: language === 'ar' ? -50 : 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex-1 flex flex-col justify-center items-start md:items-end px-8 md:px-24 lg:px-64"
+          className={`flex-1 flex flex-col justify-center items-start md:items-${language === 'ar' ? 'start' : 'end'} px-8 md:px-24 lg:px-64`}
         >
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -48,7 +68,8 @@ const AboutUsLanding = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="text-xl md:text-2xl text-black text-left leading-relaxed max-w-xl"
           >
-At Datalake, we believe that every insight starts with a question and every breakthrough begins with a team. Our people are passionate about turning data into opportunity, and together, we’re building the future of analytics for modern enterprises.          </motion.p>
+            {currentLang.description}
+          </motion.p>
         </motion.div>
       </div>
       {/* Second Row: 20vh, Marquee */}
