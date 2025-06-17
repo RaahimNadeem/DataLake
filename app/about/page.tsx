@@ -1,11 +1,11 @@
 'use client'
 
-import MainAbout from '../../components/MainAbout';
+import MainAbout from './MainAbout';
 import HeaderAlt from '../../components/ui/HeaderAlt';
 import Locations from '../../components/Locations';
-import Philosophy from '../../components/Philosophy';
+import Philosophy from './Philosophy';
 import Footer from '@/components/footer';
-import OverlayImageSection from '@/components/OverlayImage';
+import OverlayImageSection from '@/app/about/OverlayImage';
 import Slogan from '@/components/Slogan';
 
 

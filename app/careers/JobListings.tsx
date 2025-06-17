@@ -1,128 +1,188 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from '@/contexts/LanguageContext';
 
-const jobs = [
-  {
-    title: "AI Research Scientist",
-    requirements: [
-      "PhD or MS in Computer Science, Mathematics, or related field",
-      "Strong background in machine learning and deep learning",
-      "Proficiency in Python and ML frameworks (TensorFlow, PyTorch)",
-      "Track record of publications or patents is a plus"
-    ]
+const translations = {
+  en: {
+    title: "Open Positions",
+    subtitle: "Join our team and help shape the future of AI",
+    jobs: [
+      {
+        title: "Senior AI Engineer",
+        location: "Remote / Hybrid",
+        type: "Full-time",
+        description: "We're looking for a Senior AI Engineer to lead our machine learning initiatives and help build next-generation AI solutions.",
+        requirements: [
+          "5+ years of experience in AI/ML development",
+          "Strong background in Python and deep learning frameworks",
+          "Experience with large language models and NLP",
+          "Excellent problem-solving skills"
+        ]
+      },
+      {
+        title: "Data Scientist",
+        location: "Remote",
+        type: "Full-time",
+        description: "Join our data science team to develop innovative solutions that drive business value through advanced analytics.",
+        requirements: [
+          "3+ years of experience in data science",
+          "Proficiency in statistical analysis and machine learning",
+          "Experience with big data technologies",
+          "Strong communication skills"
+        ]
+      },
+      {
+        title: "AI Product Manager",
+        location: "Hybrid",
+        type: "Full-time",
+        description: "Lead the development of our AI products from conception to launch, working closely with engineering and design teams.",
+        requirements: [
+          "4+ years of product management experience",
+          "Background in AI/ML products",
+          "Strong analytical and strategic thinking",
+          "Excellent leadership skills"
+        ]
+      }
+    ],
+    apply: "Apply Now",
+    requirements: "Requirements",
+    viewDetails: "View Details"
   },
-  {
-    title: "Data Engineer",
-    requirements: [
-      "Experience with ETL pipelines and data warehousing",
-      "Proficient in SQL and cloud data platforms (AWS, GCP, Azure)",
-      "Programming in Python or Scala",
-      "Familiarity with big data tools (Spark, Hadoop)"
-    ]
-  },
-  {
-    title: "Product Manager (AI)",
-    requirements: [
-      "Experience managing AI/ML product lifecycle",
-      "Strong communication and leadership skills",
-      "Ability to translate business needs into technical requirements",
-      "Familiarity with agile methodologies"
-    ]
-  },
-  {
-    title: "Frontend Developer",
-    requirements: [
-      "Expertise in React and TypeScript",
-      "Strong sense of UI/UX design",
-      "Experience with modern web stack (Vite, Tailwind, etc.)",
-      "Portfolio of responsive web applications"
-    ]
-  },
-  {
-    title: "Backend Developer",
-    requirements: [
-      "Proficient in Node.js or Python",
-      "API design and implementation",
-      "Experience with databases (SQL/NoSQL)",
-      "Cloud deployment experience"
-    ]
-  },
-  {
-    title: "Customer Success Engineer",
-    requirements: [
-      "Technical support and client onboarding experience",
-      "Excellent communication skills",
-      "Ability to troubleshoot and resolve issues",
-      "Familiarity with SaaS products"
-    ]
+  ar: {
+    title: "الوظائف الشاغرة",
+    subtitle: "انضم إلى فريقنا وساعد في تشكيل مستقبل الذكاء الاصطناعي",
+    jobs: [
+      {
+        title: "مهندس ذكاء اصطناعي كبير",
+        location: "عن بعد / هجين",
+        type: "دوام كامل",
+        description: "نبحث عن مهندس ذكاء اصطناعي كبير لقيادة مبادرات التعلم الآلي لدينا ومساعدة في بناء حلول الذكاء الاصطناعي من الجيل التالي.",
+        requirements: [
+          "5+ سنوات من الخبرة في تطوير الذكاء الاصطناعي/التعلم الآلي",
+          "خلفية قوية في بايثون وأطر التعلم العميق",
+          "خبرة في نماذج اللغة الكبيرة ومعالجة اللغة الطبيعية",
+          "مهارات ممتازة في حل المشكلات"
+        ]
+      },
+      {
+        title: "عالم بيانات",
+        location: "عن بعد",
+        type: "دوام كامل",
+        description: "انضم إلى فريق علوم البيانات لدينا لتطوير حلول مبتكرة تدفع القيمة التجارية من خلال التحليلات المتقدمة.",
+        requirements: [
+          "3+ سنوات من الخبرة في علوم البيانات",
+          "إتقان التحليل الإحصائي والتعلم الآلي",
+          "خبرة في تقنيات البيانات الضخمة",
+          "مهارات تواصل قوية"
+        ]
+      },
+      {
+        title: "مدير منتجات الذكاء الاصطناعي",
+        location: "هجين",
+        type: "دوام كامل",
+        description: "قاد تطوير منتجات الذكاء الاصطناعي لدينا من التصور إلى الإطلاق، بالعمل عن كثب مع فرق الهندسة والتصميم.",
+        requirements: [
+          "4+ سنوات من الخبرة في إدارة المنتجات",
+          "خلفية في منتجات الذكاء الاصطناعي/التعلم الآلي",
+          "تفكير تحليلي واستراتيجي قوي",
+          "مهارات قيادية ممتازة"
+        ]
+      }
+    ],
+    apply: "تقدم الآن",
+    requirements: "المتطلبات",
+    viewDetails: "عرض التفاصيل"
   }
-];
+};
 
 const JobListings = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const handleToggle = (idx: number) => {
-    setOpenIndex(openIndex === idx ? null : idx);
-  };
+  const { language } = useLanguage();
+  const currentLang = translations[language];
+  const [expandedJob, setExpandedJob] = useState<number | null>(null);
 
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
-      className="w-full mx-auto px-12 py-24"
-    >
-      <motion.h2
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
-        className="text-6xl font-extrabold mb-10 text-[#19232e]"
-      >
-        Job Listings
-      </motion.h2>
-      <div className="divide-y divide-gray-200">
-        {jobs.map((job, idx) => (
-          <div key={job.title}>
-            <button
-              className={`w-full flex items-center justify-between py-6 px-2 text-left focus:outline-none transition bg-transparent hover:bg-gray-50/80 rounded-xl group`}
-              onClick={() => handleToggle(idx)}
+    <section className="w-full py-20 px-4 md:px-20" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
+            {currentLang.title}
+          </h2>
+          <p className="text-xl text-gray-600">
+            {currentLang.subtitle}
+          </p>
+        </motion.div>
+
+        <div className="space-y-6">
+          {currentLang.jobs.map((job, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden"
             >
-              <span className="text-2xl text-[#19232e] font-medium group-hover:text-blue-700 transition-colors duration-200">{job.title}</span>
-              <motion.span
-                animate={{ rotate: openIndex === idx ? 180 : 0 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                className="flex items-center"
+              <div 
+                className="p-6 cursor-pointer"
+                onClick={() => setExpandedJob(expandedJob === index ? null : index)}
               >
-                <ChevronDown
-                  className={`text-gray-400 text-2xl transition-colors duration-200 group-hover:text-blue-500`}
-                />
-              </motion.span>
-            </button>
-            <AnimatePresence initial={false}>
-              {openIndex === idx && (
-                <motion.div
-                  key="dropdown"
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.35, ease: 'easeInOut' }}
-                  className="bg-gradient-to-br from-blue-50/80 to-purple-50/80 rounded-xl shadow-lg px-8 pb-6 mt-1 mb-2 overflow-hidden"
-                >
-                  <ul className="list-disc pl-5 py-12  text-lg text-gray-700">
-                    {job.requirements.map((req, i) => (
-                      <li key={i}>{req}</li>
-                    ))}
-                  </ul>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        ))}
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2">{job.title}</h3>
+                    <div className="flex flex-wrap gap-4 text-gray-600">
+                      <span>{job.location}</span>
+                      <span>•</span>
+                      <span>{job.type}</span>
+                    </div>
+                  </div>
+                  <button className="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors">
+                    {currentLang.apply}
+                  </button>
+                </div>
+
+                <AnimatePresence>
+                  {expandedJob === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="mt-6 pt-6 border-t"
+                    >
+                      <p className="text-gray-700 mb-4">{job.description}</p>
+                      <div>
+                        <h4 className="font-semibold mb-2">{currentLang.requirements}:</h4>
+                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                          {job.requirements.map((req, i) => (
+                            <li key={i}>{req}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                {expandedJob !== index && (
+                  <button
+                    onClick={() => setExpandedJob(index)}
+                    className="mt-4 text-blue-600 hover:text-blue-700 font-medium"
+                  >
+                    {currentLang.viewDetails}
+                  </button>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

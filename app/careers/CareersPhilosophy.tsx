@@ -1,60 +1,59 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const Philosophy = () => (
-  <section className="w-full flex justify-center items-center py-12 lg:py-36 px-2">
-    <motion.div 
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="w-full max-w-7xl flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-lg min-h-[480px]"
-    >
-      {/* Left: Image */}
-      <motion.div 
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="relative w-full md:w-1/2 h-[300px] md:h-auto"
-      >
-        <img
-          src="/Career4.jpg"
-          alt="Career"
-          className="w-full h-full object-cover md:rounded-l-3xl md:rounded-r-none"
-        />
-        <div className="absolute inset-0 bg-black/30 rounded-l-3xl" />
-      </motion.div>
-      {/* Right: Content */}
-      <motion.div 
-        initial={{ opacity: 0, x: 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        className="w-full md:w-1/2 bg-[#19232e] flex flex-col justify-center p-8 md:p-16 text-white"
-      >
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="text-3xl md:text-5xl font-bold mb-8 leading-tight"
-        >
-          Join Our Team of Innovators and Shape the Future of AI
-        </motion.h2>
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          className="text-lg md:text-xl mb-8 text-gray-200"
-        >
-          At Datalake, we're not just building AI solutions – we're creating the future. We're looking for passionate individuals who want to make a real impact. Whether you're a data scientist, engineer, or creative thinker, you'll find a place where your ideas are valued and your growth is prioritized. Join us in our mission to transform how businesses leverage AI and data.
-        </motion.p>
-      
-      </motion.div>
-    </motion.div>
-  </section>
-);
+const translations = {
+  en: {
+    title: "Our Philosophy",
+    description: "At Datalake, we believe in creating an environment where innovation thrives and every team member can reach their full potential. We're not just building AI solutions – we're building a future where technology empowers human creativity and growth.",
+    imageAlt: "Team collaboration"
+  },
+  ar: {
+    title: "فلسفتنا",
+    description: "في داتاليك، نؤمن بخلق بيئة تزدهر فيها الابتكارات ويمكن لكل عضو في الفريق الوصول إلى إمكاناته الكاملة. نحن لا نبني حلول الذكاء الاصطناعي فقط - نحن نبني مستقبلاً حيث تمكّن التكنولوجيا الإبداع والنمو البشري.",
+    imageAlt: "تعاون الفريق"
+  }
+};
 
-export default Philosophy; 
+const CareersPhilosophy = () => {
+  const { language } = useLanguage();
+  const currentLang = translations[language];
+
+  return (
+    <section className="w-full py-20 px-4 md:px-20 bg-[#f6f8fa]" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <motion.div 
+          className="md:w-1/2"
+          initial={{ opacity: 0, x: language === 'ar' ? 40 : -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+            {currentLang.title}
+          </h2>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            {currentLang.description}
+          </p>
+        </motion.div>
+        <motion.div 
+          className="md:w-1/2"
+          initial={{ opacity: 0, x: language === 'ar' ? -40 : 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
+          <div className="rounded-3xl overflow-hidden shadow-2xl">
+            <img 
+              src="/Career4.jpg" 
+              alt={currentLang.imageAlt}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default CareersPhilosophy; 
