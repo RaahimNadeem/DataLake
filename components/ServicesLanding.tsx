@@ -1,44 +1,96 @@
 import React, { useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
+import { useLanguage } from '@/contexts/LanguageContext';
 
-const services = [
-  {
-    title: "AI",
-    description: "Unlock insights and automation with advanced AI.",
-    image: "/services/AI.jpg",
+const translations = {
+  en: {
+    header: {
+      subtitle: "OUR SERVICES",
+      title: "Empowering Your Data\nWith Enterprise Solutions"
+    },
+    services: [
+      {
+        title: "AI",
+        description: "Unlock insights and automation with advanced AI.",
+        image: "/services/AI.jpg",
+      },
+      {
+        title: "Cloud Services",
+        description: "Scalable, secure cloud solutions for your business.",
+        image: "/services/Cloud.jpg",
+      },
+      {
+        title: "Business Automation",
+        description: "Streamline operations and boost productivity.",
+        image: "/services/BusinessAutomation.jpg",
+      },
+      {
+        title: "Cyber",
+        description: "Protect your data and systems with robust security.",
+        image: "/services/Cyber.jpg",
+      },
+      {
+        title: "Data",
+        description: "Harness the power of your data for better decisions.",
+        image: "/services/Data.jpg",
+      },
+      {
+        title: "Digital Business & Products",
+        description: "Transform ideas into digital products and services.",
+        image: "/services/Digital.jpg",
+      },
+      {
+        title: "Sustainability",
+        description: "Drive growth with sustainable business practices.",
+        image: "/services/Sustainable.jpg",
+      },
+    ]
   },
-  {
-    title: "Cloud Services",
-    description: "Scalable, secure cloud solutions for your business.",
-    image: "/services/Cloud.jpg",
-  },
-  {
-    title: "Business Automation",
-    description: "Streamline operations and boost productivity.",
-    image: "/services/BusinessAutomation.jpg",
-  },
-  {
-    title: "Cyber",
-    description: "Protect your data and systems with robust security.",
-    image: "/services/Cyber.jpg",
-  },
-  {
-    title: "Data",
-    description: "Harness the power of your data for better decisions.",
-    image: "/services/Data.jpg",
-  },
-  {
-    title: "Digital Business & Products",
-    description: "Transform ideas into digital products and services.",
-    image: "/services/Digital.jpg",
-  },
-  {
-    title: "Sustainability",
-    description: "Drive growth with sustainable business practices.",
-    image: "/services/Sustainable.jpg",
-  },
-];
+  ar: {
+    header: {
+      subtitle: "خدماتنا",
+      title: "تمكين بياناتك\nبحلول المؤسسات المتطورة"
+    },
+    services: [
+      {
+        title: "الذكاء الاصطناعي",
+        description: "اكتشف الرؤى والأتمتة مع الذكاء الاصطناعي المتقدم.",
+        image: "/services/AI.jpg",
+      },
+      {
+        title: "خدمات السحابة",
+        description: "حلول سحابية قابلة للتطوير وآمنة لعملك.",
+        image: "/services/Cloud.jpg",
+      },
+      {
+        title: "أتمتة الأعمال",
+        description: "تبسيط العمليات وتعزيز الإنتاجية.",
+        image: "/services/BusinessAutomation.jpg",
+      },
+      {
+        title: "الأمن السيبراني",
+        description: "حماية بياناتك وأنظمتك بأمان قوي.",
+        image: "/services/Cyber.jpg",
+      },
+      {
+        title: "البيانات",
+        description: "استفد من قوة بياناتك لاتخاذ قرارات أفضل.",
+        image: "/services/Data.jpg",
+      },
+      {
+        title: "الأعمال والمنتجات الرقمية",
+        description: "تحويل الأفكار إلى منتجات وخدمات رقمية.",
+        image: "/services/Digital.jpg",
+      },
+      {
+        title: "الاستدامة",
+        description: "دفع النمو بممارسات أعمال مستدامة.",
+        image: "/services/Sustainable.jpg",
+      },
+    ]
+  }
+};
 
 function toKebabCase(str: string) {
   return str.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and');
@@ -48,13 +100,15 @@ const ServicesLanding = () => {
   const [hovered, setHovered] = useState<number | null>(null);
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const { language } = useLanguage();
+  const currentLang = translations[language];
 
   return (
-    <section id="services" className="w-full min-h-[70vh]">
+    <section id="services" className="w-full min-h-[70vh]" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Header Section */}
       <motion.div
         ref={ref}
-        initial={{ x: -60, opacity: 0 }}
+        initial={{ x: language === 'ar' ? 60 : -60, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ type: 'spring', stiffness: 500, damping: 40, duration: 0.5 }}
@@ -68,19 +122,18 @@ const ServicesLanding = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-sm font-semibold text-gray-700 mb-4 tracking-widest uppercase"
           >
-            OUR SERVICES
+            {currentLang.header.subtitle}
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-3xl md:text-6xl font-bold text-black leading-tight max-w-3xl"
+            className="text-3xl md:text-6xl font-bold text-black leading-tight max-w-3xl whitespace-pre-line"
           >
-            Empowering Your Data<br />With Enterprise Solutions
+            {currentLang.header.title}
           </motion.h1>
         </div>
-       
       </motion.div>
       {/* Services Grid */}
       <div className="w-full">
@@ -92,7 +145,7 @@ const ServicesLanding = () => {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="flex md:hidden gap-4 overflow-x-auto px-4 pb-6 scrollbar-thin scrollbar-thumb-gray-300"
         >
-          {services.map((service, idx) => (
+          {currentLang.services.map((service, idx) => (
             <Link
               key={service.title}
               href={`/services/${encodeURIComponent(service.title)}`}
@@ -125,7 +178,7 @@ const ServicesLanding = () => {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="hidden md:flex w-full h-[80vw] min-h-[300px] max-h-[500px]"
         >
-          {services.map((service, idx) => (
+          {currentLang.services.map((service, idx) => (
             <Link
               key={service.title}
               href={`/services/${encodeURIComponent(service.title)}`}
