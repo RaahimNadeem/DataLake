@@ -93,7 +93,7 @@ const Locations = () => {
           }}
         >
           <img
-            src="/Map.png"
+            src="/Countries.png"
             alt={language === 'ar' ? "خريطة العالم مع إبراز مواقع الشركة" : "World map highlighting company locations"}
             className="w-full max-w-xl rounded-2xl shadow-md object-cover mb-8 md:mb-10"
           />

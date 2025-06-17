@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import HeaderAlt from '@/components/ui/HeaderAlt';
-import Footer from '@/components/footer';
+import Footer from '@/components/ui/footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const translations = {

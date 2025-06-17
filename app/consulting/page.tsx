@@ -3,7 +3,7 @@
 import ConsultingExpertise from './ConsultingExpertise';
 import ConsultingHero from './ConsultingHero';
 import HeaderAlt from '@/components/ui/HeaderAlt';
-import Footer from '@/components/footer';
+import Footer from '@/components/ui/footer';
 
 const page = () => {
   return (
