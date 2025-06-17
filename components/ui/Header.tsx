@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -23,12 +23,37 @@ const translations = {
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const { language, toggleLanguage } = useLanguage();
   const currentLang = translations[language];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const heroHeight = window.innerHeight; // Approximate hero height
+
+      // Show header when scrolling up or when at the top
+      if (currentScrollY < heroHeight) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(currentScrollY < lastScrollY);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   return (
     <header 
-      className="absolute top-0 left-0 w-full z-30 flex items-center justify-between px-4 md:px-24 py-6"
+      className={`fixed top-0 left-0 w-full z-30 flex items-center justify-between px-4 md:px-24 py-6 transition-all duration-300 ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      } ${
+        lastScrollY > 0 ? 'bg-black/80 backdrop-blur-sm' : 'bg-transparent'
+      }`}
       dir={language === 'ar' ? 'rtl' : 'ltr'}
     >
       <div className="flex items-center gap-2">
