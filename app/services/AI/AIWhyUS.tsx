@@ -4,17 +4,17 @@ import RevealAnimation from '../../components/ui/RevealAnimation';
 
 const slides = [
   {
-    image: '/Philosophy.jpg',
+    image: '/AI/Slide2.jpg',
     title: 'Proven AI Expertise',
     desc: 'Our team brings years of hands-on experience delivering AI solutions across industries. We turn complex challenges into simple, scalable systems that drive real business value.'
   },
   {
-    image: '/Philosophy.jpg',
+    image: '/AI/Slide2.jpg',
     title: 'End-to-End Partnership',
     desc: 'From strategy to deployment and beyond, we guide you at every step. Our collaborative approach ensures your AI journey is seamless, transparent, and tailored to your needs.'
   },
   {
-    image: '/Philosophy.jpg',
+    image: '/AI/Slide2.jpg',
     title: 'Cutting-Edge Technology',
     desc: 'We leverage the latest advancements in AI, machine learning, and data engineering to build future-proof solutions that keep you ahead of the curve.'
   }
