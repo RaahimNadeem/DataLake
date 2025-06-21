@@ -157,7 +157,8 @@ const ServicesLanding = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="flex md:hidden gap-4 overflow-x-auto px-4 pb-6 scrollbar-thin scrollbar-thumb-gray-300"
+          className="flex md:hidden gap-4 overflow-x-auto px-4 pb-6 scrollbar-thin scrollbar-thumb-gray-300 max-w-full"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {currentLang.services.map((service, idx) => (
             <Link
