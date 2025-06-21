@@ -14,36 +14,43 @@ const translations = {
         title: "AI",
         description: "Unlock insights and automation with advanced AI.",
         image: "/services/AI.jpg",
+        link: "/services/AI",
       },
       {
         title: "Cloud Services",
         description: "Scalable, secure cloud solutions for your business.",
         image: "/services/Cloud.jpg",
+        link: "/services/Cloud",
       },
       {
         title: "Business Automation",
         description: "Streamline operations and boost productivity.",
         image: "/services/BusinessAutomation.jpg",
+        link: "/services/BusinessAutomation",
       },
       {
         title: "Cyber",
         description: "Protect your data and systems with robust security.",
         image: "/services/Cyber.jpg",
+        link: "/services/Cyber",
       },
       {
         title: "Data",
         description: "Harness the power of your data for better decisions.",
         image: "/services/Data.jpg",
+        link: "/services/Data",
       },
       {
         title: "Digital Business & Products",
         description: "Transform ideas into digital products and services.",
         image: "/services/Digital.jpg",
+        link: "/services/DigitalBusinessProducts",
       },
       {
         title: "Sustainability",
         description: "Drive growth with sustainable business practices.",
         image: "/services/Sustainable.jpg",
+        link: "/services/Sustainability",
       },
     ]
   },
@@ -57,36 +64,43 @@ const translations = {
         title: "الذكاء الاصطناعي",
         description: "اكتشف الرؤى والأتمتة مع الذكاء الاصطناعي المتقدم.",
         image: "/services/AI.jpg",
+        link: "/services/AI",
       },
       {
         title: "خدمات السحابة",
         description: "حلول سحابية قابلة للتطوير وآمنة لعملك.",
         image: "/services/Cloud.jpg",
+        link: "/services/Cloud",
       },
       {
         title: "أتمتة الأعمال",
         description: "تبسيط العمليات وتعزيز الإنتاجية.",
         image: "/services/BusinessAutomation.jpg",
+        link: "/services/BusinessAutomation",
       },
       {
         title: "الأمن السيبراني",
         description: "حماية بياناتك وأنظمتك بأمان قوي.",
         image: "/services/Cyber.jpg",
+        link: "/services/Cyber",
       },
       {
         title: "البيانات",
         description: "استفد من قوة بياناتك لاتخاذ قرارات أفضل.",
         image: "/services/Data.jpg",
+        link: "/services/Data",
       },
       {
         title: "الأعمال والمنتجات الرقمية",
         description: "تحويل الأفكار إلى منتجات وخدمات رقمية.",
         image: "/services/Digital.jpg",
+        link: "/services/DigitalBusinessProducts",
       },
       {
         title: "الاستدامة",
         description: "دفع النمو بممارسات أعمال مستدامة.",
         image: "/services/Sustainable.jpg",
+        link: "/services/Sustainability",
       },
     ]
   }
@@ -181,7 +195,7 @@ const ServicesLanding = () => {
           {currentLang.services.map((service, idx) => (
             <Link
               key={service.title}
-              href={`/services/${encodeURIComponent(service.title)}`}
+              href={`${service.link}`}
               className={`relative group cursor-pointer overflow-hidden transition-all duration-300 flex-1 ${
                 hovered === idx ? 'flex-[3]' : hovered === null ? 'flex-1' : 'flex-[0.7]'
               }`}
