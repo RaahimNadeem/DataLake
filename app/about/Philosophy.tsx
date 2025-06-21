@@ -37,7 +37,7 @@ const Philosophy = () => {
           className="relative w-full md:w-1/2 h-[300px] md:h-auto"
         >
           <img
-            src="/Philosophy.jpg"
+            src="/AboutUsPhilosophy.jpg"
             alt={language === 'ar' ? "الفلسفة" : "Philosophy"}
             className="w-full h-full object-cover md:rounded-l-3xl md:rounded-r-none"
           />

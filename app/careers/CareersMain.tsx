@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaRobot, FaBrain, FaRocket, FaUsers } from 'react-icons/fa';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Link from 'next/link';
 
 const translations = {
   en: {
     hero: {
       title: "Careers at Datalake",
-      subtitle: "Build the future of AI with us. Dream big, grow fast, and make a real impact."
+      subtitle: "Build the future of AI with us. Dream big, grow fast, and make a real impact.",
+      exploreButton: "Explore Open Roles"
     },
     culture: {
       title: "A Culture of Innovation & Belonging",
@@ -43,7 +45,8 @@ const translations = {
   ar: {
     hero: {
       title: "وظائف في داتاليك",
-      subtitle: "ساعدنا في بناء مستقبل الذكاء الاصطناعي. احلم كبيراً، نم بسرعة، واصنع تأثيراً حقيقياً."
+      subtitle: "ساعدنا في بناء مستقبل الذكاء الاصطناعي. احلم كبيراً، نم بسرعة، واصنع تأثيراً حقيقياً.",
+      exploreButton: "استكشف الوظائف المفتوحة"
     },
     culture: {
       title: "ثقافة الابتكار والانتماء",
@@ -96,12 +99,65 @@ const cardVariants = {
 const Careers = () => {
   const { language } = useLanguage();
   const currentLang = translations[language];
+  
+  // Slideshow state
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    '/Careers/Slide1.jpg',
+    '/Careers/Slide2.jpg',
+    '/Careers/Slide3.jpg'
+  ];
+
+  // Auto-advance slideshow
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
+  // Scroll to JobListings section
+  const scrollToJobListings = () => {
+    const jobListingsSection = document.querySelector('[data-section="job-listings"]');
+    if (jobListingsSection) {
+      jobListingsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div dir={language === 'ar' ? 'rtl' : 'ltr'}>
-      {/* Hero Section with Background Image */}
-      <section className="relative w-full min-h-[60vh] flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/Career.jpg')" }}>
+      {/* Hero Section with Slideshow Background */}
+      <section className="relative w-full min-h-[60vh] flex items-center justify-center bg-cover bg-center overflow-hidden">
+        {/* Slideshow Background */}
+        <div className="absolute inset-0 transition-all duration-1000 ease-in-out">
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+                index === currentSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+              style={{ backgroundImage: `url('${slide}')` }}
+            />
+          ))}
+        </div>
         <div className="absolute inset-0 bg-black/60" />
+        
+        {/* Slide Indicators */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentSlide 
+                  ? 'bg-white scale-110' 
+                  : 'bg-white/50 hover:bg-white/75'
+              }`}
+            />
+          ))}
+        </div>
+
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -115,10 +171,22 @@ const Careers = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="text-xl md:text-2xl text-white max-w-2xl mb-4 drop-shadow"
+            className="text-xl md:text-2xl text-white max-w-2xl mb-8 drop-shadow"
           >
             {currentLang.hero.subtitle}
           </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+          >
+            <button 
+              onClick={scrollToJobListings}
+              className="bg-white text-[#19232e] px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              {currentLang.hero.exploreButton}
+            </button>
+          </motion.div>
         </div>
       </section>
 
@@ -177,7 +245,7 @@ const Careers = () => {
             className="w-full h-72 md:h-96 rounded-3xl overflow-hidden shadow-2xl"
           >
             <img 
-              src="/Career2.jpg" 
+              src="Careers/Careers2.jpg" 
               alt={language === 'ar' ? "وظائف" : "Career"} 
               className="w-full h-full object-cover"
             />

@@ -46,12 +46,12 @@ const OverlayImageSection = () => {
           whileInView={{ scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          src="/Overlay.jpg"
-          alt={language === 'ar' ? "قسم التراكب" : "Overlay Section"}
+          src="AboutUs/Banner.jpg"
+          alt={language === 'ar' ? "قسم التراكب" : "Banner"}
           className="absolute inset-0 w-full h-full object-cover"
         />
         {/* Black Overlay */}
-        <div className="absolute inset-0 bg-[#19232e]/80" />
+        <div className="absolute inset-0 bg-[#19232e]/90" />
         {/* Content */}
         <motion.div 
           initial={{ opacity: 0, x: language === 'ar' ? -50 : 50 }}

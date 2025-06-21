@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -18,6 +18,21 @@ const translations = {
 const MainAbout = () => {
   const { language } = useLanguage();
   const currentLang = translations[language];
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    "/AboutUs/Slide1.jpg",
+    "/AboutUs/Slide2.jpg", 
+    "/AboutUs/Slide3.jpg"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
 
   return (
     <section className="w-full min-h-screen bg-[#f5f6f7] flex pt-12 items-center" dir={language === 'ar' ? 'rtl' : 'ltr'}>
@@ -60,23 +75,47 @@ const MainAbout = () => {
             </motion.p>
           </div>
         </motion.div>
-        {/* Right: Video */}
+        {/* Right: Slideshow */}
         <motion.div 
           initial={{ opacity: 0, x: language === 'ar' ? -50 : 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="w-full md:w-[50vw] h-[340px] md:h-[520px] flex flex-col items-center md:items-end md:pr-0"
+          className="w-full md:w-[50vw] h-[340px] md:h-[520px] flex flex-col items-center md:items-start md:pt-20 relative"
         >
-          <video
-            src="/About.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-[340px] md:h-[520px] object-cover rounded-l-3xl md:rounded-l-3xl md:rounded-r-none md:rounded-t-none md:rounded-b-none shadow-none"
-            style={{ borderTopRightRadius: 0, borderBottomRightRadius: 0 }}
-          />
+          <div className="w-full h-[340px] md:h-[520px] relative overflow-hidden rounded-l-3xl md:rounded-l-3xl md:rounded-r-none md:rounded-t-none md:rounded-b-none">
+            {slides.map((slide, index) => (
+              <motion.img
+                key={index}
+                src={slide}
+                alt={`Slide ${index + 1}`}
+                className="absolute inset-0 w-full h-full object-cover"
+                initial={{ opacity: 0 }}
+                animate={{ 
+                  opacity: currentSlide === index ? 1 : 0,
+                  scale: currentSlide === index ? 1 : 1.05
+                }}
+                transition={{ 
+                  opacity: { duration: 0.8, ease: "easeInOut" },
+                  scale: { duration: 0.8, ease: "easeInOut" }
+                }}
+              />
+            ))}
+            {/* Slide indicators */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === index 
+                      ? 'bg-white scale-110' 
+                      : 'bg-white/50 hover:bg-white/75'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

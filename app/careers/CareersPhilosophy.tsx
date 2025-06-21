@@ -4,13 +4,29 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const translations = {
   en: {
-    title: "Our Philosophy",
-    description: "At Datalake, we believe in creating an environment where innovation thrives and every team member can reach their full potential. We're not just building AI solutions – we're building a future where technology empowers human creativity and growth.",
+    title: "Why Choose Datalake?",
+    subtitle: "Join a team where innovation meets opportunity",
+    benefits: [
+      "Cutting-edge AI projects that shape the future",
+      "Flexible work environment with remote options",
+      "Continuous learning and professional development",
+      "Competitive compensation and benefits package",
+      "Collaborative culture that values every voice",
+      "Work-life balance that actually works"
+    ],
     imageAlt: "Team collaboration"
   },
   ar: {
-    title: "فلسفتنا",
-    description: "في داتاليك، نؤمن بخلق بيئة تزدهر فيها الابتكارات ويمكن لكل عضو في الفريق الوصول إلى إمكاناته الكاملة. نحن لا نبني حلول الذكاء الاصطناعي فقط - نحن نبني مستقبلاً حيث تمكّن التكنولوجيا الإبداع والنمو البشري.",
+    title: "لماذا تختار داتاليك؟",
+    subtitle: "انضم إلى فريق يجتمع فيه الابتكار مع الفرصة",
+    benefits: [
+      "مشاريع ذكاء اصطناعي متطورة تشكل المستقبل",
+      "بيئة عمل مرنة مع خيارات العمل عن بُعد",
+      "التعلم المستمر والتطوير المهني",
+      "تعويضات ومزايا تنافسية",
+      "ثقافة تعاونية تقدر كل صوت",
+      "توازن بين العمل والحياة ينجح فعلاً"
+    ],
     imageAlt: "تعاون الفريق"
   }
 };
@@ -29,12 +45,13 @@ const CareersPhilosophy = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
-            {currentLang.title}
-          </h2>
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-            {currentLang.description}
-          </p>
+          <div className="rounded-3xl overflow-hidden shadow-2xl">
+            <img 
+              src="Careers/Careers3.jpg" 
+              alt={currentLang.imageAlt}
+              className="w-full h-full object-cover"
+            />
+          </div>
         </motion.div>
         <motion.div 
           className="md:w-1/2"
@@ -43,13 +60,27 @@ const CareersPhilosophy = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <div className="rounded-3xl overflow-hidden shadow-2xl">
-            <img 
-              src="/Career4.jpg" 
-              alt={currentLang.imageAlt}
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight text-[#101424]">
+            {currentLang.title}
+          </h2>
+          <p className="text-xl text-[#4a6d8c] font-semibold mb-8">
+            {currentLang.subtitle}
+          </p>
+          <ul className="space-y-4">
+            {currentLang.benefits.map((benefit, index) => (
+              <motion.li 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex items-start gap-3 text-lg text-gray-700"
+              >
+                <div className="w-2 h-2 bg-[#4a6d8c] rounded-full mt-3 flex-shrink-0"></div>
+                <span>{benefit}</span>
+              </motion.li>
+            ))}
+          </ul>
         </motion.div>
       </div>
     </section>
