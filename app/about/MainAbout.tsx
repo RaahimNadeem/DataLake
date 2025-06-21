@@ -35,7 +35,7 @@ const MainAbout = () => {
   }, [slides.length]);
 
   return (
-    <section className="w-full min-h-screen bg-[#f5f6f7] flex pt-12 items-center" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section className="w-full min-h-screen flex pt-12 items-center" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-24 px-4 md:pl-8 md:pr-0 w-full">
         {/* Left: Text */}
         <motion.div 

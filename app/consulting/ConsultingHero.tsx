@@ -15,7 +15,6 @@ const translations = {
       "We offer a peerless collection of the best consulting expertise across industries. Our consultants deliver true people-to-people collaboration and provide insider access to outstanding strategies, offering a deeper view into your business's potential, technology, and growth.",
       "Our expert team ensures your time is well-spent, your solutions are authentic, and your results are exceptional."
     ],
-    button: "SEE MORE DETAILS"
   },
   ar: {
     subtitle: "خدماتنا الاستشارية",
@@ -29,7 +28,6 @@ const translations = {
       "نقدم مجموعة لا مثيل لها من أفضل الخبرات الاستشارية عبر الصناعات. يقدم مستشارونا تعاوناً حقيقياً بين الأشخاص ويوفرون وصولاً داخلياً إلى استراتيجيات متميزة، مما يوفر رؤية أعمق لإمكانات عملك وتكنولوجيته ونموه.",
       "يضمن فريقنا الخبير أن وقتك مستثمر بشكل جيد، وحلولك أصيلة، ونتائجك استثنائية."
     ],
-    button: "شاهد المزيد من التفاصيل"
   }
 };
 
@@ -93,17 +91,7 @@ export default function ConsultingHero() {
             {text}
           </motion.p>
         ))}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 1.2 }}
-          className="flex gap-4 md:gap-6 mt-2"
-        >
-          <button className="flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 rounded-full border border-[#4a6d8c] text-[#4a6d8c] font-semibold text-sm md:text-base hover:bg-[#4a6d8c] hover:text-white transition-colors duration-300">
-            <span className="text-xl">↓</span> {currentLang.button}
-          </button>
-        </motion.div>
+       
       </motion.div>
       {/* Right: Slideshow */}
       <motion.div 

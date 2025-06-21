@@ -74,98 +74,104 @@ const HeaderAlt = () => {
   }, [lastScrollY]);
 
   return (
-    <motion.header 
-      initial={{ y: 0 }}
-      animate={{ y: isVisible ? 0 : -100 }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-      className={`fixed top-0 left-0 w-full z-30 flex items-center justify-between px-4 md:px-24 py-6 ${
-        lastScrollY > 0 ? 'bg-white/80 backdrop-blur-sm shadow-sm' : 'bg-transparent'
-      }`}
-      dir={language === 'ar' ? 'rtl' : 'ltr'}
-    >
-      <div className="flex items-center gap-2">
-        {/* <img src="/logo.svg" alt="Trident Logo" className="h-10" /> */}
-        <Link href="/" className="text-white text-3xl font-bold tracking-widest">
-          <img src="/Logo.svg" alt="DataLake Logo" className="h-16" />
-        </Link>
-      </div>
-      {/* Desktop Nav */}
-      <nav className="hidden md:flex items-center gap-8 text-[#101424] font-semibold text-lg">
-        <Link href="/about" className="hover:text-[#4a6d8c] transition-colors duration-300">{currentLang.about}</Link>
-        
-        {/* Services Dropdown */}
-        <div 
-          className="relative group"
-          onMouseEnter={() => setServicesDropdownOpen(true)}
-          onMouseLeave={() => {
-            // Add a small delay to prevent immediate closing
-            setTimeout(() => setServicesDropdownOpen(false), 100000);
-          }}
-        >
-          <button className="hover:text-[#4a6d8c] transition-colors duration-300 flex items-center gap-1">
-            {currentLang.services}
-            <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          
-          {/* Dropdown Menu */}
-          <motion.div 
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ 
-              opacity: servicesDropdownOpen ? 1 : 0,
-              y: servicesDropdownOpen ? 0 : -10
-            }}
-            transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200"
-            style={{ pointerEvents: servicesDropdownOpen ? 'auto' : 'none' }}
-            onMouseEnter={() => setServicesDropdownOpen(true)}
-            onMouseLeave={() => setServicesDropdownOpen(false)}
-          >
-            <div className="py-2">
-              {services.map((service) => (
-                <Link
-                  key={service.name}
-                  href={service.path}
-                  className="block px-4 py-3 text-[#101424] hover:bg-[#4a6d8c]/10 hover:text-[#4a6d8c] transition-colors duration-200 text-left"
-                  onClick={() => setServicesDropdownOpen(false)}
-                >
-                  <div className="font-medium">{language === 'ar' ? service.ar : service.en}</div>
-                </Link>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-        
-        <Link href="/consulting" className="hover:text-[#4a6d8c] transition-colors duration-300">{currentLang.consulting}</Link>
-        <Link href="/careers" className="hover:text-[#4a6d8c] transition-colors duration-300">{currentLang.careers}</Link>
-        <Link href="/contact" className="hover:text-[#4a6d8c] transition-colors duration-300">{currentLang.contact}</Link>
-        {/* Language Toggle */}
-        <div className="flex items-center gap-2 ml-4">
-          <span className="text-sm text-[#101424]">EN</span>
-          <button
-            onClick={toggleLanguage}
-            className="relative w-14 h-7 bg-[#4a6d8c]/20 rounded-full transition-colors duration-300 focus:outline-none"
-          >
-            <div
-              className={`absolute top-1 left-1 w-5 h-5 bg-[#4a6d8c] rounded-full transition-transform duration-300 transform ${
-                language === 'ar' ? 'translate-x-7' : 'translate-x-0'
-              }`}
-            />
-          </button>
-          <span className="text-sm text-[#101424]">عربي</span>
-        </div>
-      </nav>
-      {/* Hamburger for Mobile */}
-      <button
-        className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
-        aria-label="Open menu"
-        onClick={() => setMenuOpen(true)}
+    <>
+      <motion.header 
+        initial={{ y: 0 }}
+        animate={{ y: isVisible ? 0 : -100 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className={`fixed top-0 left-0 w-full z-30 flex items-center justify-between px-4 md:px-24 py-6 ${
+          lastScrollY > 0 ? 'bg-white/80 backdrop-blur-sm shadow-sm' : 'bg-transparent'
+        }`}
+        dir={language === 'ar' ? 'rtl' : 'ltr'}
       >
-        <span className="block w-8 h-1 bg-[#101424] rounded mb-1.5"></span>
-        <span className="block w-8 h-1 bg-[#101424] rounded mb-1.5"></span>
-        <span className="block w-8 h-1 bg-[#101424] rounded"></span>
-      </button>
+        <div className="flex items-center gap-2">
+          {/* <img src="/logo.svg" alt="Trident Logo" className="h-10" /> */}
+          <Link href="/" className="text-white text-3xl font-bold tracking-widest">
+            <img src="/Logo.svg" alt="DataLake Logo" className="h-16" />
+          </Link>
+        </div>
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-8 text-[#101424] font-semibold text-lg">
+          <Link href="/about" className="hover:text-[#4a6d8c] transition-colors duration-300">{currentLang.about}</Link>
+          
+          {/* Services Dropdown */}
+          <div 
+            className="relative group"
+            onMouseEnter={() => setServicesDropdownOpen(true)}
+            onMouseLeave={() => {
+              // Add a small delay to prevent immediate closing
+              setTimeout(() => setServicesDropdownOpen(false), 100000);
+            }}
+          >
+            <button className="hover:text-[#4a6d8c] transition-colors duration-300 flex items-center gap-1">
+              {currentLang.services}
+              <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            {/* Dropdown Menu */}
+            <motion.div 
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ 
+                opacity: servicesDropdownOpen ? 1 : 0,
+                y: servicesDropdownOpen ? 0 : -10
+              }}
+              transition={{ duration: 0.2 }}
+              className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200"
+              style={{ pointerEvents: servicesDropdownOpen ? 'auto' : 'none' }}
+              onMouseEnter={() => setServicesDropdownOpen(true)}
+              onMouseLeave={() => setServicesDropdownOpen(false)}
+            >
+              <div className="py-2">
+                {services.map((service) => (
+                  <Link
+                    key={service.name}
+                    href={service.path}
+                    className="block px-4 py-3 text-[#101424] hover:bg-[#4a6d8c]/10 hover:text-[#4a6d8c] transition-colors duration-200 text-left"
+                    onClick={() => setServicesDropdownOpen(false)}
+                  >
+                    <div className="font-medium">{language === 'ar' ? service.ar : service.en}</div>
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+          
+          <Link href="/consulting" className="hover:text-[#4a6d8c] transition-colors duration-300">{currentLang.consulting}</Link>
+          <Link href="/careers" className="hover:text-[#4a6d8c] transition-colors duration-300">{currentLang.careers}</Link>
+          <Link href="/contact" className="hover:text-[#4a6d8c] transition-colors duration-300">{currentLang.contact}</Link>
+          {/* Language Toggle */}
+          <div className="flex items-center gap-2 ml-4">
+            <span className="text-sm text-[#101424]">EN</span>
+            <button
+              onClick={toggleLanguage}
+              className="relative w-14 h-7 bg-[#4a6d8c]/20 rounded-full transition-colors duration-300 focus:outline-none"
+            >
+              <div
+                className={`absolute top-1 left-1 w-5 h-5 bg-[#4a6d8c] rounded-full transition-transform duration-300 transform ${
+                  language === 'ar' ? 'translate-x-7' : 'translate-x-0'
+                }`}
+              />
+            </button>
+            <span className="text-sm text-[#101424]">عربي</span>
+          </div>
+        </nav>
+        {/* Hamburger for Mobile */}
+        <button
+          className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
+          aria-label="Open menu"
+          onClick={() => setMenuOpen(true)}
+        >
+          <span className="block w-8 h-1 bg-[#101424] rounded mb-1.5"></span>
+          <span className="block w-8 h-1 bg-[#101424] rounded mb-1.5"></span>
+          <span className="block w-8 h-1 bg-[#101424] rounded"></span>
+        </button>
+      </motion.header>
+
+      {/* Spacer to prevent content overlap */}
+      <div className="h-24 md:h-28"></div>
+
       {/* Mobile Menu Overlay */}
       {menuOpen && (
         <motion.div 
@@ -242,7 +248,7 @@ const HeaderAlt = () => {
           </nav>
         </motion.div>
       )}
-    </motion.header>
+    </>
   );
 };
 

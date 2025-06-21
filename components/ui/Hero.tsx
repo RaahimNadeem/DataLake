@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -18,9 +18,13 @@ const translations = {
 
 const Hero = () => {
   const ref = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollY } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const { language } = useLanguage();
   const currentLang = translations[language];
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoError, setVideoError] = useState(false);
+  const [isInView, setIsInView] = useState(false);
   
   // Scale video from 1 to 1.18 as you scroll through the hero section
   const scale = useTransform(scrollY, [0, 400], [1, 1.18]);
@@ -29,6 +33,36 @@ const Hero = () => {
   // Scale content container from 1 to 0.85 as you scroll (opposite of video scale)
   const contentScale = useTransform(scrollY, [0, 400], [1, 0.85]);
 
+  useEffect(() => {
+    // Intersection Observer to detect when hero is in view
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          // Start loading video when in view
+          if (videoRef.current) {
+            videoRef.current.load();
+          }
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleVideoLoad = () => {
+    setVideoLoaded(true);
+  };
+
+  const handleVideoError = () => {
+    setVideoError(true);
+  };
+
   return (
     <section 
       ref={ref} 
@@ -36,17 +70,43 @@ const Hero = () => {
       dir={language === 'ar' ? 'rtl' : 'ltr'}
     >
       {/* Background Video */}
-      <motion.video
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        src="/Hero.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{ scale }}
-      />
+      {isInView && (
+        <motion.video
+          ref={videoRef}
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          src="/Hero.webm"
+          poster="/hero-poster.jpg" // Add a low-quality poster image
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata" // Only preload metadata initially
+          style={{ scale }}
+          onLoadedData={handleVideoLoad}
+          onError={handleVideoError}
+        />
+      )}
+      
+      {/* Loading overlay */}
+      {!videoLoaded && !videoError && isInView && (
+        <div className="absolute top-0 left-0 w-full h-full bg-black/90 z-5 flex items-center justify-center">
+          <div className="text-white text-lg">Loading...</div>
+        </div>
+      )}
+      
+      {/* Fallback background for video error or slow loading */}
+      {videoError && (
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 z-0" />
+      )}
+      
+      {/* Static fallback background when video not loaded yet */}
+      {!isInView && (
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 z-0" />
+      )}
+      
       {/* Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-black/80 z-10" />
+      
       {/* Content */}
       <motion.div
         style={{ opacity, scale: contentScale }}
