@@ -42,7 +42,7 @@ const CareersPhilosophy = () => {
           className="md:w-1/2"
           initial={{ opacity: 0, x: language === 'ar' ? 40 : -40 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1, margin: "-100px" }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <div className="rounded-3xl overflow-hidden shadow-2xl">
@@ -57,7 +57,7 @@ const CareersPhilosophy = () => {
           className="md:w-1/2"
           initial={{ opacity: 0, x: language === 'ar' ? -40 : 40 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1, margin: "-100px" }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight text-[#101424]">
@@ -72,7 +72,7 @@ const CareersPhilosophy = () => {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.1, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex items-start gap-3 text-lg text-gray-700"
               >

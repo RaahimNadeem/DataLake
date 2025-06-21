@@ -20,6 +20,7 @@ export default function RevealAnimation({
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
+    rootMargin: "-50px 0px",
   });
 
   const getDirectionOffset = () => {

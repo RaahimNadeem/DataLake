@@ -1,0 +1,100 @@
+{
+  "jobs": [
+    {
+      "id": "1",
+      "title": "Senior AI Engineer",
+      "location": "Tunisia",
+      "type": "Full-time",
+      "team": "Engineering",
+      "description": "We're looking for a Senior AI Engineer to lead our machine learning initiatives and help build next-generation AI solutions.",
+      "requirements": [
+        "5+ years of experience in AI/ML development",
+        "Strong background in Python and deep learning frameworks",
+        "Experience with large language models and NLP",
+        "Excellent problem-solving skills"
+      ],
+      "isActive": true,
+      "link": "https://example.com/jobs/senior-ai-engineer"
+    },
+    {
+      "id": "2",
+      "title": "Data Scientist",
+      "location": "France",
+      "type": "Full-time",
+      "team": "Data Science",
+      "description": "Join our data science team to develop innovative solutions that drive business value through advanced analytics.",
+      "requirements": [
+        "3+ years of experience in data science",
+        "Proficiency in statistical analysis and machine learning",
+        "Experience with big data technologies",
+        "Strong communication skills"
+      ],
+      "isActive": true,
+      "link": "https://example.com/jobs/data-scientist"
+    },
+    {
+      "id": "3",
+      "title": "AI Product Manager",
+      "location": "Morocco",
+      "type": "Full-time",
+      "team": "Product",
+      "description": "Lead the development of our AI products from conception to launch, working closely with engineering and design teams.",
+      "requirements": [
+        "4+ years of product management experience",
+        "Background in AI/ML products",
+        "Strong analytical and strategic thinking",
+        "Excellent leadership skills"
+      ],
+      "isActive": true,
+      "link": "https://example.com/jobs/ai-product-manager"
+    },
+    {
+      "id": "4",
+      "title": "Frontend Developer",
+      "location": "Saudi Arabia",
+      "type": "Full-time",
+      "team": "Engineering",
+      "description": "Build beautiful and responsive user interfaces for our AI-powered applications using modern web technologies.",
+      "requirements": [
+        "3+ years of frontend development experience",
+        "Proficiency in React, TypeScript, and modern CSS",
+        "Experience with responsive design and accessibility",
+        "Strong collaboration skills"
+      ],
+      "isActive": true,
+      "link": "https://example.com/jobs/frontend-developer"
+    },
+    {
+      "id": "5",
+      "title": "UX Designer",
+      "location": "Tunisia",
+      "type": "Full-time",
+      "team": "Design",
+      "description": "Create intuitive and engaging user experiences for our AI products through user research and design thinking.",
+      "requirements": [
+        "4+ years of UX design experience",
+        "Proficiency in design tools (Figma, Sketch)",
+        "Experience with user research and testing",
+        "Strong portfolio showcasing AI/ML products"
+      ],
+      "isActive": true,
+      "link": "https://example.com/jobs/ux-designer"
+    },
+    {
+      "id": "6",
+      "title": "DevOps Engineer II",
+      "location": "France",
+      "type": "Full-time",
+      "team": "Engineering",
+      "description": "Build and maintain our cloud infrastructure to support scalable AI applications and machine learning pipelines.",
+      "requirements": [
+        "3+ years of DevOps experience",
+        "Experience with AWS, Docker, and Kubernetes",
+        "Knowledge of CI/CD pipelines",
+        "Experience with monitoring and logging tools"
+      ],
+      "isActive": true,
+      "link": "https://example.com/jobs/devops-engineer-ii"
+    }
+  ]
+} 

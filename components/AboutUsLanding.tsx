@@ -66,7 +66,7 @@ const AboutUsLanding = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="text-xl md:text-2xl text-black text-left leading-relaxed max-w-xl"
+            className="text-xl md:text-2xl text-gray-600 text-left leading-relaxed max-w-xl"
           >
             {currentLang.description}
           </motion.p>

@@ -36,7 +36,7 @@ const OverlayImageSection = () => {
       <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.8 }}
         className="relative min-h-[70vh] overflow-hidden flex items-center"
       >
@@ -44,7 +44,7 @@ const OverlayImageSection = () => {
         <motion.img
           initial={{ scale: 1.1 }}
           whileInView={{ scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
           src="AboutUs/Banner.jpg"
           alt={language === 'ar' ? "قسم التراكب" : "Banner"}
@@ -56,14 +56,14 @@ const OverlayImageSection = () => {
         <motion.div 
           initial={{ opacity: 0, x: language === 'ar' ? -50 : 50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="relative z-10 px-8 md:px-16 lg:px-32 ml-auto w-full md:w-1/2 flex flex-col items-start"
         >
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
             className="text-sm font-semibold text-gray-200 tracking-widest uppercase mb-6"
           >
@@ -72,7 +72,7 @@ const OverlayImageSection = () => {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.5, delay: 0.8 }}
             className="text-3xl md:text-6xl font-bold text-white leading-tight mb-8"
           >
@@ -81,7 +81,7 @@ const OverlayImageSection = () => {
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.5, delay: 1 }}
             className="text-lg md:text-xl text-white"
           >
@@ -93,14 +93,14 @@ const OverlayImageSection = () => {
       <motion.div 
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.8 }}
         className="w-full py-16 bg-white flex flex-col items-center"
       >
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-sm font-semibold text-gray-700 tracking-widest uppercase mb-4"
         >
@@ -109,7 +109,7 @@ const OverlayImageSection = () => {
         <motion.h3 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-3xl md:text-6xl font-bold text-black leading-tight mb-24"
         >
@@ -118,7 +118,7 @@ const OverlayImageSection = () => {
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-y-16 gap-x-12 w-full max-w-6xl px-4 justify-items-center"
         >

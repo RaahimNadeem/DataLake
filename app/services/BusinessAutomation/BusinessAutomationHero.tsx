@@ -3,14 +3,30 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import RevealAnimation from '../../components/ui/RevealAnimation';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const images = ['/services/BusinessAutomation.jpg', '/services/BusinessAutomation.jpg', '/services/BusinessAutomation.jpg'];
 const SLIDE_DURATION = 4000;
+
+const translations = {
+  en: {
+    title: "Business Automation for Operational Excellence",
+    description: "Streamline your operations and boost productivity with intelligent automation solutions. We help you eliminate manual processes, reduce errors, and focus on what matters most to your business.",
+    button: "Let's Talk"
+  },
+  ar: {
+    title: "أتمتة الأعمال للتميز التشغيلي",
+    description: "قم بتبسيط عملياتك وزيادة الإنتاجية من خلال حلول الأتمتة الذكية. نحن نساعدك على التخلص من العمليات اليدوية وتقليل الأخطاء والتركيز على الأمور الأكثر أهمية لعملك.",
+    button: "لنتحدث"
+  }
+};
 
 const BusinessAutomationHero = () => {
   const [current, setCurrent] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [imageError, setImageError] = useState<{[key: string]: boolean}>({});
+  const { language } = useLanguage();
+  const currentLang = translations[language];
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -39,7 +55,7 @@ const BusinessAutomationHero = () => {
 
   return (
     <>
-      <section className="relative w-full h-screen overflow-hidden flex items-center font-sans">
+      <section className="relative w-full h-screen overflow-hidden flex items-center font-sans" dir={language === 'ar' ? 'rtl' : 'ltr'}>
         {/* Slideshow Background */}
         <div className="absolute top-0 left-0 w-full h-full">
           {images.map((src, idx) => (
@@ -53,7 +69,7 @@ const BusinessAutomationHero = () => {
               {!imageError[src] ? (
                 <Image
                   src={src}
-                  alt="Business Automation background"
+                  alt={language === 'ar' ? 'خلفية أتمتة الأعمال' : 'Business Automation background'}
                   fill
                   priority={idx === 0}
                   quality={90}
@@ -63,7 +79,7 @@ const BusinessAutomationHero = () => {
                 />
               ) : (
                 <div className="w-full h-full bg-gray-800 flex items-center justify-center">
-                  <p className="text-white">Failed to load image</p>
+                  <p className="text-white">{language === 'ar' ? 'فشل تحميل الصورة' : 'Failed to load image'}</p>
                 </div>
               )}
             </div>
@@ -73,17 +89,16 @@ const BusinessAutomationHero = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-black/80 z-10" />
         
         {/* Content */}
-        <div className="relative z-20 flex flex-col items-start justify-center h-full pl-4 pr-4 md:pl-24 md:pr-0 max-w-full md:max-w-4xl w-full">
+        <div className={`relative z-20 flex flex-col items-start justify-center h-full pl-4 pr-4 md:px-24 max-w-full md:max-w-4xl w-full ${language === 'ar' ? 'text-right' : 'text-left'}`}>
           <RevealAnimation direction="up" delay={0.2}>
-            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-4 sm:mb-6">
-              Business Automation<br />
-              for Operational Excellence
+            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-4 sm:mb-6 whitespace-pre-line">
+              {currentLang.title}
             </h1>
           </RevealAnimation>
           
           <RevealAnimation direction="up" delay={0.4}>
             <p className="text-white text-base sm:text-lg md:text-2xl mb-6 sm:mb-8 max-w-full">
-              Streamline your operations and boost productivity with intelligent automation solutions. We help you eliminate manual processes, reduce errors, and focus on what matters most to your business.
+              {currentLang.description}
             </p>
           </RevealAnimation>
           
@@ -92,8 +107,8 @@ const BusinessAutomationHero = () => {
               href="#contact"
               className="inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 bg-white text-black text-base sm:text-lg font-semibold rounded-full shadow-lg hover:bg-gray-200 transition border border-white"
             >
-              Let's Talk
-              <span className="ml-2">→</span>
+              {currentLang.button}
+              <span className={language === 'ar' ? 'mr-2' : 'ml-2'}>→</span>
             </a>
           </RevealAnimation>
         </div>
@@ -107,7 +122,7 @@ const BusinessAutomationHero = () => {
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 idx === current ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/75'
               }`}
-              aria-label={`Go to slide ${idx + 1}`}
+              aria-label={`${language === 'ar' ? 'اذهب للشريحة' : 'Go to slide'} ${idx + 1}`}
             />
           ))}
         </div>

@@ -8,6 +8,7 @@ import AboutUsLanding from './AboutUsLanding';
 import WhyUs from './WhyUs';
 import ServicesLanding from './ServicesLanding';
 import Locations from './Locations';
+import InfiniteSlideshow from './ui/InfiniteSlideshow';
 import Footer from './ui/footer';
 
 const LandingPage = () => {
@@ -19,6 +20,7 @@ const LandingPage = () => {
       <WhyUs />
       <ServicesLanding />
       <Locations />
+      <InfiniteSlideshow />
       <Footer />
     </main>
   );

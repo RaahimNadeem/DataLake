@@ -26,6 +26,8 @@ const Hero = () => {
   const scale = useTransform(scrollY, [0, 400], [1, 1.18]);
   // Fade out text as you scroll through the hero section
   const opacity = useTransform(scrollY, [0, 250], [1, 0]);
+  // Scale content container from 1 to 0.85 as you scroll (opposite of video scale)
+  const contentScale = useTransform(scrollY, [0, 400], [1, 0.85]);
 
   return (
     <section 
@@ -47,7 +49,7 @@ const Hero = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-black/80 z-10" />
       {/* Content */}
       <motion.div
-        style={{ opacity }}
+        style={{ opacity, scale: contentScale }}
         className={`relative z-20 flex flex-col items-${language === 'ar' ? 'end' : 'start'} justify-center h-full px-4 md:px-24 max-w-full md:max-w-4xl w-full`}
       >
         <motion.h1
@@ -81,7 +83,7 @@ const Hero = () => {
             {currentLang.description}
           </p>
           <a
-            href="#more"
+            href="/contact"
             className="inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 bg-white text-black text-base sm:text-lg font-semibold rounded-full shadow-lg hover:bg-gray-200 transition border border-white"
           >
             {currentLang.cta}

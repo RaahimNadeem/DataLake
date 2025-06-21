@@ -17,10 +17,6 @@ const translations = {
       quote: {
         text: "Datalake is the first place I've worked where I feel my ideas matter. The energy is contagious and the support is real.",
         author: "— Team Member"
-      },
-      contact: {
-        phone: "+1 (555) 123-4567",
-        email: "careers@datalake.ai"
       }
     },
     positions: [
@@ -54,10 +50,6 @@ const translations = {
       quote: {
         text: "داتاليك هو أول مكان عمل أشعر فيه أن أفكاري مهمة. الطاقة معدية والدعم حقيقي.",
         author: "— عضو الفريق"
-      },
-      contact: {
-        phone: "+1 (555) 123-4567",
-        email: "careers@datalake.ai"
       }
     },
     positions: [
@@ -196,7 +188,7 @@ const Careers = () => {
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1, margin: "-100px" }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
             className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight"
           >
@@ -205,7 +197,7 @@ const Careers = () => {
           <motion.p
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1, margin: "-100px" }}
             transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
             className="text-lg md:text-xl mb-8 max-w-2xl"
           >
@@ -214,33 +206,19 @@ const Careers = () => {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1, margin: "-100px" }}
             transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
             className="rounded-2xl p-6 bg-[#f6f8fa] shadow-lg mb-8 max-w-xl"
           >
             <p className="text-xl italic text-[#19232e] mb-2">{currentLang.culture.quote.text}</p>
             <p className="text-right">{currentLang.culture.quote.author}</p>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
-            className="flex flex-col gap-2 mt-4"
-          >
-            <div className="flex items-center gap-2">
-              <span className="font-bold">📞</span> {currentLang.culture.contact.phone}
-            </div>
-            <div className="flex items-center gap-2 text-[#2b2b2b]">
-              <span className="font-bold">✉️</span> {currentLang.culture.contact.email}
-            </div>
-          </motion.div>
         </div>
         <div className="md:w-1/3 flex items-center justify-center mt-12 md:mt-0">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "-100px" }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="w-full h-72 md:h-96 rounded-3xl overflow-hidden shadow-2xl"
           >

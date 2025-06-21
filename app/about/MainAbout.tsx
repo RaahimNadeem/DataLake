@@ -40,16 +40,14 @@ const MainAbout = () => {
         {/* Left: Text */}
         <motion.div 
           initial={{ opacity: 0, x: language === 'ar' ? 50 : -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex-1 w-full md:w-1/2 flex flex-col justify-center items-start"
         >
           <div className="mb-6 w-full max-w-2xl">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-sm font-semibold text-gray-700 tracking-widest uppercase mb-6"
             >
@@ -57,8 +55,7 @@ const MainAbout = () => {
             </motion.div>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-5xl md:text-8xl font-bold text-black leading-tight mb-8"
             >
@@ -66,8 +63,7 @@ const MainAbout = () => {
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
               className="text-lg md:text-xl text-gray-700 max-w-xl"
             >
@@ -78,8 +74,7 @@ const MainAbout = () => {
         {/* Right: Slideshow */}
         <motion.div 
           initial={{ opacity: 0, x: language === 'ar' ? -50 : 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="w-full md:w-[50vw] h-[340px] md:h-[520px] flex flex-col items-center md:items-start md:pt-20 relative"
         >

@@ -1,37 +1,66 @@
 import React, { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import RevealAnimation from '../../components/ui/RevealAnimation';
+import { useLanguage } from '@/contexts/LanguageContext';
 
-const slides = [
-  {
-    image: '/services/BusinessAutomation.jpg',
-    title: 'Process Optimization Experts',
-    desc: 'Our team specializes in analyzing and optimizing business processes to identify automation opportunities that deliver maximum ROI and operational efficiency.'
+const translations = {
+  en: {
+    mainTitle: "Why Choose Datalake for Business Automation?",
+    slides: [
+      {
+        image: '/services/BusinessAutomation.jpg',
+        title: 'Process Optimization Experts',
+        desc: 'Our team specializes in analyzing and optimizing business processes to identify automation opportunities that deliver maximum ROI and operational efficiency.'
+      },
+      {
+        image: '/services/BusinessAutomation.jpg',
+        title: 'End-to-End Implementation',
+        desc: 'From process analysis to deployment and ongoing optimization, we handle every aspect of your automation journey with proven methodologies and best practices.'
+      },
+      {
+        image: '/services/BusinessAutomation.jpg',
+        title: 'Technology Agnostic',
+        desc: 'We select the right automation tools and platforms for your specific needs, whether it is RPA, workflow automation, or custom integrations.'
+      }
+    ]
   },
-  {
-    image: '/services/BusinessAutomation.jpg',
-    title: 'End-to-End Implementation',
-    desc: 'From process analysis to deployment and ongoing optimization, we handle every aspect of your automation journey with proven methodologies and best practices.'
-  },
-  {
-    image: '/services/BusinessAutomation.jpg',
-    title: 'Technology Agnostic',
-    desc: 'We select the right automation tools and platforms for your specific needs, whether it is RPA, workflow automation, or custom integrations.'
+  ar: {
+    mainTitle: "لماذا تختار Datalake لأتمتة الأعمال؟",
+    slides: [
+      {
+        image: '/services/BusinessAutomation.jpg',
+        title: 'خبراء تحسين العمليات',
+        desc: 'يتخصص فريقنا في تحليل وتحسين عمليات الأعمال لتحديد فرص الأتمتة التي توفر أقصى عائد على الاستثمار والكفاءة التشغيلية.'
+      },
+      {
+        image: '/services/BusinessAutomation.jpg',
+        title: 'تنفيذ شامل',
+        desc: 'من تحليل العمليات إلى النشر والتحسين المستمر، نتعامل مع كل جانب من رحلة الأتمتة الخاصة بك باستخدام منهجيات مثبتة وأفضل الممارسات.'
+      },
+      {
+        image: '/services/BusinessAutomation.jpg',
+        title: 'محايدون تقنيًا',
+        desc: 'نختار أدوات ومنصات الأتمتة المناسبة لاحتياجاتك المحددة، سواء كانت RPA أو أتمتة سير العمل أو التكاملات المخصصة.'
+      }
+    ]
   }
-];
+};
 
 const BusinessAutomationWhyUS = () => {
   const [current, setCurrent] = useState(0);
+  const { language } = useLanguage();
+  const currentLang = translations[language];
+  const slides = currentLang.slides;
 
   const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="w-full flex flex-col items-center py-12 lg:py-24 px-2">
+    <section className="w-full flex flex-col items-center py-12 lg:py-24 px-2" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Section Heading */}
       <RevealAnimation direction="up" delay={0.2}>
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-[#101424]">
-          Why Choose Datalake for Business Automation?
+          {currentLang.mainTitle}
         </h2>
       </RevealAnimation>
       
@@ -57,7 +86,7 @@ const BusinessAutomationWhyUS = () => {
               <button
                 onClick={prevSlide}
                 className="w-10 h-10 rounded-full bg-[#eaf1f7] text-[#4a6d8c] flex items-center justify-center text-2xl font-bold hover:bg-[#dbeafe] transition"
-                aria-label="Previous slide"
+                aria-label={language === 'ar' ? 'الشريحة السابقة' : 'Previous slide'}
               >
                 &#8592;
               </button>
@@ -69,14 +98,14 @@ const BusinessAutomationWhyUS = () => {
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       idx === current ? 'bg-[#4a6d8c]' : 'bg-[#eaf1f7]'
                     }`}
-                    aria-label={`Go to slide ${idx + 1}`}
+                    aria-label={`${language === 'ar' ? 'اذهب للشريحة' : 'Go to slide'} ${idx + 1}`}
                   />
                 ))}
               </div>
               <button
                 onClick={nextSlide}
                 className="w-10 h-10 rounded-full bg-[#eaf1f7] text-[#4a6d8c] flex items-center justify-center text-2xl font-bold hover:bg-[#dbeafe] transition"
-                aria-label="Next slide"
+                aria-label={language === 'ar' ? 'الشريحة التالية' : 'Next slide'}
               >
                 &#8594;
               </button>

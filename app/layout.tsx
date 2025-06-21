@@ -21,6 +21,11 @@ const georgia = Georgia({
 export const metadata: Metadata = {
   title: "DataLake - Data Analytics for Modern Enterprises",
   description: "Enterprise-grade data solutions for innovators and industry leaders",
+  icons: {
+    icon: '/Logo.svg',
+    shortcut: '/Logo.svg',
+    apple: '/Logo.svg',
+  },
 }
 
 export default function RootLayout({
@@ -30,6 +35,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/Logo.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="/Logo.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/Logo.svg" />
+      </head>
       <body className={cn("min-h-screen font-sans antialiased", inter.variable, georgia.variable)}>
         <LanguageProvider>
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>

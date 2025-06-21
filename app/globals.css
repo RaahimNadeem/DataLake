@@ -85,8 +85,21 @@ html {
   }
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .animate-fade-in {
   animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
 }
 
 /* Custom transitions */

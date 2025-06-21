@@ -45,7 +45,7 @@ const Locations = () => {
           className="flex-1 w-full md:w-1/2 flex flex-col justify-center"
           initial={{ x: language === 'ar' ? 60 : -60, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{
             type: "spring",
             stiffness: 300,
@@ -83,7 +83,7 @@ const Locations = () => {
           className="flex-1 w-full md:w-1/2 flex flex-col items-center md:items-end"
           initial={{ x: language === 'ar' ? -60 : 60, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{
             type: "spring",
             stiffness: 300,
