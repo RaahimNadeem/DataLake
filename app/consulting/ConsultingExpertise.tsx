@@ -20,15 +20,15 @@ const translations = {
   ar: {
     title: "خبراؤنا",
     expertise: [
-      { label: 'مهندس البيانات الضخمة' },
-      { label: 'مدير النظام' },
-      { label: 'هادوب' },
-      { label: 'ديف أوبس' },
-      { label: 'مدير المشروع' },
-      { label: 'مدرب أجايل' },
-      { label: 'مهندس البيانات' },
-      { label: 'محلل البيانات' },
-      { label: 'عالم البيانات' }
+      { label: 'Big Data Architect' },
+      { label: 'Administrator' },
+      { label: 'Hadoop' },
+      { label: 'DevOps' },
+      { label: 'Project Manager' },
+      { label: 'Agile Coach' },
+      { label: 'Data Engineer' },
+      { label: 'Data Analyst' },
+      { label: 'Data Scientist' }
     ]
   }
 };

@@ -104,7 +104,7 @@ const CloudHero = () => {
           
           <RevealAnimation direction="up" delay={0.6}>
             <a
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 bg-white text-black text-base sm:text-lg font-semibold rounded-full shadow-lg hover:bg-gray-200 transition border border-white"
             >
               {currentLang.button}
