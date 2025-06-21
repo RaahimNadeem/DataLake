@@ -58,12 +58,14 @@ const Header = () => {
     >
       <div className="flex items-center gap-2">
         {/* <img src="/logo.svg" alt="Trident Logo" className="h-10" /> */}
-        <Link href="/" className="text-white text-3xl font-bold tracking-widest">DATALAKE</Link>
+        <Link href="/" className="text-white text-3xl font-bold tracking-widest">
+          <img src="/Logo.svg" alt="DataLake Logo" className="h-16" />
+        </Link>
       </div>
       {/* Desktop Nav */}
       <nav className="hidden md:flex items-center gap-8 text-white font-semibold text-lg">
         <Link href="/about" className="hover:underline">{currentLang.about}</Link>
-        <Link href="/#services" className="hover:underline">{currentLang.services}</Link>
+        <Link href="/services" className="hover:underline">{currentLang.services}</Link>
         <Link href="/consulting" className="hover:underline">{currentLang.consulting}</Link>
         <Link href="/careers" className="hover:underline">{currentLang.careers}</Link>
         <Link href="/contact" className="hover:underline">{currentLang.contact}</Link>

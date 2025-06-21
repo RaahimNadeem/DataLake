@@ -59,12 +59,15 @@ const HeaderAlt = () => {
       dir={language === 'ar' ? 'rtl' : 'ltr'}
     >
       <div className="flex items-center gap-2">
-        <Link href="/" className="text-[#101424] text-3xl font-bold tracking-widest hover:text-[#4a6d8c] transition-colors duration-300">DATALAKE</Link>
+        {/* <img src="/logo.svg" alt="Trident Logo" className="h-10" /> */}
+        <Link href="/" className="text-white text-3xl font-bold tracking-widest">
+          <img src="/Logo.svg" alt="DataLake Logo" className="h-16" />
+        </Link>
       </div>
       {/* Desktop Nav */}
       <nav className="hidden md:flex items-center gap-8 text-[#101424] font-semibold text-lg">
         <Link href="/about" className="hover:text-[#4a6d8c] transition-colors duration-300">{currentLang.about}</Link>
-        <Link href="/#services" className="hover:text-[#4a6d8c] transition-colors duration-300">{currentLang.services}</Link>
+        <Link href="/services" className="hover:text-[#4a6d8c] transition-colors duration-300">{currentLang.services}</Link>
         <Link href="/consulting" className="hover:text-[#4a6d8c] transition-colors duration-300">{currentLang.consulting}</Link>
         <Link href="/careers" className="hover:text-[#4a6d8c] transition-colors duration-300">{currentLang.careers}</Link>
         <Link href="/contact" className="hover:text-[#4a6d8c] transition-colors duration-300">{currentLang.contact}</Link>
