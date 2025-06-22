@@ -11,16 +11,10 @@ const translations = {
     },
     services: [
       {
-        title: "AI",
+        title: "AI Services",
         description: "Unlock insights and automation with advanced AI.",
-        image: "/services/AI.jpg",
+        image: "/AI/AI-2.jpg",
         link: "/services/AI",
-      },
-      {
-        title: "Cloud Services",
-        description: "Scalable, secure cloud solutions for your business.",
-        image: "/services/Cloud.jpg",
-        link: "/services/Cloud",
       },
       {
         title: "Business Automation",
@@ -29,13 +23,19 @@ const translations = {
         link: "/services/BusinessAutomation",
       },
       {
-        title: "Cyber",
+        title: "Cloud Services",
+        description: "Scalable, secure cloud solutions for your business.",
+        image: "/services/Cloud.jpg",
+        link: "/services/Cloud",
+      },
+      {
+        title: "Cybersecurity",
         description: "Protect your data and systems with robust security.",
         image: "/services/Cyber.jpg",
         link: "/services/Cyber",
       },
       {
-        title: "Data",
+        title: "Data-driven Intelligence",
         description: "Harness the power of your data for better decisions.",
         image: "/services/Data.jpg",
         link: "/services/Data",
@@ -61,16 +61,10 @@ const translations = {
     },
     services: [
       {
-        title: "الذكاء الاصطناعي",
+        title: "خدمات الذكاء الاصطناعي",
         description: "اكتشف الرؤى والأتمتة مع الذكاء الاصطناعي المتقدم.",
         image: "/services/AI.jpg",
         link: "/services/AI",
-      },
-      {
-        title: "خدمات السحابة",
-        description: "حلول سحابية قابلة للتطوير وآمنة لعملك.",
-        image: "/services/Cloud.jpg",
-        link: "/services/Cloud",
       },
       {
         title: "أتمتة الأعمال",
@@ -79,19 +73,25 @@ const translations = {
         link: "/services/BusinessAutomation",
       },
       {
+        title: "خدمات السحابة",
+        description: "حلول سحابية قابلة للتطوير وآمنة لعملك.",
+        image: "/services/Cloud.jpg",
+        link: "/services/Cloud",
+      },
+      {
         title: "الأمن السيبراني",
         description: "حماية بياناتك وأنظمتك بأمان قوي.",
         image: "/services/Cyber.jpg",
         link: "/services/Cyber",
       },
       {
-        title: "البيانات",
+        title: "الذكاء القائم على البيانات",
         description: "استفد من قوة بياناتك لاتخاذ قرارات أفضل.",
         image: "/services/Data.jpg",
         link: "/services/Data",
       },
       {
-        title: "الأعمال والمنتجات الرقمية",
+        title: "الأعمال الرقمية والمنتجات",
         description: "تحويل الأفكار إلى منتجات وخدمات رقمية.",
         image: "/services/Digital.jpg",
         link: "/services/DigitalBusinessProducts",

@@ -1,12 +1,9 @@
 'use client'
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const images = ['/services/Cloud.jpg', '/services/Cloud.jpg', '/services/Cloud.jpg'];
-const SLIDE_DURATION = 4000;
 
 const translations = {
   en: {
@@ -22,69 +19,25 @@ const translations = {
 };
 
 const CloudHero = () => {
-  const [current, setCurrent] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [imageError, setImageError] = useState<{[key: string]: boolean}>({});
   const { language } = useLanguage();
   const currentLang = translations[language];
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setCurrent((prev) => (prev + 1) % images.length);
-        setIsTransitioning(false);
-      }, 500);
-    }, SLIDE_DURATION);
-    return () => clearTimeout(timer);
-  }, [current]);
-
-  const handleIndicatorClick = (index: number) => {
-    if (index === current) return;
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrent(index);
-      setIsTransitioning(false);
-    }, 500);
-  };
-
-  const handleImageError = (src: string) => {
-    console.error(`Failed to load image: ${src}`);
-    setImageError(prev => ({...prev, [src]: true}));
-  };
 
   return (
     <>
       <section className="relative w-full h-screen overflow-hidden flex items-center font-sans" dir={language === 'ar' ? 'rtl' : 'ltr'}>
-        {/* Slideshow Background */}
+        {/* Static Background Image */}
         <div className="absolute top-0 left-0 w-full h-full">
-          {images.map((src, idx) => (
-            <div
-              key={src}
-              className={`absolute inset-0 w-full h-full transition-transform duration-500 ${
-                idx === current ? 'translate-x-0' : 
-                idx < current ? '-translate-x-full' : 'translate-x-full'
-              }`}
-            >
-              {!imageError[src] ? (
-                <Image
-                  src={src}
-                  alt={language === 'ar' ? 'خلفية الخدمات السحابية' : 'Cloud Services background'}
-                  fill
-                  priority={idx === 0}
-                  quality={90}
-                  className="object-cover"
-                  onError={() => handleImageError(src)}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-                />
-              ) : (
-                <div className="w-full h-full bg-gray-800 flex items-center justify-center">
-                  <p className="text-white">{language === 'ar' ? 'فشل تحميل الصورة' : 'Failed to load image'}</p>
-                </div>
-              )}
-            </div>
-          ))}
+          <Image
+            src="/services/Cloud.jpg"
+            alt={language === 'ar' ? 'خلفية الخدمات السحابية' : 'Cloud Services background'}
+            fill
+            priority
+            quality={90}
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+          />
         </div>
+        
         {/* Overlay */}
         <div className="absolute top-0 left-0 w-full h-full bg-black/80 z-10" />
         
@@ -111,20 +64,6 @@ const CloudHero = () => {
               <span className={language === 'ar' ? 'mr-2' : 'ml-2'}>→</span>
             </a>
           </RevealAnimation>
-        </div>
-
-        {/* Image Indicators */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
-          {images.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => handleIndicatorClick(idx)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                idx === current ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/75'
-              }`}
-              aria-label={`${language === 'ar' ? 'اذهب للشريحة' : 'Go to slide'} ${idx + 1}`}
-            />
-          ))}
         </div>
       </section>
     </>

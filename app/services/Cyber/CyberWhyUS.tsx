@@ -8,17 +8,17 @@ const translations = {
     mainTitle: "Why Choose Datalake for Cybersecurity?",
     slides: [
       {
-        image: '/services/Cyber.jpg',
+        image: '/services/Cyber2.jpg',
         title: 'Security Experts',
         desc: 'Our certified security professionals bring deep expertise in threat intelligence, incident response, and security architecture to protect your organization.'
       },
       {
-        image: '/services/Cyber.jpg',
+        image: '/services/Cyber2.jpg',
         title: 'Comprehensive Protection',
         desc: 'We provide end-to-end security solutions covering network security, application security, data protection, and compliance management.'
       },
       {
-        image: '/services/Cyber.jpg',
+        image: '/services/Cyber2.jpg',
         title: 'Proactive Defense',
         desc: 'Stay ahead of threats with our proactive security approach, including threat hunting, vulnerability assessments, and security awareness training.'
       }
@@ -28,17 +28,17 @@ const translations = {
     mainTitle: "لماذا تختار Datalake للأمن السيبراني؟",
     slides: [
       {
-        image: '/services/Cyber.jpg',
+        image: '/services/Cyber2.jpg',
         title: 'خبراء الأمن',
         desc: 'يقدم محترفو الأمن المعتمدون لدينا خبرة عميقة في استخبارات التهديدات والاستجابة للحوادث وهندسة الأمن لحماية مؤسستك.'
       },
       {
-        image: '/services/Cyber.jpg',
+        image: '/services/Cyber2.jpg',
         title: 'حماية شاملة',
         desc: 'نحن نقدم حلول أمنية شاملة تغطي أمن الشبكات وأمن التطبيقات وحماية البيانات وإدارة الامتثال.'
       },
       {
-        image: '/services/Cyber.jpg',
+        image: '/services/Cyber2.jpg',
         title: 'الدفاع الاستباقي',
         desc: 'ابق في صدارة التهديدات من خلال نهجنا الأمني الاستباقي، بما في ذلك البحث عن التهديدات وتقييمات الضعف والتدريب على الوعي الأمني.'
       }

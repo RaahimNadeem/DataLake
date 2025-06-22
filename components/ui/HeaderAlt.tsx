@@ -29,21 +29,21 @@ const translations = {
     sustainability: 'الاستدامة',
     digitalBusiness: 'الأعمال الرقمية والمنتجات',
     dataIntelligence: 'الذكاء القائم على البيانات',
-    cloud: 'الحوسبة السحابية الموزعة',
+    cloud: 'خدمات السحابة',
     automation: 'أتمتة الأعمال',
-    cybersecurity: 'الثقة والأمن السيبراني',
+    cybersecurity: 'الأمن السيبراني',
     ai: 'خدمات الذكاء الاصطناعي'
   }
 };
 
 const services = [
-  { name: 'sustainability', path: '/services/Sustainability', en: 'Sustainability', ar: 'الاستدامة' },
-  { name: 'digitalBusiness', path: '/services/DigitalBusinessProducts', en: 'Digital Business & Products', ar: 'الأعمال الرقمية والمنتجات' },
-  { name: 'dataIntelligence', path: '/services/Data', en: 'Data-driven Intelligence', ar: 'الذكاء القائم على البيانات' },
-  { name: 'cloud', path: '/services/Cloud', en: 'Distributed Cloud', ar: 'الحوسبة السحابية الموزعة' },
+  { name: 'ai', path: '/services/AI', en: 'AI Services', ar: 'خدمات الذكاء الاصطناعي' },
   { name: 'automation', path: '/services/BusinessAutomation', en: 'Business Automation', ar: 'أتمتة الأعمال' },
-  { name: 'cybersecurity', path: '/services/Cyber', en: 'Trust & Cybersecurity', ar: 'الثقة والأمن السيبراني' },
-  { name: 'ai', path: '/services/AI', en: 'AI Services', ar: 'خدمات الذكاء الاصطناعي' }
+  { name: 'cloud', path: '/services/Cloud', en: 'Cloud Services', ar: 'خدمات السحابة' },
+  { name: 'cybersecurity', path: '/services/Cyber', en: 'Cybersecurity', ar: 'الأمن السيبراني' },
+  { name: 'dataIntelligence', path: '/services/Data', en: 'Data-driven Intelligence', ar: 'الذكاء القائم على البيانات' },
+  { name: 'digitalBusiness', path: '/services/DigitalBusinessProducts', en: 'Digital Business & Products', ar: 'الأعمال الرقمية والمنتجات' },
+  { name: 'sustainability', path: '/services/Sustainability', en: 'Sustainability', ar: 'الاستدامة' },
 ];
 
 const HeaderAlt = () => {
