@@ -3,6 +3,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Image from 'next/image';
 
 const translations = {
   en: {
@@ -18,6 +19,16 @@ const translations = {
 };
 
 const AboutUsLanding = () => {
+
+  const slides = [
+    '/LandingPage/Slide1.jpg',
+    '/LandingPage/Slide2.jpg',
+    '/LandingPage/Slide3.jpg',
+    '/LandingPage/Slide4.jpg',
+    '/LandingPage/Slide5.jpg',
+  ];
+
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { language } = useLanguage();
@@ -26,7 +37,7 @@ const AboutUsLanding = () => {
   return (
     <section 
       ref={ref} 
-      className="w-full min-h-[80vh] md:min-h-[100vh] bg-white font-sans"
+      className="w-full min-h-[80vh] md:min-h-[100vh] pb-24 bg-white font-sans"
       dir={language === 'ar' ? 'rtl' : 'ltr'}
     >
       {/* First Row: 80vh, 2 columns */}
@@ -72,8 +83,47 @@ const AboutUsLanding = () => {
           </motion.p>
         </motion.div>
       </div>
+
+      <div className="container mx-auto px-4">
+        <div className="relative">
+          <div className="flex animate-scroll">
+            {/* First set of images */}
+            {slides.map((slide, index) => (
+              <div
+                key={`first-${index}`}
+                className="flex-shrink-0 w-64 h-48 md:w-80 md:h-64 lg:w-96 lg:h-80 xl:w-[500px] xl:h-[400px] mx-3 md:mx-4 lg:mx-6 rounded-lg overflow-hidden shadow-lg"
+              >
+                <Image
+                  src={slide}
+                  alt={`Slide ${index + 1} - First Set`}
+                  width={500}
+                  height={400}
+                  className="w-full h-full object-cover"
+                  priority={index < 2}
+                />
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {slides.map((slide, index) => (
+              <div
+                key={`second-${index}`}
+                className="flex-shrink-0 w-64 h-48 md:w-80 md:h-64 lg:w-96 lg:h-80 xl:w-[500px] xl:h-[400px] mx-3 md:mx-4 lg:mx-6 rounded-lg overflow-hidden shadow-lg"
+              >
+                <Image
+                  src={slide}
+                  alt={`Slide ${index + 1} - Second Set`}
+                  width={500}
+                  height={400}
+                  className="w-full h-full object-cover"
+                  priority={index < 2}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
       {/* Second Row: 20vh, Marquee */}
-      <motion.div 
+      {/* <motion.div 
         initial={{ opacity: 0, y: 50 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.8, delay: 0.8 }}
@@ -97,7 +147,7 @@ const AboutUsLanding = () => {
             100% { transform: translateX(-50%); }
           }
         `}</style>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 };

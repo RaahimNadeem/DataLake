@@ -17,10 +17,10 @@ const LandingPage = () => {
       <Header />
       <Hero />
       <AboutUsLanding />
+      {/* <InfiniteSlideshow /> */}
       <WhyUs />
       <ServicesLanding />
       <Locations />
-      <InfiniteSlideshow />
       <Footer />
     </main>
   );
