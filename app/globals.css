@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import NotoSansArabic font */
+@font-face {
+  font-family: 'NotoSansArabic';
+  src: url('/NotoSansArabic-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap');
+.noto-kufi-arabic {
+  font-family: 'Noto Kufi Arabic', sans-serif !important;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -62,6 +78,38 @@
 
   .font-serif {
     font-family: var(--font-serif);
+  }
+
+  /* Global font application based on language */
+  html[data-lang="ar"] {
+    font-family: var(--font-arabic), 'Noto Sans Arabic', Arial, sans-serif !important;
+  }
+
+  html[data-lang="en"] {
+    font-family: var(--font-sans), Helvetica, Arial, sans-serif !important;
+  }
+
+  /* Alternative approach using body class */
+  body[data-lang="ar"] {
+    font-family: var(--font-arabic), 'Noto Sans Arabic', Arial, sans-serif !important;
+  }
+
+  body[data-lang="en"] {
+    font-family: var(--font-sans), Helvetica, Arial, sans-serif !important;
+  }
+
+  /* RTL Support and Arabic Font */
+  [dir="rtl"] {
+    font-family: 'NotoSansArabic', var(--font-sans), system-ui, sans-serif;
+  }
+
+  [dir="rtl"] * {
+    font-family: inherit;
+  }
+
+  /* Arabic font utility class */
+  .font-arabic {
+    font-family: 'NotoSansArabic', var(--font-sans), system-ui, sans-serif;
   }
 }
 
