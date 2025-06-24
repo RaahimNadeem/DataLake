@@ -37,7 +37,7 @@ const AboutUsLanding = () => {
   return (
     <section 
       ref={ref} 
-      className="w-full min-h-[80vh] md:min-h-[100vh] pb-24 bg-white font-sans"
+      className={`w-full min-h-[80vh] md:min-h-[100vh] pb-24 bg-white font-sans  ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
       dir={language === 'ar' ? 'rtl' : 'ltr'}
     >
       {/* First Row: 80vh, 2 columns */}
@@ -47,7 +47,7 @@ const AboutUsLanding = () => {
           initial={{ opacity: 0, x: language === 'ar' ? 50 : -50 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: language === 'ar' ? 50 : -50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className={`flex-1 flex flex-col justify-center items-center ${language === 'ar' ? 'pl-8 pr-8 md:pr-24 lg:pr-64' : 'pl-8 md:pl-24 lg:pl-64'}`}
+          className={`flex-1 flex flex-col justify-center items-center ${language === 'ar' ? 'font-arabic' : 'font-sans'} ${language === 'ar' ? 'pl-8 pr-8 md:pr-24 lg:pr-64' : 'pl-8 md:pl-24 lg:pl-64'}`}
         >
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
@@ -71,7 +71,7 @@ const AboutUsLanding = () => {
           initial={{ opacity: 0, x: language === 'ar' ? -50 : 50 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: language === 'ar' ? -50 : 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className={`flex-1 flex flex-col justify-center items-start md:items-${language === 'ar' ? 'start' : 'end'} px-8 md:px-24 lg:px-64`}
+          className={`flex-1 ${language === 'ar' ? 'font-arabic' : 'font-sans'} flex flex-col justify-center items-start md:items-${language === 'ar' ? 'start' : 'end'} px-8 md:px-24 lg:px-64`}
         >
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

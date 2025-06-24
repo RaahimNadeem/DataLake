@@ -5,9 +5,10 @@ import HeaderAlt from '../../components/ui/HeaderAlt';
 import LocationsAlt from '../../components/LocationsAlt';
 import Philosophy from './Philosophy';
 import Footer from '@/components/ui/footer';
-import OverlayImageSection from '@/app/about/OverlayImage';
+import OverlayImageSection from '@/app/consulting/OverlayImage';
 import Slogan from '@/components/ui/Slogan';
 import Mission from './Mission';
+import ClientLogosMarquee from '../../components/ClientLogosMarquee';
 
 export default function AboutPage() {
   return (
@@ -17,8 +18,9 @@ export default function AboutPage() {
       <Mission />
       <Philosophy />
       <LocationsAlt />
-      <OverlayImageSection />
+      {/* <OverlayImageSection /> */}
       {/* <Slogan /> */}
+      <ClientLogosMarquee />
       <Footer />
     </>
   );

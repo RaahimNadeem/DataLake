@@ -157,11 +157,11 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen flex pt-12 sm:pt-16 flex-col bg-white" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <div className={`flex pt-0 sm:pt-8 flex-col bg-white ${language === 'ar' ? 'font-arabic' : 'font-sans'}`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <HeaderAlt />
       
       {/* Main Contact Section */}
-      <section className="w-full mx-auto flex flex-col items-stretch md:flex-row gap-6 sm:gap-8 md:gap-12 py-8 sm:py-12 md:py-16 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-12">
+      <section className="w-full mx-auto flex flex-col items-stretch md:flex-row gap-4 sm:gap-8 md:gap-12 py-0 sm:py-8 md:py-16 lg:py-24 px-2 sm:px-6 md:px-8 lg:px-12">
         {/* Left: Semi-circle Card */}
         <motion.div 
           initial={{ opacity: 0, x: language === 'ar' ? 50 : -50 }}
@@ -170,7 +170,7 @@ const Contact = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="md:w-1/3 flex flex-col items-start justify-start"
         >
-          <div className="relative w-full sm:w-[90%] h-56 sm:h-64 md:h-72 lg:h-[300px] flex items-center justify-center">
+          <div className="relative w-full sm:w-[90%] h-fit sm:h-64 md:h-72 lg:h-[300px] flex items-start justify-start">
             {/* Semi-circle for desktop, regular card for mobile */}
             <div className="absolute inset-0 hidden md:block">
               <div className={`h-full w-[90%] bg-[#19232e] ${language === 'ar' ? 'rounded-l-3xl' : 'rounded-r-3xl'} shadow-lg`} />

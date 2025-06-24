@@ -4,12 +4,16 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const translations = {
   en: {
-    title: "Datalake is powered by a team of data experts and industry veterans.",
-    description: "Our leadership team brings decades of combined experience in data science, machine learning, and enterprise architecture. We're committed to delivering exceptional value through innovative data solutions, backed by a customer-first approach that ensures your success. At Datalake, we don't just process data – we transform it into a strategic asset for your business.",
+    title: "Empowering Organizations Through Strategic Technology Consulting",
+    description: "At Datalake, we believe that successful digital transformation requires more than just technology implementation.",
+    description2: "Our approach combines deep industry knowledge with cutting-edge technical expertise to deliver comprehensive solutions that drive measurable business outcomes.",
+    description3: "Since our founding in Paris, we've built a reputation for excellence in data management, digital strategy, and technological innovation, helping organizations navigate the complexities of the digital landscape with confidence and precision.",
   },
   ar: {
-    title: "داتاليك مدعومة بفريق من خبراء البيانات والمحترفين في الصناعة.",
-    description: "يجلب فريق قيادتنا عقودًا من الخبرة المشتركة في علوم البيانات والتعلم الآلي وهندسة المؤسسات. نحن ملتزمون بتقديم قيمة استثنائية من خلال حلول بيانات مبتكرة، مدعومة بنهج يركز على العميل يضمن نجاحك. في داتاليك، نحن لا نقوم فقط بمعالجة البيانات - نحن نحولها إلى أصل استراتيجي لعملك.",
+    title: "تمكين المؤسسات من خلال الاستشارات التقنية الاستراتيجية",
+    description: "في داتاليك، نؤمن بأن التحول الرقمي الناجح يتطلب أكثر من مجرد تنفيذ التكنولوجيا.",
+    description2: "يجمع نهجنا بين المعرفة العميقة بالصناعة والخبرة التقنية المتطورة لتقديم حلول شاملة تدفع النتائج التجارية القابلة للقياس.",
+    description3: "منذ تأسيسنا في باريس، بنينا سمعة في التميز في إدارة البيانات والاستراتيجية الرقمية والابتكار التكنولوجي، مما يساعد المؤسسات على التنقل في تعقيدات المشهد الرقمي بثقة ودقة.",
   }
 };
 
@@ -47,7 +51,7 @@ const Philosophy = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="w-full md:w-1/2 bg-[#19232e] flex flex-col justify-center p-8 md:p-16 text-white"
+          className={`w-full md:w-1/2 bg-[#19232e] flex flex-col justify-center p-8 md:p-16 text-white ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
         >
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -67,7 +71,24 @@ const Philosophy = () => {
           >
             {currentLang.description}
           </motion.p>
-         
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, delay: 1 }}
+            className="text-lg md:text-xl mb-8 text-gray-200"
+          >
+            {currentLang.description2}
+          </motion.p>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, delay: 1.2 }}
+            className="text-lg md:text-xl mb-8 text-gray-200"
+          >
+            {currentLang.description3}
+          </motion.p>
         </motion.div>
       </motion.div>
     </section>
