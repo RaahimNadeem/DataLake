@@ -5,13 +5,13 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const translations = {
   en: {
     subtitle: "ABOUT DATALAKE",
-    title: "Intelligent Data\nfor Smart Decisions",
-    description: "We are a leading data analytics company specializing in enterprise-grade data solutions, AI-driven insights, and scalable data infrastructure. Our team of experts helps organizations transform their data into actionable intelligence, driving innovation and growth in the digital age."
+    title: "Technology Consulting\nfor Digital Success",
+    description: "Founded in Paris in 2017, Datalake is a leading technology consulting group specializing in digital transformation and data management solutions."
   },
   ar: {
     subtitle: "عن داتاليك",
-    title: "بيانات ذكية\nلقرارات ذكية",
-    description: "نحن شركة رائدة في تحليل البيانات متخصصة في حلول البيانات على مستوى المؤسسات، والرؤى المدعومة بالذكاء الاصطناعي، وبنية البيانات التحتية القابلة للتطوير. يساعد فريقنا من الخبراء المؤسسات على تحويل بياناتها إلى ذكاء قابل للتنفيذ، مما يدفع الابتكار والنمو في العصر الرقمي."
+    title: "استشارات تقنية\nللنجاح الرقمي",
+    description: "تأسست داتاليك في باريس عام 2017، وهي مجموعة استشارات تقنية رائدة متخصصة في التحول الرقمي وحلول إدارة البيانات."
   }
 };
 
@@ -35,7 +35,7 @@ const MainAbout = () => {
   }, [slides.length]);
 
   return (
-    <section className="w-full min-h-screen flex pt-12 items-center" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section className="w-full min-h-screen flex pt-12 items-center"  dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-24 px-4 md:pl-8 md:pr-0 w-full">
         {/* Left: Text */}
         <motion.div 
@@ -49,7 +49,8 @@ const MainAbout = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-sm font-semibold text-gray-700 tracking-widest uppercase mb-6"
+              className={`text-sm ${language === 'ar' ? 'font-arabic' : 'font-sans'} font-semibold text-gray-700 tracking-widest uppercase mb-6`}
+            
             >
               {currentLang.subtitle}
             </motion.div>
@@ -57,7 +58,7 @@ const MainAbout = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-5xl md:text-8xl font-bold text-black leading-tight mb-8"
+              className={`text-5xl md:text-8xl font-bold text-black leading-tight mb-8 ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
             >
               {currentLang.title}
             </motion.h2>
@@ -65,7 +66,7 @@ const MainAbout = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-lg md:text-xl text-gray-700 max-w-xl"
+              className={`text-lg md:text-xl text-gray-700 max-w-xl ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
             >
               {currentLang.description}
             </motion.p>
