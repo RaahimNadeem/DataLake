@@ -56,7 +56,7 @@ const AIWhyUS = () => {
   const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="w-full flex flex-col items-center py-12 lg:py-24 px-2" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} w-full flex flex-col items-center py-12 lg:py-24 px-2`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Section Heading */}
       <RevealAnimation direction="up" delay={0.2}>
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-[#101424]">
