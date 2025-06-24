@@ -27,6 +27,7 @@ const COUNTRY_COORDS = {
 
 const translations = {
   en: {
+    subtitle: "OUR LOCATIONS",
     title: "4 Countries, 1 Vision",
     description: "Our company operates across four strategic countries, building connections that span continents and cultures:",
     countries: [
@@ -37,6 +38,7 @@ const translations = {
     ],
   },
   ar: {
+    subtitle: "مواقعنا",
     title: "أربع دول، رؤية واحدة",
     description: "تعمل شركتنا في أربع دول استراتيجية، وتبني روابط تمتد عبر القارات والثقافات:",
     countries: [
@@ -73,8 +75,19 @@ const LocationsAlt = () => {
         panY: "rotateY",
         projection: am5map.geoOrthographic(),
         homeGeoPoint: { latitude: 2, longitude: 2 },
-        rotationY: -90 // Start from -90deg
+        rotationY: -90, // Start from -90deg
       }));
+      // Disable zoom controls and zoom events
+      if (chart.zoomControl) {
+        chart.zoomControl.dispose();
+        chart.set("zoomControl", undefined);
+      }
+      chart.chartContainer.events.on("wheel", (ev: any) => {
+        ev.preventDefault();
+      });
+      chart.chartContainer.events.on("pinch", (ev: any) => {
+        ev.preventDefault();
+      });
 
       let backgroundSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {}));
       backgroundSeries.mapPolygons.template.setAll({
@@ -115,10 +128,13 @@ const LocationsAlt = () => {
 
       let pointSeries = chart.series.push(am5map.MapPointSeries.new(root, {}));
 
+      const markerNames = ["Saudi Arabia", "France", "Morocco", "Tunisia"];
+      let markerIndex = 0;
       pointSeries.bullets.push(function() {
+        const name = markerNames[markerIndex++];
         let circle = am5.Circle.new(root, {
           radius: 7,
-          tooltipText: "Location",
+          tooltipText: name,
           cursorOverStyle: "pointer",
           tooltipY: 0,
           fill: am5.color("#e08d37"),
@@ -231,6 +247,9 @@ const LocationsAlt = () => {
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
           className={`flex flex-col gap-6 justify-center ${language === 'ar' ? 'md:pr-8 order-1 md:order-1' : 'md:pl-8 order-1 md:order-2'}`}
         >
+          <div className={`text-sm font-semibold text-gray-700 mb-2 tracking-widest uppercase ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+            {currentLang.subtitle}
+          </div>
           <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 leading-tight ${language === 'ar' ? 'text-right' : 'text-left'}`}>
             {currentLang.title}
           </h1>

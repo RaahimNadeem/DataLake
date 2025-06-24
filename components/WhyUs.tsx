@@ -79,7 +79,7 @@ const WhyUs = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-[200vh] flex justify-center overflow-hidden"
+      className={`relative w-full min-h-[200vh] flex justify-center overflow-hidden  ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
       dir={language === 'ar' ? 'rtl' : 'ltr'}
     >
       {/* Background Container */}

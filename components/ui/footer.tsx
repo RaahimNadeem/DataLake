@@ -77,7 +77,7 @@ const Footer = () => {
   const currentLang = translations[language];
 
   return (
-    <footer className="w-full bg-[#19232e] text-white pt-12 md:pt-16 pb-6 px-4 md:px-12" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <footer className={`w-full bg-[#19232e]  ${language === 'ar' ? 'font-arabic' : 'font-sans'} text-white pt-12 md:pt-16 pb-6 px-4 md:px-12`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-0 justify-between items-start">
         {/* Left: Heading and Button */}
         <motion.div 
@@ -92,7 +92,7 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl md:text-4xl lg:text-6xl font-light leading-tight mb-6 md:mb-8"
+            className="text-3xl md:text-4xl lg:text-6xl font-bold leading-tight mb-6 md:mb-8"
           >
             {currentLang.readyToTransform}<br />{currentLang.yourData}
           </motion.h2>

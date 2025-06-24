@@ -75,7 +75,7 @@ const Header = () => {
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 w-full z-30 flex items-center justify-between px-6 md:px-24 py-6 transition-all duration-300 ${
+        className={`fixed  ${language === 'ar' ? 'font-arabic' : 'font-sans'} top-0 left-0 w-full z-30 flex items-center justify-between px-6 md:px-24 py-6 transition-all duration-300 ${
           isVisible ? 'translate-y-0' : '-translate-y-full'
         } ${
           lastScrollY > 0 ? 'bg-black/80 backdrop-blur-sm' : 'bg-transparent'
@@ -85,7 +85,8 @@ const Header = () => {
         <div className="flex items-center gap-2">
           {/* <img src="/logo.svg" alt="Trident Logo" className="h-10" /> */}
           <Link href="/" className="text-white text-3xl font-bold tracking-widest">
-            <img src="/Logo.svg" alt="DataLake Logo" className="h-12 md:h-16" />
+            {/* <img src="/Logo.svg" alt="DataLake Logo" className="h-12 md:h-16" /> */}
+            <h1>DATALAKE</h1>
           </Link>
         </div>
         {/* Desktop Nav */}

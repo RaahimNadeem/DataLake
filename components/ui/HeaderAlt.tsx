@@ -79,17 +79,20 @@ const HeaderAlt = () => {
         initial={{ y: 0 }}
         animate={{ y: isVisible ? 0 : -100 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className={`fixed top-0 left-0 w-full z-30 flex items-center justify-between px-4 md:px-24 py-6 ${
+        className={`fixed top-0  ${language === 'ar' ? 'font-arabic' : 'font-sans'} left-0 w-full z-30 flex items-center justify-between px-4 md:px-24 py-6 ${
           lastScrollY > 0 ? 'bg-white/80 backdrop-blur-sm shadow-sm' : 'bg-transparent'
         }`}
         dir={language === 'ar' ? 'rtl' : 'ltr'}
       >
         <div className="flex items-center gap-2">
           {/* <img src="/logo.svg" alt="Trident Logo" className="h-10" /> */}
-          <Link href="/" className="text-white text-3xl font-bold tracking-widest">
+          {/* <Link href="/" className="text-white text-3xl font-bold tracking-widest">
             <img src="/Logo.svg" alt="DataLake Logo" className="h-16" />
-          </Link>
-        </div>
+          </Link> */}
+          <Link href="/" className="text-black text-3xl font-bold tracking-widest">
+            {/* <img src="/Logo.svg" alt="DataLake Logo" className="h-12 md:h-16" /> */}
+            <h1>DATALAKE</h1>
+          </Link>        </div>
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8 text-[#101424] font-semibold text-lg">
           <Link href="/about" className="hover:text-[#4a6d8c] transition-colors duration-300">{currentLang.about}</Link>

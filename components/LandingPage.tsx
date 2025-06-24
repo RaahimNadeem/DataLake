@@ -7,9 +7,13 @@ import Slogan from './ui/Slogan';
 import AboutUsLanding from './AboutUsLanding';
 import WhyUs from './WhyUs';
 import ServicesLanding from './ServicesLanding';
+import Projects from './Projects';
+import CardsParallax from './CardsParallax/CardsParallax';
 import Locations from './Locations';
 import InfiniteSlideshow from './ui/InfiniteSlideshow';
 import Footer from './ui/footer';
+import LocationsAlt from './LocationsAlt';
+import ClientLogosMarquee from './ClientLogosMarquee';
 
 const LandingPage = () => {
   return (
@@ -18,9 +22,12 @@ const LandingPage = () => {
       <Hero />
       <AboutUsLanding />
       {/* <InfiniteSlideshow /> */}
-      <WhyUs />
+      {/* <WhyUs /> */}
       <ServicesLanding />
-      <Locations />
+        {/* <Locations /> */}
+      <LocationsAlt />
+      <ClientLogosMarquee />
+
       <Footer />
     </main>
   );

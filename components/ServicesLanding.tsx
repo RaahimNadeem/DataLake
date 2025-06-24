@@ -118,7 +118,7 @@ const ServicesLanding = () => {
   const currentLang = translations[language];
 
   return (
-    <section id="services" className="w-full min-h-[70vh]" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section id="services" className={`w-full min-h-[70vh] py-16 md:py-12 ${language === 'ar' ? 'font-arabic' : 'font-sans'} bg-[#edf4f9] `} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Header Section */}
       <motion.div
         ref={ref}
@@ -126,7 +126,7 @@ const ServicesLanding = () => {
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ type: 'spring', stiffness: 500, damping: 40, duration: 0.5 }}
-        className="flex flex-col md:flex-row justify-between items-start md:items-center px-4 md:px-8 pt-4 md:pt-16 pb-2 md:pb-12 max-w-[1800px] mx-auto mb-4 md:mb-24"
+        className="flex flex-col md:flex-row justify-between items-start md:items-center px-4 md:px-24  md:pt-16  max-w-[1800px] mx-auto mb-4 md:mb-24"
       >
         <div>
           <motion.div
