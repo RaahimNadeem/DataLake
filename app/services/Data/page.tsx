@@ -15,10 +15,11 @@ export default function DataPage() {
       <Header />
       <DataHero />
       <DataDesc />
-      <DataWhyUS />
       <DataCTA />
-      <DataProcess />
-      <DataSlogan />
+
+      <DataWhyUS />
+      {/* <DataProcess /> */}
+      {/* <DataSlogan /> */}
       <Footer />
     </>
   );
