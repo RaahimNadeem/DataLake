@@ -15,10 +15,11 @@ export default function DataPage() {
       <Header />
       <DigitalHero />
       <DigitalDesc />
-      <DigitalWhyUS />
       <DigitalCTA />
-      <DigitalProcess />
-      <DigitalSlogan />
+
+      <DigitalWhyUS />
+      {/* <DigitalProcess /> */}
+      {/* <DigitalSlogan /> */}
       <Footer />
     </>
   );

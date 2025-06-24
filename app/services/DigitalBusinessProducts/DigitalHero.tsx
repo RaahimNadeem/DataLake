@@ -59,7 +59,7 @@ const DigitalHero = () => {
 
   return (
     <>
-      <section className="relative w-full h-screen overflow-hidden flex items-center font-sans" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+      <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} relative w-full h-screen overflow-hidden flex items-center font-sans`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
         {/* Slideshow Background */}
         <div className="absolute top-0 left-0 w-full h-full">
         <Image
