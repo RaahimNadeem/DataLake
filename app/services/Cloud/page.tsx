@@ -15,10 +15,11 @@ export default function CloudPage() {
       <Header />
       <CloudHero />
       <CloudDesc />
-      <CloudWhyUS />
       <CloudCTA />
-      <CloudProcess />
-      <CloudSlogan />
+      <CloudWhyUS />
+
+      {/* <CloudProcess /> */}
+      {/* <CloudSlogan /> */}
       <Footer />
     </>
   );
