@@ -15,10 +15,10 @@ export default function BusinessAutomationPage() {
       <Header />
       <BusinessAutomationHero />
       <BusinessAutomationDesc />
-      <BusinessAutomationWhyUS />
       <BusinessAutomationCTA />
-      <BusinessAutomationProcess />
-      <BusinessAutomationSlogan />
+      <BusinessAutomationWhyUS />
+      {/* <BusinessAutomationProcess /> */}
+      {/* <BusinessAutomationSlogan /> */}
       <Footer />
     </>
   );
