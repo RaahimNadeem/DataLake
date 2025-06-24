@@ -15,10 +15,11 @@ export default function DataPage() {
       <Header />
       <SustainabilityHero />
       <SustainabilityDesc />
-      <SustainabilityWhyUS />
       <SustainabilityCTA />
-      <SustainabilityProcess />
-      <SustainabilitySlogan />
+
+      <SustainabilityWhyUS />
+      {/* <SustainabilityProcess /> */}
+      {/* <SustainabilitySlogan /> */}
       <Footer />
     </>
   );
