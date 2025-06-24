@@ -13,7 +13,6 @@ const translations = {
     description: [
       "Specializing in high-impact, tailored consulting, we cater to clients who seek exclusive and transformative business solutions.",
       "We offer a peerless collection of the best consulting expertise across industries. Our consultants deliver true people-to-people collaboration and provide insider access to outstanding strategies, offering a deeper view into your business's potential, technology, and growth.",
-      "Our expert team ensures your time is well-spent, your solutions are authentic, and your results are exceptional."
     ],
   },
   ar: {
@@ -26,7 +25,6 @@ const translations = {
     description: [
       "نحن متخصصون في تقديم استشارات عالية التأثير ومخصصة، نخدم العملاء الذين يسعون إلى حلول تجارية حصرية وتحويلية.",
       "نقدم مجموعة لا مثيل لها من أفضل الخبرات الاستشارية عبر الصناعات. يقدم مستشارونا تعاوناً حقيقياً بين الأشخاص ويوفرون وصولاً داخلياً إلى استراتيجيات متميزة، مما يوفر رؤية أعمق لإمكانات عملك وتكنولوجيته ونموه.",
-      "يضمن فريقنا الخبير أن وقتك مستثمر بشكل جيد، وحلولك أصيلة، ونتائجك استثنائية."
     ],
   }
 };
@@ -51,7 +49,7 @@ export default function ConsultingHero() {
   }, [slides.length]);
 
   return (
-    <section className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-stretch gap-12 md:gap-24 py-16 md:py-24 lg:py-32 px-4 md:px-6 min-h-[500px]" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section className={`w-full max-w-7xl mx-auto flex flex-col md:flex-row items-stretch gap-12 md:gap-24 py-16 md:py-24 lg:py-32 px-4 md:px-6 min-h-[500px] ${language === 'ar' ? 'font-arabic' : 'font-sans'}`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Left: Text Content */}
       <motion.div 
         initial={{ opacity: 0, x: language === 'ar' ? 50 : -50 }}
