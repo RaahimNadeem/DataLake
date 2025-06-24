@@ -69,7 +69,7 @@ const CyberDesc = () => {
   const currentLang = translations[language];
 
   return (
-    <section className="w-full flex flex-col md:flex-row bg-white font-sans min-h-[120vh]" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} w-full flex flex-col md:flex-row bg-white font-sans min-h-[120vh]`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Sticky Left Column */}
       <div className="md:w-1/2 flex flex-col justify-start items-start px-4 md:pl-24 pt-16 md:pt-32 sticky top-0 h-fit md:h-screen z-10">
         <RevealAnimation direction="up" delay={0.2}>

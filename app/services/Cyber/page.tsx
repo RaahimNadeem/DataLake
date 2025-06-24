@@ -15,10 +15,10 @@ export default function CyberPage() {
       <Header />
       <CyberHero />
       <CyberDesc />
-      <CyberWhyUS />
       <CyberCTA />
-      <CyberProcess />
-      <CyberSlogan />
+      <CyberWhyUS />
+      {/* <CyberProcess /> */}
+      {/* <CyberSlogan /> */}
       <Footer />
     </>
   );
