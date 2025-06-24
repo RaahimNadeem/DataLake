@@ -15,10 +15,10 @@ export default function AIPage() {
       <Header />
       <AIHero />
       <AIDesc />
-      <AIWhyUS />
       <AICTA />
-      <AIProcess />
-      <Slogan />
+      <AIWhyUS />
+      {/* <AIProcess /> */}
+      {/* <Slogan /> */}
       <Footer />
     </>
   );
