@@ -36,7 +36,7 @@ const CareersPhilosophy = () => {
   const currentLang = translations[language];
 
   return (
-    <section className="w-full py-20 px-4 md:px-20 bg-[#f6f8fa]" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} w-full py-20 px-4 md:px-20 bg-[#f6f8fa]`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
         <motion.div 
           className="md:w-1/2"

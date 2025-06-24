@@ -65,7 +65,7 @@ const JobListings = () => {
   };
 
   return (
-    <section className="w-full py-20 px-4 md:px-20" dir={language === 'ar' ? 'rtl' : 'ltr'} data-section="job-listings">
+    <section className={`w-full py-20 px-4 md:px-20 ${language === 'ar' ? 'font-arabic' : 'font-sans'} `} dir={language === 'ar' ? 'rtl' : 'ltr'} data-section="job-listings">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

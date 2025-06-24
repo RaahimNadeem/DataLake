@@ -118,7 +118,7 @@ const Careers = () => {
   };
 
   return (
-    <div dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <div dir={language === 'ar' ? 'rtl' : 'ltr'} className={`${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
       {/* Hero Section with Slideshow Background */}
       <section className="relative w-full min-h-[60vh] flex items-center justify-center bg-cover bg-center overflow-hidden">
         {/* Slideshow Background */}
@@ -203,16 +203,7 @@ const Careers = () => {
           >
             {currentLang.culture.description}
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1, margin: "-100px" }}
-            transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
-            className="rounded-2xl p-6 bg-[#f6f8fa] shadow-lg mb-8 max-w-xl"
-          >
-            <p className="text-xl italic text-[#19232e] mb-2">{currentLang.culture.quote.text}</p>
-            <p className="text-right">{currentLang.culture.quote.author}</p>
-          </motion.div>
+         
         </div>
         <div className="md:w-1/3 flex items-center justify-center mt-12 md:mt-0">
           <motion.div
