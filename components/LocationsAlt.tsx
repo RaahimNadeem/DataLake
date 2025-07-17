@@ -10,6 +10,7 @@ import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
 import { motion, useInView } from 'framer-motion';
 // @ts-ignore: No types for react-world-flags
 import Flag from 'react-world-flags';
+import locationsAltTranslations from '@/translations/common/locationsAlt.json';
 
 // ISO Alpha-3 codes for the countries to highlight
 const HIGHLIGHTED = ["SAU", "FRA", "MAR", "ESH", "TUN"];
@@ -28,37 +29,12 @@ const COUNTRY_COORDS = {
   TUN: { latitude: 36.8065, longitude: 10.1815 }, // Tunis
 };
 
-const translations = {
-  en: {
-    subtitle: "OUR LOCATIONS",
-    title: "4 Countries, 1 Vision",
-    description: "Our company operates across four strategic countries, building connections that span continents and cultures:",
-    countries: [
-      { name: "Saudi Arabia" },
-      { name: "France"},
-      { name: "Morocco" },
-      { name: "Tunisia"}
-    ],
-  },
-  ar: {
-    subtitle: "مواقعنا",
-    title: "أربع دول، رؤية واحدة",
-    description: "تعمل شركتنا في أربع دول استراتيجية، وتبني روابط تمتد عبر القارات والثقافات:",
-    countries: [
-      { name: "المملكة العربية السعودية" },
-      { name: "فرنسا" },
-      { name: "المغرب" },
-      { name: "تونس" }
-    ],
-  }
-};
-
 const geoUrl = "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries-sans-antarctica.json";
 
 const LocationsAlt = () => {
   const chartRef = useRef<HTMLDivElement>(null);
   const { language } = useLanguage();
-  const currentLang = translations[language];
+  const currentLang = locationsAltTranslations[language as keyof typeof locationsAltTranslations];
 
   // For globe animation
   const globeContainerRef = useRef<HTMLDivElement>(null);

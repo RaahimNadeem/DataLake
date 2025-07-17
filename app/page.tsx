@@ -1,7 +1,6 @@
 "use client";
 
-import LandingPage from '../components/LandingPage';
-import HeaderAlt from '../components/ui/HeaderAlt';
+import LandingPage from '../components/LandingPage/LandingPage';
 const page = () => {
   return (
     <>

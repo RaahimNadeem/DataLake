@@ -3,47 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    about: 'About',
-    services: 'Our Services',
-    consulting: 'Consulting',
-    careers: 'Careers',
-    contact: 'Contact',
-    sustainability: 'Sustainability',
-    digitalBusiness: 'Digital Business & Products',
-    dataIntelligence: 'Data-driven Intelligence',
-    cloud: 'Cloud Services',
-    automation: 'Business Automation',
-    cybersecurity: 'Cybersecurity',
-    ai: 'AI Services'
-  },
-  ar: {
-    about: 'من نحن',
-    services: 'خدماتنا',
-    consulting: 'الاستشارات',
-    careers: 'وظائف',
-    contact: 'اتصل بنا',
-    sustainability: 'الاستدامة',
-    digitalBusiness: 'الأعمال الرقمية والمنتجات',
-    dataIntelligence: 'الذكاء القائم على البيانات',
-    cloud: 'خدمات السحابة',
-    automation: 'أتمتة الأعمال',
-    cybersecurity: 'الأمن السيبراني',
-    ai: 'خدمات الذكاء الاصطناعي'
-  }
-};
-
-const services = [
-  { name: 'ai', path: '/services/AI', en: 'AI Services', ar: 'خدمات الذكاء الاصطناعي' },
-  { name: 'automation', path: '/services/BusinessAutomation', en: 'Business Automation', ar: 'أتمتة الأعمال' },
-  { name: 'cloud', path: '/services/Cloud', en: 'Cloud Services', ar: 'خدمات السحابة' },
-  { name: 'cybersecurity', path: '/services/Cyber', en: 'Cybersecurity', ar: 'الأمن السيبراني' },
-  { name: 'dataIntelligence', path: '/services/Data', en: 'Data-driven Intelligence', ar: 'الذكاء القائم على البيانات' },
-  { name: 'digitalBusiness', path: '/services/DigitalBusinessProducts', en: 'Digital Business & Products', ar: 'الأعمال الرقمية والمنتجات' },
-  { name: 'sustainability', path: '/services/Sustainability', en: 'Sustainability', ar: 'الاستدامة' },
-];
+import headerTranslations from '@/translations/common/header.json';
+import servicesData from '@/translations/common/services.json';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -51,7 +12,7 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const { language, toggleLanguage } = useLanguage();
-  const currentLang = translations[language];
+  const currentLang = headerTranslations[language as keyof typeof headerTranslations];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -113,7 +74,7 @@ const Header = () => {
               servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
             }`}>
               <div className="py-2">
-                {services.map((service) => (
+                {servicesData.map((service) => (
                   <Link
                     key={service.name}
                     href={service.path}
@@ -187,7 +148,7 @@ const Header = () => {
               
               {servicesDropdownOpen && (
                 <div className="mt-4 flex flex-col gap-4 text-lg bg-white/10 rounded-lg p-4">
-                  {services.map((service) => (
+                  {servicesData.map((service) => (
                     <Link
                       key={service.name}
                       href={service.path}

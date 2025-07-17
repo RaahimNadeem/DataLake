@@ -2,29 +2,15 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
-import Preloader from './Preloader';
-
-const translations = {
-  en: {
-    heading: ['Data', ' ', 'Analytics', ' ', 'for', ' ', 'Modern', ' ', 'Enterprises'],
-    description: 'We proudly architect, analyze, and deliver enterprise-grade data solutions for innovators and industry leaders across every sector.',
-    cta: 'Get in Touch',
-    scrollText: 'Scroll below to explore'
-  },
-  ar: {
-    heading: ['تحليلات', ' ', 'البيانات', ' ', 'للشركات', ' ', 'الحديثة'],
-    description: 'نحن نقوم بتصميم وتحليل وتقديم حلول بيانات على مستوى المؤسسات للمبتكرين وقادة الصناعة في جميع القطاعات.',
-    cta: 'تواصل معنا',
-    scrollText: 'مرر للأسفل لاستكشاف'
-  }
-};
+import Preloader from '../ui/Preloader';
+import heroTranslations from '@/translations/LandingPage/hero.json';
 
 const Hero = () => {
   const ref = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollY } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const { language } = useLanguage();
-  const currentLang = translations[language];
+  const currentLang = heroTranslations[language as keyof typeof heroTranslations];
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const [isInView, setIsInView] = useState(false);

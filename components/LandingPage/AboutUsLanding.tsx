@@ -4,19 +4,7 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Image from 'next/image';
-
-  const translations = {
-    en: {
-      journey: "Our journey",
-      heading: "Where Innovation Meets Excellence",
-      description: "At Datalake, we believe that every insight starts with a question and every breakthrough begins with a team. Our people are passionate about turning data into opportunity, and together, we're building the future of analytics for modern enterprises."
-    },
-    ar: {
-      journey: "رحلتنا",
-      heading: "حيث يلتقي الابتكار بالتميز",
-      description: "في داتاليك، نؤمن بأن كل بصيرة تبدأ بسؤال وكل اختراق يبدأ بفريق. فريقنا شغوف بتحويل البيانات إلى فرص، ومعًا، نبني مستقبل التحليلات للشركات الحديثة."
-    }
-  };
+import aboutUsLandingTranslations from '@/translations/LandingPage/aboutUsLanding.json';
 
     const AboutUsLanding = () => {
 
@@ -32,7 +20,7 @@ import Image from 'next/image';
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { language } = useLanguage();
-  const currentLang = translations[language];
+  const currentLang = aboutUsLandingTranslations[language as keyof typeof aboutUsLandingTranslations];
 
   const renderHeading = (text: string) => {
     if (language === 'en') {

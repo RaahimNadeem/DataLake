@@ -5,55 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    readyToTransform: "Ready to transform",
-    yourData: "your data?",
-    startYourJourney: "START YOUR\nJOURNEY",
-    services: "SERVICES",
-    company: "COMPANY",
-    about: "About",
-    consulting: "Consulting",
-    careers: "Careers",
-    contact: "Contact",
-    sustainability: "Sustainability",
-    digitalBusiness: "Digital Business & Products",
-    dataIntelligence: "Data-driven Intelligence",
-    cloud: "Distributed Cloud",
-    automation: "Business Automation",
-    cybersecurity: "Trust & Cybersecurity",
-    ai: "AI Services",
-    allRightsReserved: "© 2024 DataLake. All rights reserved.",
-    privacyPolicy: "Privacy Policy",
-    cookiePolicy: "Cookie Policy",
-    address: "123 Innovation Drive, Suite 100, San Francisco, CA",
-    email: "Email:"
-  },
-  ar: {
-    readyToTransform: "هل أنت مستعد لتحويل",
-    yourData: "بياناتك؟",
-    startYourJourney: "ابدأ رحلتك",
-    services: "الخدمات",
-    company: "الشركة",
-    about: "من نحن",
-    consulting: "الاستشارات",
-    careers: "وظائف",
-    contact: "اتصل بنا",
-    sustainability: "الاستدامة",
-    digitalBusiness: "الأعمال الرقمية والمنتجات",
-    dataIntelligence: "الذكاء القائم على البيانات",
-    cloud: "الحوسبة السحابية الموزعة",
-    automation: "أتمتة الأعمال",
-    cybersecurity: "الثقة والأمن السيبراني",
-    ai: "خدمات الذكاء الاصطناعي",
-    allRightsReserved: "© 2024 DataLake. جميع الحقوق محفوظة.",
-    privacyPolicy: "سياسة الخصوصية",
-    cookiePolicy: "سياسة ملفات تعريف الارتباط",
-    address: "١٢٣ طريق الابتكار، جناح ١٠٠، سان فرانسيسكو، كاليفورنيا",
-    email: "البريد الإلكتروني:"
-  }
-};
+import footerTranslations from '@/translations/common/footer.json';
 
 const services = [
   { name: 'sustainability', path: '/services/Sustainability', en: 'Sustainability', ar: 'الاستدامة' },
@@ -74,7 +26,7 @@ const company = [
 
 const Footer = () => {
   const { language } = useLanguage();
-  const currentLang = translations[language];
+  const currentLang = footerTranslations[language as keyof typeof footerTranslations];
 
   return (
     <footer className={`w-full bg-[#19232e]  ${language === 'ar' ? 'font-arabic' : 'font-sans'} text-white pt-12 md:pt-16 pb-6 px-4 md:px-12`} dir={language === 'ar' ? 'rtl' : 'ltr'}>

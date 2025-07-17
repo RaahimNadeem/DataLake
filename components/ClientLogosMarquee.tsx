@@ -2,21 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Image from 'next/image';
-
-const translations = {
-  en: {
-    header: {
-      subtitle: "OUR CLIENTS",
-      title: "Our Trusted Clients\nPartners in Success"
-    }
-  },
-  ar: {
-    header: {
-      subtitle: "عملاؤنا",
-      title: "عملاؤنا الموثوقون\nشركاء في النجاح"
-    }
-  }
-};
+import clientLogosMarqueeTranslations from '@/translations/common/clientLogosMarquee.json';
 
 const clientLogos = [
   { src: '/Clients/Paribas.png', name: 'BNP Paribas' },
@@ -39,7 +25,7 @@ const clientLogos = [
 
 export default function ClientLogosMarquee() {
   const { language } = useLanguage();
-  const currentLang = translations[language];
+  const currentLang = clientLogosMarqueeTranslations[language as keyof typeof clientLogosMarqueeTranslations];
 
   const renderTitle = (text: string) => {
     if (language === 'en') {

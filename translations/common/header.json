@@ -1,0 +1,30 @@
+{
+  "en": {
+    "about": "About",
+    "services": "Our Services",
+    "consulting": "Consulting",
+    "careers": "Careers",
+    "contact": "Contact",
+    "sustainability": "Sustainability",
+    "digitalBusiness": "Digital Business & Products",
+    "dataIntelligence": "Data-driven Intelligence",
+    "cloud": "Cloud Services",
+    "automation": "Business Automation",
+    "cybersecurity": "Cybersecurity",
+    "ai": "AI Services"
+  },
+  "ar": {
+    "about": "من نحن",
+    "services": "خدماتنا",
+    "consulting": "الاستشارات",
+    "careers": "وظائف",
+    "contact": "اتصل بنا",
+    "sustainability": "الاستدامة",
+    "digitalBusiness": "الأعمال الرقمية والمنتجات",
+    "dataIntelligence": "الذكاء القائم على البيانات",
+    "cloud": "خدمات السحابة",
+    "automation": "أتمتة الأعمال",
+    "cybersecurity": "الأمن السيبراني",
+    "ai": "خدمات الذكاء الاصطناعي"
+  }
+} 

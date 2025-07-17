@@ -18,8 +18,6 @@ export default function AboutPage() {
       <Mission />
       <Philosophy />
       <LocationsAlt />
-      {/* <OverlayImageSection /> */}
-      {/* <Slogan /> */}
       <ClientLogosMarquee />
       <Footer />
     </>

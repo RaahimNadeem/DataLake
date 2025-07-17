@@ -1,0 +1,102 @@
+{
+  "en": {
+    "header": {
+      "subtitle": "OUR SERVICES",
+      "title": "Empowering Your Data\nWith Enterprise Solutions"
+    },
+    "services": [
+      {
+        "title": "AI Services",
+        "description": "Unlock insights and automation with advanced AI.",
+        "image": "/AI/AI-2.jpg",
+        "link": "/services/AI"
+      },
+      {
+        "title": "Business Automation",
+        "description": "Streamline operations and boost productivity.",
+        "image": "/services/BusinessAutomation.jpg",
+        "link": "/services/BusinessAutomation"
+      },
+      {
+        "title": "Cloud Services",
+        "description": "Scalable, secure cloud solutions for your business.",
+        "image": "/services/Cloud.jpg",
+        "link": "/services/Cloud"
+      },
+      {
+        "title": "Cybersecurity",
+        "description": "Protect your data and systems with robust security.",
+        "image": "/services/Cyber.jpg",
+        "link": "/services/Cyber"
+      },
+      {
+        "title": "Data-driven Intelligence",
+        "description": "Harness the power of your data for better decisions.",
+        "image": "/services/Data.jpg",
+        "link": "/services/Data"
+      },
+      {
+        "title": "Digital Business & Products",
+        "description": "Transform ideas into digital products and services.",
+        "image": "/services/Digital.jpg",
+        "link": "/services/DigitalBusinessProducts"
+      },
+      {
+        "title": "Sustainability",
+        "description": "Drive growth with sustainable business practices.",
+        "image": "/services/Sustainable.jpg",
+        "link": "/services/Sustainability"
+      }
+    ]
+  },
+  "ar": {
+    "header": {
+      "subtitle": "خدماتنا",
+      "title": "تمكين بياناتك\nبحلول المؤسسات المتطورة"
+    },
+    "services": [
+      {
+        "title": "خدمات الذكاء الاصطناعي",
+        "description": "اكتشف الرؤى والأتمتة مع الذكاء الاصطناعي المتقدم.",
+        "image": "/services/AI.jpg",
+        "link": "/services/AI"
+      },
+      {
+        "title": "أتمتة الأعمال",
+        "description": "تبسيط العمليات وتعزيز الإنتاجية.",
+        "image": "/services/BusinessAutomation.jpg",
+        "link": "/services/BusinessAutomation"
+      },
+      {
+        "title": "خدمات السحابة",
+        "description": "حلول سحابية قابلة للتطوير وآمنة لعملك.",
+        "image": "/services/Cloud.jpg",
+        "link": "/services/Cloud"
+      },
+      {
+        "title": "الأمن السيبراني",
+        "description": "حماية بياناتك وأنظمتك بأمان قوي.",
+        "image": "/services/Cyber.jpg",
+        "link": "/services/Cyber"
+      },
+      {
+        "title": "الذكاء القائم على البيانات",
+        "description": "استفد من قوة بياناتك لاتخاذ قرارات أفضل.",
+        "image": "/services/Data.jpg",
+        "link": "/services/Data"
+      },
+      {
+        "title": "الأعمال الرقمية والمنتجات",
+        "description": "تحويل الأفكار إلى منتجات وخدمات رقمية.",
+        "image": "/services/Digital.jpg",
+        "link": "/services/DigitalBusinessProducts"
+      },
+      {
+        "title": "الاستدامة",
+        "description": "دفع النمو بممارسات أعمال مستدامة.",
+        "image": "/services/Sustainable.jpg",
+        "link": "/services/Sustainability"
+      }
+    ]
+  }
+} 
