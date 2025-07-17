@@ -1,0 +1,38 @@
+{
+  "en": {
+    "title": "Open Positions",
+    "subtitle": "Join our team and help shape the future of AI",
+    "filters": {
+      "title": "Filters",
+      "location": "Location",
+      "team": "Team",
+      "allLocations": "All Locations",
+      "allTeams": "All Teams",
+      "clearFilters": "Clear Filters",
+      "showFilters": "Show Filters",
+      "hideFilters": "Hide Filters"
+    },
+    "apply": "Apply Now",
+    "requirements": "Requirements",
+    "viewDetails": "View Details",
+    "noJobsFound": "No jobs found matching your filters"
+  },
+  "ar": {
+    "title": "الوظائف الشاغرة",
+    "subtitle": "انضم إلى فريقنا وساعد في تشكيل مستقبل الذكاء الاصطناعي",
+    "filters": {
+      "title": "المرشحات",
+      "location": "الموقع",
+      "team": "الفريق",
+      "allLocations": "جميع المواقع",
+      "allTeams": "جميع الفرق",
+      "clearFilters": "مسح المرشحات",
+      "showFilters": "إظهار المرشحات",
+      "hideFilters": "إخفاء المرشحات"
+    },
+    "apply": "تقدم الآن",
+    "requirements": "المتطلبات",
+    "viewDetails": "عرض التفاصيل",
+    "noJobsFound": "لم يتم العثور على وظائف تطابق مرشحاتك"
+  }
+} 

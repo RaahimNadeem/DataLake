@@ -1,39 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-const translations = {
-  en: {
-    title: "Why Choose Datalake?",
-    subtitle: "Join a team where innovation meets opportunity",
-    benefits: [
-      "Cutting-edge AI projects that shape the future",
-      "Flexible work environment with remote options",
-      "Continuous learning and professional development",
-      "Competitive compensation and benefits package",
-      "Collaborative culture that values every voice",
-      "Work-life balance that actually works"
-    ],
-    imageAlt: "Team collaboration"
-  },
-  ar: {
-    title: "لماذا تختار داتاليك؟",
-    subtitle: "انضم إلى فريق يجتمع فيه الابتكار مع الفرصة",
-    benefits: [
-      "مشاريع ذكاء اصطناعي متطورة تشكل المستقبل",
-      "بيئة عمل مرنة مع خيارات العمل عن بُعد",
-      "التعلم المستمر والتطوير المهني",
-      "تعويضات ومزايا تنافسية",
-      "ثقافة تعاونية تقدر كل صوت",
-      "توازن بين العمل والحياة ينجح فعلاً"
-    ],
-    imageAlt: "تعاون الفريق"
-  }
-};
+import careersPhilosophyTranslations from '@/translations/CareersPage/careersPhilosophy.json';
 
 const CareersPhilosophy = () => {
   const { language } = useLanguage();
-  const currentLang = translations[language];
+  const currentLang = careersPhilosophyTranslations[language as keyof typeof careersPhilosophyTranslations];
 
   return (
     <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} w-full py-20 px-4 md:px-20 bg-[#f6f8fa]`} dir={language === 'ar' ? 'rtl' : 'ltr'}>

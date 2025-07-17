@@ -1,0 +1,80 @@
+{
+  "en": {
+    "header": {
+      "subtitle": "OUR TEAM",
+      "title": "130+ Global Innovators\nAcross 4 Countries"
+    },
+    "description": "Join a truly international workplace where diversity meets innovation. Our team spans across four strategic locations, offering unparalleled global exposure and opportunities to work with colleagues from different cultures and backgrounds.",
+    "stats": [
+      {
+        "number": "130+",
+        "label": "Global Innovators"
+      },
+      {
+        "number": "4",
+        "label": "Strategic Countries"
+      },
+      {
+        "number": "100%",
+        "label": "International Exposure"
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Global Collaboration",
+        "description": "Work with diverse international teams on cutting-edge projects"
+      },
+      {
+        "title": "Cultural Diversity",
+        "description": "Experience different business cultures and perspectives"
+      },
+      {
+        "title": "Worldwide Projects",
+        "description": "Access to global project opportunities and client networks"
+      },
+      {
+        "title": "Cross-Border Growth",
+        "description": "Develop skills through international collaboration and mentorship"
+      }
+    ]
+  },
+  "ar": {
+    "header": {
+      "subtitle": "فريقنا",
+      "title": "أكثر من 130 مبتكر عالمي\nفي 4 دول"
+    },
+    "description": "انضم إلى مكان عمل دولي حقيقي حيث يلتقي التنوع بالابتكار. يمتد فريقنا عبر أربع مواقع استراتيجية، مما يمنحك تعرضاً عالمياً لا مثيل له وفرصاً للعمل مع زملاء من ثقافات وخلفيات مختلفة.",
+    "stats": [
+      {
+        "number": "130+",
+        "label": "مبتكرين عالميين"
+      },
+      {
+        "number": "4",
+        "label": "دول استراتيجية"
+      },
+      {
+        "number": "100%",
+        "label": "تعرض دولي"
+      }
+    ],
+    "benefits": [
+      {
+        "title": "تعاون عالمي",
+        "description": "العمل مع فرق دولية متنوعة على مشاريع متطورة"
+      },
+      {
+        "title": "تنوع ثقافي",
+        "description": "تجربة ثقافات أعمال ومنظورات مختلفة"
+      },
+      {
+        "title": "مشاريع عالمية",
+        "description": "الوصول إلى فرص مشاريع عالمية وشبكات عملاء"
+      },
+      {
+        "title": "نمو عبر الحدود",
+        "description": "تطوير المهارات من خلال التعاون الدولي والإرشاد"
+      }
+    ]
+  }
+} 

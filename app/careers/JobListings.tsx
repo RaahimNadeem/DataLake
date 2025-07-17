@@ -3,45 +3,11 @@ import { ChevronDown, Filter } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getJobs, getUniqueTeams, getUniqueLocations, Job } from '@/lib/jobs';
-
-const translations = {
-  en: {
-    title: "Open Positions",
-    subtitle: "Join our team and help shape the future of AI",
-    filters: {
-      title: "Filters",
-      location: "Location",
-      team: "Team",
-      allLocations: "All Locations",
-      allTeams: "All Teams",
-      clearFilters: "Clear Filters"
-    },
-    apply: "Apply Now",
-    requirements: "Requirements",
-    viewDetails: "View Details",
-    noJobsFound: "No jobs found matching your filters"
-  },
-  ar: {
-    title: "الوظائف الشاغرة",
-    subtitle: "انضم إلى فريقنا وساعد في تشكيل مستقبل الذكاء الاصطناعي",
-    filters: {
-      title: "المرشحات",
-      location: "الموقع",
-      team: "الفريق",
-      allLocations: "جميع المواقع",
-      allTeams: "جميع الفرق",
-      clearFilters: "مسح المرشحات"
-    },
-    apply: "تقدم الآن",
-    requirements: "المتطلبات",
-    viewDetails: "عرض التفاصيل",
-    noJobsFound: "لم يتم العثور على وظائف تطابق مرشحاتك"
-  }
-};
+import jobListingsTranslations from '@/translations/CareersPage/jobListings.json';
 
 const JobListings = () => {
   const { language } = useLanguage();
-  const currentLang = translations[language];
+  const currentLang = jobListingsTranslations[language as keyof typeof jobListingsTranslations];
   const [expandedJob, setExpandedJob] = useState<number | null>(null);
   const [selectedLocation, setSelectedLocation] = useState<string>("");
   const [selectedTeam, setSelectedTeam] = useState<string>("");
@@ -100,7 +66,7 @@ const JobListings = () => {
                 onClick={() => setShowFilters(!showFilters)}
                 className="flex items-center gap-2 text-[#2454a1] hover:text-[#294b81] font-medium"
               >
-                {showFilters ? "Hide Filters" : "Show Filters"}
+                {showFilters ? currentLang.filters.hideFilters : currentLang.filters.showFilters}
                 <ChevronDown className={`w-4 h-4 transition-transform ${showFilters ? 'rotate-180' : ''}`} />
               </button>
             </div>

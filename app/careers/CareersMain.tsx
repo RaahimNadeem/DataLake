@@ -3,75 +3,7 @@ import { motion } from 'framer-motion';
 import { FaRobot, FaBrain, FaRocket, FaUsers } from 'react-icons/fa';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Link from 'next/link';
-
-const translations = {
-  en: {
-    hero: {
-      title: "Careers at Datalake",
-      subtitle: "Build the future of AI with us. Dream big, grow fast, and make a real impact.",
-      exploreButton: "Explore Open Roles"
-    },
-    culture: {
-      title: "A Culture of Innovation & Belonging",
-      description: "At Datalake, we believe the best ideas come from diverse minds working together. Our culture is built on trust, curiosity, and a relentless drive to learn. We celebrate every win, support each other through challenges, and make sure every voice is heard. If you want to shape the future of AI in a place where you truly belong, you'll thrive here.",
-      quote: {
-        text: "Datalake is the first place I've worked where I feel my ideas matter. The energy is contagious and the support is real.",
-        author: "— Team Member"
-      }
-    },
-    positions: [
-      {
-        title: 'AI Dreamer',
-        desc: 'Imagine, design, and prototype the next wave of intelligent solutions.'
-      },
-      {
-        title: 'Machine Learning Magician',
-        desc: 'Turn data into magic with cutting-edge ML models and creative thinking.'
-      },
-      {
-        title: 'Innovation Pilot',
-        desc: 'Lead bold experiments and launch new AI-powered products.'
-      },
-      {
-        title: 'Culture Champion',
-        desc: 'Shape our team spirit and make Datalake the best place to grow.'
-      }
-    ]
-  },
-  ar: {
-    hero: {
-      title: "وظائف في داتاليك",
-      subtitle: "ساعدنا في بناء مستقبل الذكاء الاصطناعي. احلم كبيراً، نم بسرعة، واصنع تأثيراً حقيقياً.",
-      exploreButton: "استكشف الوظائف المفتوحة"
-    },
-    culture: {
-      title: "ثقافة الابتكار والانتماء",
-      description: "في داتاليك، نؤمن بأن أفضل الأفكار تأتي من عقول متنوعة تعمل معاً. ثقافتنا مبنية على الثقة والفضول والرغبة المستمرة في التعلم. نحتفل بكل نجاح، ندعم بعضنا البعض في التحديات، ونتأكد من أن كل صوت يُسمع. إذا كنت تريد تشكيل مستقبل الذكاء الاصطناعي في مكان تشعر فيه بالانتماء الحقيقي، فستزدهر هنا.",
-      quote: {
-        text: "داتاليك هو أول مكان عمل أشعر فيه أن أفكاري مهمة. الطاقة معدية والدعم حقيقي.",
-        author: "— عضو الفريق"
-      }
-    },
-    positions: [
-      {
-        title: 'حالم الذكاء الاصطناعي',
-        desc: 'تخيل، صمم، وطور النموذج الأولي للجيل القادم من الحلول الذكية.'
-      },
-      {
-        title: 'ساحر التعلم الآلي',
-        desc: 'حول البيانات إلى سحر باستخدام نماذج التعلم الآلي المتطورة والتفكير الإبداعي.'
-      },
-      {
-        title: 'طيار الابتكار',
-        desc: 'قاد التجارب الجريئة وأطلق منتجات جديدة مدعومة بالذكاء الاصطناعي.'
-      },
-      {
-        title: 'بطل الثقافة',
-        desc: 'شكل روح فريقنا واجعل داتاليك أفضل مكان للنمو.'
-      }
-    ]
-  }
-};
+import careersMainTranslations from '@/translations/CareersPage/careersMain.json';
 
 const heroVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -90,7 +22,7 @@ const cardVariants = {
 
 const Careers = () => {
   const { language } = useLanguage();
-  const currentLang = translations[language];
+  const currentLang = careersMainTranslations[language as keyof typeof careersMainTranslations];
   
   // Slideshow state
   const [currentSlide, setCurrentSlide] = useState(0);
