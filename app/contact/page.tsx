@@ -1,6 +1,6 @@
 'use client'
 
-import Contact from '@/components/Contact';
+import Contact from './Contact';
 import HeaderAlt from '@/components/ui/HeaderAlt';
 
 export default function ContactPage() {

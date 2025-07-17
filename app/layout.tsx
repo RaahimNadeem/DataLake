@@ -1,9 +1,11 @@
 import type React from "react"
 import "./globals.css"
 import type { Metadata } from "next"
-import { Georama as Georgia, Inter } from "next/font/google"
+import { Georama as Georgia, Inter, Noto_Kufi_Arabic, Noto_Sans_Arabic } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
+import { LanguageProvider } from '@/contexts/LanguageContext'
+import { FontProvider } from '@/components/FontProvider'
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,9 +19,20 @@ const georgia = Georgia({
   subsets: ["latin"],
 })
 
+const notoSansArabic = Noto_Sans_Arabic({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["arabic"],
+  variable: "--font-arabic",
+})
+
 export const metadata: Metadata = {
-  title: "Datalake",
-  description:""
+  title: "DataLake - Data Analytics for Modern Enterprises",
+  description: "Enterprise-grade data solutions for innovators and industry leaders",
+  icons: {
+    icon: '/Logo.svg',
+    shortcut: '/Logo.svg',
+    apple: '/Logo.svg',
+  },
 }
 
 export default function RootLayout({
@@ -29,10 +42,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={cn("min-h-screen font-sans antialiased", inter.variable, georgia.variable)}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          {children}
-        </ThemeProvider>
+      <head>
+        <link rel="icon" href="/Logo.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="/Logo.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/Logo.svg" />
+      </head>
+      <body className={cn("min-h-screen font-sans antialiased", inter.variable, georgia.variable, notoSansArabic.variable)}>
+        <LanguageProvider>
+          <FontProvider className="min-h-screen">
+            <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+              {children}
+            </ThemeProvider>
+          </FontProvider>
+        </LanguageProvider>
       </body>
     </html>
   )

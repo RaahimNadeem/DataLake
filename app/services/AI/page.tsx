@@ -3,7 +3,7 @@
 import Header from "@/components/ui/Header";
 import AIHero from "./AIHero";
 import AIDesc from "./AIDesc";
-import Footer from "@/components/footer";
+import Footer from "@/components/ui/footer";
 import AIWhyUS from "./AIWhyUS";
 import AICTA from "./AICTA";
 import AIProcess from "./AIProcess";
@@ -15,10 +15,10 @@ export default function AIPage() {
       <Header />
       <AIHero />
       <AIDesc />
-      <AIWhyUS />
       <AICTA />
-      <AIProcess />
-      <Slogan />
+      <AIWhyUS />
+      {/* <AIProcess /> */}
+      {/* <Slogan /> */}
       <Footer />
     </>
   );

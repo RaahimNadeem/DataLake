@@ -3,12 +3,17 @@
 import React from 'react';
 import Header from './ui/Header';
 import Hero from './ui/Hero';
-import Slogan from './Slogan';
+import Slogan from './ui/Slogan';
 import AboutUsLanding from './AboutUsLanding';
 import WhyUs from './WhyUs';
 import ServicesLanding from './ServicesLanding';
+import Projects from './Projects';
+import CardsParallax from './CardsParallax/CardsParallax';
 import Locations from './Locations';
-import Footer from './footer';
+import InfiniteSlideshow from './ui/InfiniteSlideshow';
+import Footer from './ui/footer';
+import LocationsAlt from './LocationsAlt';
+import ClientLogosMarquee from './ClientLogosMarquee';
 
 const LandingPage = () => {
   return (
@@ -16,9 +21,13 @@ const LandingPage = () => {
       <Header />
       <Hero />
       <AboutUsLanding />
-      <WhyUs />
+      {/* <InfiniteSlideshow /> */}
+      {/* <WhyUs /> */}
       <ServicesLanding />
-      <Locations />
+        {/* <Locations /> */}
+      <LocationsAlt />
+      <ClientLogosMarquee />
+
       <Footer />
     </main>
   );

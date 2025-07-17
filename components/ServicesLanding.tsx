@@ -1,44 +1,110 @@
 import React, { useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
+import { useLanguage } from '@/contexts/LanguageContext';
 
-const services = [
-  {
-    title: "AI",
-    description: "Unlock insights and automation with advanced AI.",
-    image: "/services/AI.jpg",
+const translations = {
+  en: {
+    header: {
+      subtitle: "OUR SERVICES",
+      title: "Empowering Your Data\nWith Enterprise Solutions"
+    },
+    services: [
+      {
+        title: "AI Services",
+        description: "Unlock insights and automation with advanced AI.",
+        image: "/AI/AI-2.jpg",
+        link: "/services/AI",
+      },
+      {
+        title: "Business Automation",
+        description: "Streamline operations and boost productivity.",
+        image: "/services/BusinessAutomation.jpg",
+        link: "/services/BusinessAutomation",
+      },
+      {
+        title: "Cloud Services",
+        description: "Scalable, secure cloud solutions for your business.",
+        image: "/services/Cloud.jpg",
+        link: "/services/Cloud",
+      },
+      {
+        title: "Cybersecurity",
+        description: "Protect your data and systems with robust security.",
+        image: "/services/Cyber.jpg",
+        link: "/services/Cyber",
+      },
+      {
+        title: "Data-driven Intelligence",
+        description: "Harness the power of your data for better decisions.",
+        image: "/services/Data.jpg",
+        link: "/services/Data",
+      },
+      {
+        title: "Digital Business & Products",
+        description: "Transform ideas into digital products and services.",
+        image: "/services/Digital.jpg",
+        link: "/services/DigitalBusinessProducts",
+      },
+      {
+        title: "Sustainability",
+        description: "Drive growth with sustainable business practices.",
+        image: "/services/Sustainable.jpg",
+        link: "/services/Sustainability",
+      },
+    ]
   },
-  {
-    title: "Cloud Services",
-    description: "Scalable, secure cloud solutions for your business.",
-    image: "/services/Cloud.jpg",
-  },
-  {
-    title: "Business Automation",
-    description: "Streamline operations and boost productivity.",
-    image: "/services/BusinessAutomation.jpg",
-  },
-  {
-    title: "Cyber",
-    description: "Protect your data and systems with robust security.",
-    image: "/services/Cyber.jpg",
-  },
-  {
-    title: "Data",
-    description: "Harness the power of your data for better decisions.",
-    image: "/services/Data.jpg",
-  },
-  {
-    title: "Digital Business & Products",
-    description: "Transform ideas into digital products and services.",
-    image: "/services/Digital.jpg",
-  },
-  {
-    title: "Sustainability",
-    description: "Drive growth with sustainable business practices.",
-    image: "/services/Sustainable.jpg",
-  },
-];
+  ar: {
+    header: {
+      subtitle: "خدماتنا",
+      title: "تمكين بياناتك\nبحلول المؤسسات المتطورة"
+    },
+    services: [
+      {
+        title: "خدمات الذكاء الاصطناعي",
+        description: "اكتشف الرؤى والأتمتة مع الذكاء الاصطناعي المتقدم.",
+        image: "/services/AI.jpg",
+        link: "/services/AI",
+      },
+      {
+        title: "أتمتة الأعمال",
+        description: "تبسيط العمليات وتعزيز الإنتاجية.",
+        image: "/services/BusinessAutomation.jpg",
+        link: "/services/BusinessAutomation",
+      },
+      {
+        title: "خدمات السحابة",
+        description: "حلول سحابية قابلة للتطوير وآمنة لعملك.",
+        image: "/services/Cloud.jpg",
+        link: "/services/Cloud",
+      },
+      {
+        title: "الأمن السيبراني",
+        description: "حماية بياناتك وأنظمتك بأمان قوي.",
+        image: "/services/Cyber.jpg",
+        link: "/services/Cyber",
+      },
+      {
+        title: "الذكاء القائم على البيانات",
+        description: "استفد من قوة بياناتك لاتخاذ قرارات أفضل.",
+        image: "/services/Data.jpg",
+        link: "/services/Data",
+      },
+      {
+        title: "الأعمال الرقمية والمنتجات",
+        description: "تحويل الأفكار إلى منتجات وخدمات رقمية.",
+        image: "/services/Digital.jpg",
+        link: "/services/DigitalBusinessProducts",
+      },
+      {
+        title: "الاستدامة",
+        description: "دفع النمو بممارسات أعمال مستدامة.",
+        image: "/services/Sustainable.jpg",
+        link: "/services/Sustainability",
+      },
+    ]
+  }
+};
 
 function toKebabCase(str: string) {
   return str.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and');
@@ -48,17 +114,19 @@ const ServicesLanding = () => {
   const [hovered, setHovered] = useState<number | null>(null);
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const { language } = useLanguage();
+  const currentLang = translations[language];
 
   return (
-    <section id="services" className="w-full min-h-[70vh]">
+    <section id="services" className={`w-full min-h-[70vh] py-16 md:py-12 ${language === 'ar' ? 'font-arabic' : 'font-sans'} bg-[#edf4f9] `} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Header Section */}
       <motion.div
         ref={ref}
-        initial={{ x: -60, opacity: 0 }}
+        initial={{ x: language === 'ar' ? 60 : -60, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ type: 'spring', stiffness: 500, damping: 40, duration: 0.5 }}
-        className="flex flex-col md:flex-row justify-between items-start md:items-center px-4 md:px-8 pt-4 md:pt-16 pb-2 md:pb-12 max-w-[1800px] mx-auto mb-4 md:mb-24"
+        className="flex flex-col md:flex-row justify-between items-start md:items-center px-4 md:px-24  md:pt-16  max-w-[1800px] mx-auto mb-4 md:mb-24"
       >
         <div>
           <motion.div
@@ -68,19 +136,18 @@ const ServicesLanding = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-sm font-semibold text-gray-700 mb-4 tracking-widest uppercase"
           >
-            OUR SERVICES
+            {currentLang.header.subtitle}
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-3xl md:text-6xl font-bold text-black leading-tight max-w-3xl"
+            className="text-3xl md:text-6xl font-bold text-black leading-tight max-w-3xl whitespace-pre-line"
           >
-            Empowering Your Data<br />With Enterprise Solutions
+            {currentLang.header.title}
           </motion.h1>
         </div>
-       
       </motion.div>
       {/* Services Grid */}
       <div className="w-full">
@@ -90,9 +157,10 @@ const ServicesLanding = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="flex md:hidden gap-4 overflow-x-auto px-4 pb-6 scrollbar-thin scrollbar-thumb-gray-300"
+          className="flex md:hidden gap-4 overflow-x-auto px-4 pb-6 scrollbar-thin scrollbar-thumb-gray-300 max-w-full"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {services.map((service, idx) => (
+          {currentLang.services.map((service, idx) => (
             <Link
               key={service.title}
               href={`/services/${encodeURIComponent(service.title)}`}
@@ -125,10 +193,10 @@ const ServicesLanding = () => {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="hidden md:flex w-full h-[80vw] min-h-[300px] max-h-[500px]"
         >
-          {services.map((service, idx) => (
+          {currentLang.services.map((service, idx) => (
             <Link
               key={service.title}
-              href={`/services/${encodeURIComponent(service.title)}`}
+              href={`${service.link}`}
               className={`relative group cursor-pointer overflow-hidden transition-all duration-300 flex-1 ${
                 hovered === idx ? 'flex-[3]' : hovered === null ? 'flex-1' : 'flex-[0.7]'
               }`}

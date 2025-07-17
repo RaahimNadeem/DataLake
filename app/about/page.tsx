@@ -1,23 +1,26 @@
 'use client'
 
-import MainAbout from '../../components/MainAbout';
+import MainAbout from './MainAbout';
 import HeaderAlt from '../../components/ui/HeaderAlt';
-import Locations from '../../components/Locations';
-import Philosophy from '../../components/Philosophy';
-import Footer from '@/components/footer';
-import OverlayImageSection from '@/components/OverlayImage';
-import Slogan from '@/components/Slogan';
-
+import LocationsAlt from '../../components/LocationsAlt';
+import Philosophy from './Philosophy';
+import Footer from '@/components/ui/footer';
+import OverlayImageSection from '@/app/consulting/OverlayImage';
+import Slogan from '@/components/ui/Slogan';
+import Mission from './Mission';
+import ClientLogosMarquee from '../../components/ClientLogosMarquee';
 
 export default function AboutPage() {
   return (
     <>
       <HeaderAlt />
       <MainAbout />
+      <Mission />
       <Philosophy />
-      <Locations />
-      <OverlayImageSection />
-      <Slogan />
+      <LocationsAlt />
+      {/* <OverlayImageSection /> */}
+      {/* <Slogan /> */}
+      <ClientLogosMarquee />
       <Footer />
     </>
   );

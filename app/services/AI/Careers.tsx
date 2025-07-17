@@ -82,14 +82,7 @@ const Careers = () => (
           <p className="text-xl italic text-[#f472b6] mb-2">"Datalake is the first place I've worked where I feel my ideas matter. The energy is contagious and the support is real."</p>
           <p className="text-[#eaf1f7] text-right">— Team Member</p>
         </div>
-        <div className="flex flex-col gap-2 mt-4">
-          <div className="flex items-center gap-2 text-[#eaf1f7]">
-            <span className="font-bold">📞</span> +1 (555) 123-4567
-          </div>
-          <div className="flex items-center gap-2 text-[#eaf1f7]">
-            <span className="font-bold">✉️</span> careers@datalake.ai
-          </div>
-        </div>
+       
       </div>
       <div className="md:w-1/3 flex items-center justify-center mt-12 md:mt-0">
         <motion.div
