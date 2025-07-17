@@ -83,11 +83,13 @@ const Header = () => {
         dir={language === 'ar' ? 'rtl' : 'ltr'}
       >
         <div className="flex items-center gap-2">
-          {/* <img src="/logo.svg" alt="Trident Logo" className="h-10" /> */}
-          <Link href="/" className="text-white text-3xl font-bold tracking-widest">
-            {/* <img src="/Logo.svg" alt="DataLake Logo" className="h-12 md:h-16" /> */}
-            <h1>DATALAKE</h1>
+          <Link href="/" className="cursor-pointer">
+            <img src="/DataLakeLogo.svg" alt="DataLake Logo" className="h-12 sm:h-16 md:h-24" />
           </Link>
+          {/* <Link href="/" className="text-white text-3xl font-bold tracking-widest"> */}
+            {/* <img src="/Logo.svg" alt="DataLake Logo" className="h-12 md:h-16" /> */}
+            {/* <h1>DATALAKE</h1> */}
+          {/* </Link> */}
         </div>
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8 text-white font-semibold text-lg">

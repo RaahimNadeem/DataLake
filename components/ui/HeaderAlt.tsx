@@ -89,10 +89,14 @@ const HeaderAlt = () => {
           {/* <Link href="/" className="text-white text-3xl font-bold tracking-widest">
             <img src="/Logo.svg" alt="DataLake Logo" className="h-16" />
           </Link> */}
-          <Link href="/" className="text-black text-3xl font-bold tracking-widest">
+          {/* <Link href="/" className="text-black text-3xl font-bold tracking-widest"> */}
             {/* <img src="/Logo.svg" alt="DataLake Logo" className="h-12 md:h-16" /> */}
-            <h1>DATALAKE</h1>
-          </Link>        </div>
+            {/* <h1>DATALAKE</h1> */}
+          {/* </Link>         */}
+          <Link href="/" className="cursor-pointer">
+            <img src="/DataLakeLogo.svg" alt="DataLake Logo" className="h-12 sm:h-16 md:h-24" />
+          </Link>
+        </div>
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8 text-[#101424] font-semibold text-lg">
           <Link href="/about" className="hover:text-[#4a6d8c] transition-colors duration-300">{currentLang.about}</Link>
