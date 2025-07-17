@@ -1,25 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    subtitle: "OUR MISSION",
-    title: "Helping Organizations Achieve Their Ambitions",
-    description: "Our mission is to help organizations achieve their ambitions through comprehensive expertise in data strategy, digital infrastructure, and technological innovation.",
-    description2: "We support clients in realizing their digital and technological projects with cutting-edge solutions that drive measurable business outcomes."
-  },
-  ar: {
-    subtitle: "مهمتنا",
-    title: "مساعدة المؤسسات على تحقيق طموحاتها",
-    description: "مهمتنا هي مساعدة المؤسسات على تحقيق طموحاتها من خلال خبرة شاملة في استراتيجية البيانات والبنية التحتية الرقمية والابتكار التكنولوجي.",
-    description2: "ندعم العملاء في تحقيق مشاريعهم الرقمية والتكنولوجية من خلال حلول متطورة تدفع النتائج التجارية القابلة للقياس."
-  }
-};
+import missionTranslations from '@/translations/AboutPage/mission.json';
 
 const Mission = () => {
   const { language } = useLanguage();
-  const currentLang = translations[language];
+  const currentLang = missionTranslations[language as keyof typeof missionTranslations];
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {

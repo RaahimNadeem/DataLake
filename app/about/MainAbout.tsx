@@ -1,23 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    subtitle: "ABOUT DATALAKE",
-    title: "Technology Consulting\nfor Digital Success",
-    description: "Founded in Paris in 2017, Datalake is a leading technology consulting group specializing in digital transformation and data management solutions."
-  },
-  ar: {
-    subtitle: "عن داتاليك",
-    title: "استشارات تقنية\nللنجاح الرقمي",
-    description: "تأسست داتاليك في باريس عام 2017، وهي مجموعة استشارات تقنية رائدة متخصصة في التحول الرقمي وحلول إدارة البيانات."
-  }
-};
+import mainAboutTranslations from '@/translations/AboutPage/mainAbout.json';
 
 const MainAbout = () => {
   const { language } = useLanguage();
-  const currentLang = translations[language];
+  const currentLang = mainAboutTranslations[language as keyof typeof mainAboutTranslations];
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [

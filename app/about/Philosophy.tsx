@@ -1,25 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    title: "Empowering Organizations Through Strategic Technology Consulting",
-    description: "At Datalake, we believe that successful digital transformation requires more than just technology implementation.",
-    description2: "Our approach combines deep industry knowledge with cutting-edge technical expertise to deliver comprehensive solutions that drive measurable business outcomes.",
-    description3: "Since our founding in Paris, we've built a reputation for excellence in data management, digital strategy, and technological innovation, helping organizations navigate the complexities of the digital landscape with confidence and precision.",
-  },
-  ar: {
-    title: "تمكين المؤسسات من خلال الاستشارات التقنية الاستراتيجية",
-    description: "في داتاليك، نؤمن بأن التحول الرقمي الناجح يتطلب أكثر من مجرد تنفيذ التكنولوجيا.",
-    description2: "يجمع نهجنا بين المعرفة العميقة بالصناعة والخبرة التقنية المتطورة لتقديم حلول شاملة تدفع النتائج التجارية القابلة للقياس.",
-    description3: "منذ تأسيسنا في باريس، بنينا سمعة في التميز في إدارة البيانات والاستراتيجية الرقمية والابتكار التكنولوجي، مما يساعد المؤسسات على التنقل في تعقيدات المشهد الرقمي بثقة ودقة.",
-  }
-};
+import philosophyTranslations from '@/translations/AboutPage/philosophy.json';
 
 const Philosophy = () => {
   const { language } = useLanguage();
-  const currentLang = translations[language];
+  const currentLang = philosophyTranslations[language as keyof typeof philosophyTranslations];
 
   return (
     <section className="w-full flex justify-center items-center py-12 lg:py-36 px-2" dir={language === 'ar' ? 'rtl' : 'ltr'}>
