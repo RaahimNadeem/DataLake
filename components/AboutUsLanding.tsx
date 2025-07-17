@@ -5,20 +5,20 @@ import { motion, useInView } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Image from 'next/image';
 
-const translations = {
-  en: {
-    journey: "Our journey",
-    heading: "Where Innovation Meets Excellence",
-    description: "At Datalake, we believe that every insight starts with a question and every breakthrough begins with a team. Our people are passionate about turning data into opportunity, and together, we're building the future of analytics for modern enterprises."
-  },
-  ar: {
-    journey: "رحلتنا",
-    heading: "حيث يلتقي الابتكار بالتميز",
-    description: "في داتاليك، نؤمن بأن كل بصيرة تبدأ بسؤال وكل اختراق يبدأ بفريق. فريقنا شغوف بتحويل البيانات إلى فرص، ومعًا، نبني مستقبل التحليلات للشركات الحديثة."
-  }
-};
+  const translations = {
+    en: {
+      journey: "Our journey",
+      heading: "Where Innovation Meets Excellence",
+      description: "At Datalake, we believe that every insight starts with a question and every breakthrough begins with a team. Our people are passionate about turning data into opportunity, and together, we're building the future of analytics for modern enterprises."
+    },
+    ar: {
+      journey: "رحلتنا",
+      heading: "حيث يلتقي الابتكار بالتميز",
+      description: "في داتاليك، نؤمن بأن كل بصيرة تبدأ بسؤال وكل اختراق يبدأ بفريق. فريقنا شغوف بتحويل البيانات إلى فرص، ومعًا، نبني مستقبل التحليلات للشركات الحديثة."
+    }
+  };
 
-const AboutUsLanding = () => {
+    const AboutUsLanding = () => {
 
   const slides = [
     '/LandingPage/Slide1.jpg',
@@ -33,6 +33,32 @@ const AboutUsLanding = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { language } = useLanguage();
   const currentLang = translations[language];
+
+  const renderHeading = (text: string) => {
+    if (language === 'en') {
+      return text.split(' ').map((word, index) => {
+        if (word === 'Innovation') {
+          return <span key={index} style={{ color: '#2254a0' }}>{word} </span>;
+        } else if (word === 'Excellence') {
+          return <span key={index} style={{ color: '#e08d37' }}>{word} </span>;
+        }
+        return word + (index < text.split(' ').length - 1 ? ' ' : '');
+      });
+    } else if (language === 'ar') {
+      // For Arabic, we need to handle the text differently since it might contain prefixes/suffixes
+      const words = text.split(' ');
+      return words.map((word, index) => {
+        // Check if the word contains the target Arabic words
+        if (word.includes('الابتكار')) {
+          return <span key={index} style={{ color: '#2254a0' }}>{word} </span>;
+        } else if (word.includes('التميز')) {
+          return <span key={index} style={{ color: '#e08d37' }}>{word} </span>;
+        }
+        return word + (index < words.length - 1 ? ' ' : '');
+      });
+    }
+    return text;
+  };
 
   return (
     <section 
@@ -63,7 +89,7 @@ const AboutUsLanding = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight whitespace-pre-line text-left w-full"
           >
-            {currentLang.heading}
+            {renderHeading(currentLang.heading)}
           </motion.h2>
         </motion.div>
         {/* Right Column */}

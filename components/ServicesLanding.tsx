@@ -117,6 +117,28 @@ const ServicesLanding = () => {
   const { language } = useLanguage();
   const currentLang = translations[language];
 
+  const renderTitle = (text: string) => {
+    if (language === 'en') {
+      return text.split(' ').map((word, index) => {
+        if (word === 'Enterprise' || word === 'Solutions') {
+          return <span key={index} style={{ color: '#e08d37' }}>{word} </span>;
+        }
+        return word + (index < text.split(' ').length - 1 ? ' ' : '');
+      });
+    } else if (language === 'ar') {
+      // For Arabic, we need to handle the text differently since it might contain prefixes/suffixes
+      const words = text.split(' ');
+      return words.map((word, index) => {
+        // Check if the word contains the target Arabic words for "Enterprise Solutions"
+        if (word.includes('المؤسسات') || word.includes('المتطورة')) {
+          return <span key={index} style={{ color: '#e08d37' }}>{word} </span>;
+        }
+        return word + (index < words.length - 1 ? ' ' : '');
+      });
+    }
+    return text;
+  };
+
   return (
     <section id="services" className={`w-full min-h-[70vh] py-16 md:py-12 ${language === 'ar' ? 'font-arabic' : 'font-sans'} bg-[#edf4f9] `} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Header Section */}
@@ -145,7 +167,7 @@ const ServicesLanding = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-3xl md:text-6xl font-bold text-black leading-tight max-w-3xl whitespace-pre-line"
           >
-            {currentLang.header.title}
+            {renderTitle(currentLang.header.title)}
           </motion.h1>
         </div>
       </motion.div>
