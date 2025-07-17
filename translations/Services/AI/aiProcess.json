@@ -1,0 +1,52 @@
+{
+  "en": {
+    "mainTitle": "Our AI Project Journey",
+    "steps": [
+      {
+        "title": "Discovery",
+        "desc": "We dive deep to understand your business, goals, and data landscape."
+      },
+      {
+        "title": "Strategy",
+        "desc": "We craft a tailored AI roadmap, selecting the right technologies and approach."
+      },
+      {
+        "title": "Build",
+        "desc": "Our experts design, develop, and train your AI solutions for real-world impact."
+      },
+      {
+        "title": "Deploy",
+        "desc": "We launch your AI system, ensuring seamless integration and performance."
+      },
+      {
+        "title": "Support",
+        "desc": "Ongoing monitoring, optimization, and support to maximize your AI investment."
+      }
+    ]
+  },
+  "ar": {
+    "mainTitle": "رحلة مشروعنا في الذكاء الاصطناعي",
+    "steps": [
+      {
+        "title": "الاكتشاف",
+        "desc": "نتعمق لفهم عملك وأهدافك ومشهد بياناتك."
+      },
+      {
+        "title": "الاستراتيجية",
+        "desc": "نصمم خارطة طريق مخصصة للذكاء الاصطناعي ، ونختار التقنيات والنهج المناسبين."
+      },
+      {
+        "title": "البناء",
+        "desc": "يقوم خبراؤنا بتصميم وتطوير وتدريب حلول الذكاء الاصطناعي الخاصة بك لتحقيق تأثير في العالم الحقيقي."
+      },
+      {
+        "title": "النشر",
+        "desc": "نطلق نظام الذكاء الاصطناعي الخاص بك ، مما يضمن التكامل السلس والأداء."
+      },
+      {
+        "title": "الدعم",
+        "desc": "مراقبة وتحسين ودعم مستمر لزيادة استثمارك في الذكاء الاصطناعي إلى أقصى حد."
+      }
+    ]
+  }
+} 

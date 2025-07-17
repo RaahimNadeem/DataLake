@@ -1,0 +1,52 @@
+{
+  "en": {
+    "mainTitle": "Why Choose Datalake for Your AI Implementation?",
+    "slides": [
+      {
+        "image": "/AI/Slide2.jpg",
+        "title": "Proven AI Expertise",
+        "desc": "Our team brings years of hands-on experience delivering AI solutions across industries. We turn complex challenges into simple, scalable systems that drive real business value."
+      },
+      {
+        "image": "/AI/Slide2.jpg",
+        "title": "End-to-End Partnership",
+        "desc": "From strategy to deployment and beyond, we guide you at every step. Our collaborative approach ensures your AI journey is seamless, transparent, and tailored to your needs."
+      },
+      {
+        "image": "/AI/Slide2.jpg",
+        "title": "Cutting-Edge Technology",
+        "desc": "We leverage the latest advancements in AI, machine learning, and data engineering to build future-proof solutions that keep you ahead of the curve."
+      }
+    ],
+    "controls": {
+      "previousSlide": "Previous slide",
+      "nextSlide": "Next slide",
+      "goToSlide": "Go to slide"
+    }
+  },
+  "ar": {
+    "mainTitle": "لماذا تختار Datalake لتنفيذ الذكاء الاصطناعي الخاص بك؟",
+    "slides": [
+      {
+        "image": "/AI/Slide2.jpg",
+        "title": "خبرة مثبتة في الذكاء الاصطناعي",
+        "desc": "يقدم فريقنا سنوات من الخبرة العملية في تقديم حلول الذكاء الاصطناعي عبر الصناعات. نحول التحديات المعقدة إلى أنظمة بسيطة وقابلة للتطوير تدفع قيمة الأعمال الحقيقية."
+      },
+      {
+        "image": "/AI/Slide2.jpg",
+        "title": "شراكة شاملة",
+        "desc": "من الاستراتيجية إلى النشر وما بعده ، نوجهك في كل خطوة. يضمن نهجنا التعاوني أن تكون رحلة الذكاء الاصطناعي الخاصة بك سلسة وشفافة ومصممة خصيصًا لاحتياجاتك."
+      },
+      {
+        "image": "/AI/Slide2.jpg",
+        "title": "أحدث التقنيات",
+        "desc": "نستفيد من أحدث التطورات في الذكاء الاصطناعي والتعلم الآلي وهندسة البيانات لبناء حلول مستقبلية تبقيك في الطليعة."
+      }
+    ],
+    "controls": {
+      "previousSlide": "الشريحة السابقة",
+      "nextSlide": "الشريحة التالية",
+      "goToSlide": "اذهب للشريحة"
+    }
+  }
+} 

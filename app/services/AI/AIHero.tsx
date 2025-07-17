@@ -4,27 +4,15 @@ import React from 'react';
 import Image from 'next/image';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    title: "AI Solutions for Data-Driven Success",
-    description: "Unlock the power of artificial intelligence with Datalake. We design, build, and deploy custom AI models and analytics platforms to help your business automate, predict, and grow with confidence.",
-    button: "Let's Talk"
-  },
-  ar: {
-    title: "حلول الذكاء الاصطناعي لنجاح قائم على البيانات",
-    description: "أطلق العنان لقوة الذكاء الاصطناعي مع Datalake. نقوم بتصميم وبناء ونشر نماذج الذكاء الاصطناعي المخصصة ومنصات التحليلات لمساعدة عملك على الأتمتة والتنبؤ والنمو بثقة.",
-    button: "لنتحدث"
-  }
-};
+import aiHeroTranslations from '@/translations/Services/AI/aiHero.json';
 
 const AIHero = () => {
   const { language } = useLanguage();
-  const currentLang = translations[language];
+  const currentLang = aiHeroTranslations[language as keyof typeof aiHeroTranslations];
 
   return (
     <>
-      <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} relative w-full h-screen overflow-hidden flex items-center font-sans`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+      <section className="relative w-full h-screen overflow-hidden flex items-center" dir={language === 'ar' ? 'rtl' : 'ltr'}>
         {/* Static Background Image */}
         <div className="absolute top-0 left-0 w-full h-full">
           <Image

@@ -8,10 +8,13 @@ import AIWhyUS from "./AIWhyUS";
 import AICTA from "./AICTA";
 import AIProcess from "./AIProcess";
 import Slogan from "./AISlogan";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AIPage() {
+  const { language } = useLanguage();
+  
   return (
-    <>
+    <div className={language === 'ar' ? 'font-arabic' : 'font-sans'} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <Header />
       <AIHero />
       <AIDesc />
@@ -20,6 +23,6 @@ export default function AIPage() {
       {/* <AIProcess /> */}
       {/* <Slogan /> */}
       <Footer />
-    </>
+    </div>
   );
 }

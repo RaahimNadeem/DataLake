@@ -2,73 +2,11 @@ import React from 'react';
 import { FaSearch, FaLightbulb, FaCogs, FaRocket, FaHandsHelping } from 'react-icons/fa';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    mainTitle: "Our AI Project Journey",
-    steps: [
-      {
-        icon: FaSearch,
-        title: 'Discovery',
-        desc: 'We dive deep to understand your business, goals, and data landscape.'
-      },
-      {
-        icon: FaLightbulb,
-        title: 'Strategy',
-        desc: 'We craft a tailored AI roadmap, selecting the right technologies and approach.'
-      },
-      {
-        icon: FaCogs,
-        title: 'Build',
-        desc: 'Our experts design, develop, and train your AI solutions for real-world impact.'
-      },
-      {
-        icon: FaRocket,
-        title: 'Deploy',
-        desc: 'We launch your AI system, ensuring seamless integration and performance.'
-      },
-      {
-        icon: FaHandsHelping,
-        title: 'Support',
-        desc: 'Ongoing monitoring, optimization, and support to maximize your AI investment.'
-      }
-    ]
-  },
-  ar: {
-    mainTitle: "رحلة مشروعنا في الذكاء الاصطناعي",
-    steps: [
-      {
-        icon: FaSearch,
-        title: 'الاكتشاف',
-        desc: 'نتعمق لفهم عملك وأهدافك ومشهد بياناتك.'
-      },
-      {
-        icon: FaLightbulb,
-        title: 'الاستراتيجية',
-        desc: 'نصمم خارطة طريق مخصصة للذكاء الاصطناعي ، ونختار التقنيات والنهج المناسبين.'
-      },
-      {
-        icon: FaCogs,
-        title: 'البناء',
-        desc: 'يقوم خبراؤنا بتصميم وتطوير وتدريب حلول الذكاء الاصطناعي الخاصة بك لتحقيق تأثير في العالم الحقيقي.'
-      },
-      {
-        icon: FaRocket,
-        title: 'النشر',
-        desc: 'نطلق نظام الذكاء الاصطناعي الخاص بك ، مما يضمن التكامل السلس والأداء.'
-      },
-      {
-        icon: FaHandsHelping,
-        title: 'الدعم',
-        desc: 'مراقبة وتحسين ودعم مستمر لزيادة استثمارك في الذكاء الاصطناعي إلى أقصى حد.'
-      }
-    ]
-  }
-};
+import aiProcessTranslations from '@/translations/Services/AI/aiProcess.json';
 
 const AIProcess = () => {
   const { language } = useLanguage();
-  const currentLang = translations[language];
+  const currentLang = aiProcessTranslations[language as keyof typeof aiProcessTranslations];
   const steps = currentLang.steps;
 
   return (
@@ -92,7 +30,7 @@ const AIProcess = () => {
               <div className={`relative flex items-center ${idx % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`} style={{ minWidth: 0 }}>
                 {/* Icon in circle */}
                 <div className="flex-shrink-0 w-16 h-16 rounded-full bg-white shadow-lg flex items-center justify-center border-4 border-blue-200 z-10">
-                  {React.createElement(step.icon, { size: 24, className: "text-blue-700" })}
+                  {React.createElement([FaSearch, FaLightbulb, FaCogs, FaRocket, FaHandsHelping][idx], { size: 24, className: "text-blue-700" })}
                 </div>
                 {/* Connecting arrow */}
                 {idx < steps.length - 1 && (

@@ -1,19 +1,11 @@
 import React from 'react'
 import RevealAnimation from '../../components/ui/RevealAnimation'
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    slogan: "Think AI"
-  },
-  ar: {
-    slogan: "Think AI"
-  }
-};
+import aiSloganTranslations from '@/translations/Services/AI/aiSlogan.json';
 
 const Slogan = () => {
   const { language } = useLanguage();
-  const currentLang = translations[language];
+  const currentLang = aiSloganTranslations[language as keyof typeof aiSloganTranslations];
 
   return (
     <div className="min-h-[20vh] bg-[#19232e] flex items-center justify-center" dir={language === 'ar' ? 'rtl' : 'ltr'}>
