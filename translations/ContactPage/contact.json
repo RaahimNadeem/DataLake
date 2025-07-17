@@ -1,0 +1,134 @@
+{
+  "en": {
+    "services": [
+      "AI",
+      "Cloud Services",
+      "Business Automation",
+      "Cyber",
+      "Data",
+      "Digital Business & Products",
+      "Sustainability"
+    ],
+    "getInTouch": {
+      "title": "Get in touch with us",
+      "description": "Would you like to discuss your next project with us? Do you have any questions or need support? Whatever the case, we look forward to hearing from you."
+    },
+    "contactInfo": {
+      "title": "Contact Information",
+      "email": "Email",
+      "address": "Address",
+      "phone": "Phone",
+      "workingHours": "Working Hours",
+      "socialMedia": "Follow Us"
+    },
+    "companyInfo": {
+      "email": "Info@datalake.sa",
+      "address": "King Fahd Road, Riyadh, Saudi Arabia",
+      "phone": "+966 11 123 4567",
+      "workingHours": "Sunday - Thursday: 9:00 AM - 6:00 PM",
+      "socialMedia": {
+        "linkedin": "LinkedIn",
+        "twitter": "Twitter",
+        "instagram": "Instagram"
+      }
+    },
+    "location": "Location",
+    "servicesWeOffer": "Services We Offer",
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about working with DataLake",
+      "items": [
+        {
+          "question": "What services does DataLake offer?",
+          "answer": "We offer comprehensive digital solutions including AI, Cloud Services, Business Automation, Cybersecurity, Data Analytics, Digital Business & Products, and Sustainability services."
+        },
+        {
+          "question": "How can I get started with DataLake?",
+          "answer": "Simply reach out to us via email or phone, and our team will schedule a consultation to understand your needs and provide tailored solutions."
+        },
+        {
+          "question": "Do you work with international clients?",
+          "answer": "Yes, we serve clients both locally in Saudi Arabia and internationally, providing remote and on-site support as needed."
+        },
+        {
+          "question": "What is your typical project timeline?",
+          "answer": "Project timelines vary depending on complexity. Small projects may take 2-4 weeks, while larger enterprise solutions can take 3-6 months or more."
+        },
+        {
+          "question": "Do you provide ongoing support?",
+          "answer": "Yes, we offer comprehensive support packages including maintenance, updates, and 24/7 technical assistance for critical systems."
+        }
+      ]
+    },
+    "gallery": {
+      "title": "Our Workspace",
+      "subtitle": "Take a look at our modern office and team"
+    }
+  },
+  "ar": {
+    "services": [
+      "الذكاء الاصطناعي",
+      "خدمات السحابة",
+      "أتمتة الأعمال",
+      "الأمن السيبراني",
+      "البيانات",
+      "الأعمال الرقمية والمنتجات",
+      "الاستدامة"
+    ],
+    "getInTouch": {
+      "title": "تواصل معنا",
+      "description": "هل ترغب في مناقشة مشروعك القادم معنا؟ هل لديك أي أسئلة أو تحتاج إلى دعم؟ في كل الحالات، نتطلع إلى سماع منك."
+    },
+    "contactInfo": {
+      "title": "معلومات الاتصال",
+      "email": "البريد الإلكتروني",
+      "address": "العنوان",
+      "phone": "الهاتف",
+      "workingHours": "ساعات العمل",
+      "socialMedia": "تابعنا"
+    },
+    "companyInfo": {
+      "email": "Info@datalake.sa",
+      "address": "طريق الملك فهد، الرياض، المملكة العربية السعودية",
+      "phone": "+966 11 123 4567",
+      "workingHours": "الأحد - الخميس: 9:00 ص - 6:00 م",
+      "socialMedia": {
+        "linkedin": "لينكد إن",
+        "twitter": "تويتر",
+        "instagram": "إنستغرام"
+      }
+    },
+    "location": "الموقع",
+    "servicesWeOffer": "الخدمات التي نقدمها",
+    "faq": {
+      "title": "الأسئلة الشائعة",
+      "subtitle": "كل ما تحتاج لمعرفته حول العمل مع DataLake",
+      "items": [
+        {
+          "question": "ما هي الخدمات التي تقدمها DataLake؟",
+          "answer": "نقدم حلول رقمية شاملة تشمل الذكاء الاصطناعي، خدمات السحابة، أتمتة الأعمال، الأمن السيبراني، تحليل البيانات، الأعمال الرقمية والمنتجات، وخدمات الاستدامة."
+        },
+        {
+          "question": "كيف يمكنني البدء مع DataLake؟",
+          "answer": "ما عليك سوى التواصل معنا عبر البريد الإلكتروني أو الهاتف، وسيقوم فريقنا بجدولة استشارة لفهم احتياجاتك وتقديم حلول مخصصة."
+        },
+        {
+          "question": "هل تعملون مع عملاء دوليين؟",
+          "answer": "نعم، نخدم العملاء محلياً في المملكة العربية السعودية ودولياً، ونقدم الدعم عن بُعد وفي الموقع حسب الحاجة."
+        },
+        {
+          "question": "ما هو الجدول الزمني النموذجي للمشروع؟",
+          "answer": "تختلف الجداول الزمنية للمشاريع حسب التعقيد. قد تستغرق المشاريع الصغيرة 2-4 أسابيع، بينما قد تستغرق حلول المؤسسات الكبيرة 3-6 أشهر أو أكثر."
+        },
+        {
+          "question": "هل تقدمون دعم مستمر؟",
+          "answer": "نعم، نقدم حزم دعم شاملة تشمل الصيانة والتحديثات والمساعدة التقنية على مدار الساعة طوال أيام الأسبوع للأنظمة الحرجة."
+        }
+      ]
+    },
+    "gallery": {
+      "title": "مساحة عملنا",
+      "subtitle": "ألق نظرة على مكتبنا الحديث وفريقنا"
+    }
+  }
+} 

@@ -3,141 +3,11 @@ import { motion, useInView } from 'framer-motion';
 import HeaderAlt from '@/components/ui/HeaderAlt';
 import Footer from '@/components/ui/footer';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    services: [
-      'AI',
-      'Cloud Services',
-      'Business Automation',
-      'Cyber',
-      'Data',
-      'Digital Business & Products',
-      'Sustainability'
-    ],
-    getInTouch: {
-      title: "Get in touch with us",
-      description: "Would you like to discuss your next project with us? Do you have any questions or need support? Whatever the case, we look forward to hearing from you."
-    },
-    contactInfo: {
-      title: "Contact Information",
-      email: "Email",
-      address: "Address",
-      phone: "Phone",
-      workingHours: "Working Hours",
-      socialMedia: "Follow Us"
-    },
-    companyInfo: {
-      email: "Info@datalake.sa",
-      address: "King Fahd Road, Riyadh, Saudi Arabia",
-      phone: "+966 11 123 4567",
-      workingHours: "Sunday - Thursday: 9:00 AM - 6:00 PM",
-      socialMedia: {
-        linkedin: "LinkedIn",
-        twitter: "Twitter",
-        instagram: "Instagram"
-      }
-    },
-    faq: {
-      title: "Frequently Asked Questions",
-      subtitle: "Everything you need to know about working with DataLake",
-      items: [
-        {
-          question: "What services does DataLake offer?",
-          answer: "We offer comprehensive digital solutions including AI, Cloud Services, Business Automation, Cybersecurity, Data Analytics, Digital Business & Products, and Sustainability services."
-        },
-        {
-          question: "How can I get started with DataLake?",
-          answer: "Simply reach out to us via email or phone, and our team will schedule a consultation to understand your needs and provide tailored solutions."
-        },
-        {
-          question: "Do you work with international clients?",
-          answer: "Yes, we serve clients both locally in Saudi Arabia and internationally, providing remote and on-site support as needed."
-        },
-        {
-          question: "What is your typical project timeline?",
-          answer: "Project timelines vary depending on complexity. Small projects may take 2-4 weeks, while larger enterprise solutions can take 3-6 months or more."
-        },
-        {
-          question: "Do you provide ongoing support?",
-          answer: "Yes, we offer comprehensive support packages including maintenance, updates, and 24/7 technical assistance for critical systems."
-        }
-      ]
-    },
-    gallery: {
-      title: "Our Workspace",
-      subtitle: "Take a look at our modern office and team"
-    }
-  },
-  ar: {
-    services: [
-      'الذكاء الاصطناعي',
-      'خدمات السحابة',
-      'أتمتة الأعمال',
-      'الأمن السيبراني',
-      'البيانات',
-      'الأعمال الرقمية والمنتجات',
-      'الاستدامة'
-    ],
-    getInTouch: {
-      title: "تواصل معنا",
-      description: "هل ترغب في مناقشة مشروعك القادم معنا؟ هل لديك أي أسئلة أو تحتاج إلى دعم؟ في كل الحالات، نتطلع إلى سماع منك."
-    },
-    contactInfo: {
-      title: "معلومات الاتصال",
-      email: "البريد الإلكتروني",
-      address: "العنوان",
-      phone: "الهاتف",
-      workingHours: "ساعات العمل",
-      socialMedia: "تابعنا"
-    },
-    companyInfo: {
-      email: "Info@datalake.sa",
-      address: "طريق الملك فهد، الرياض، المملكة العربية السعودية",
-      phone: "+966 11 123 4567",
-      workingHours: "الأحد - الخميس: 9:00 ص - 6:00 م",
-      socialMedia: {
-        linkedin: "لينكد إن",
-        twitter: "تويتر",
-        instagram: "إنستغرام"
-      }
-    },
-    faq: {
-      title: "الأسئلة الشائعة",
-      subtitle: "كل ما تحتاج لمعرفته حول العمل مع DataLake",
-      items: [
-        {
-          question: "ما هي الخدمات التي تقدمها DataLake؟",
-          answer: "نقدم حلول رقمية شاملة تشمل الذكاء الاصطناعي، خدمات السحابة، أتمتة الأعمال، الأمن السيبراني، تحليل البيانات، الأعمال الرقمية والمنتجات، وخدمات الاستدامة."
-        },
-        {
-          question: "كيف يمكنني البدء مع DataLake؟",
-          answer: "ما عليك سوى التواصل معنا عبر البريد الإلكتروني أو الهاتف، وسيقوم فريقنا بجدولة استشارة لفهم احتياجاتك وتقديم حلول مخصصة."
-        },
-        {
-          question: "هل تعملون مع عملاء دوليين؟",
-          answer: "نعم، نخدم العملاء محلياً في المملكة العربية السعودية ودولياً، ونقدم الدعم عن بُعد وفي الموقع حسب الحاجة."
-        },
-        {
-          question: "ما هو الجدول الزمني النموذجي للمشروع؟",
-          answer: "تختلف الجداول الزمنية للمشاريع حسب التعقيد. قد تستغرق المشاريع الصغيرة 2-4 أسابيع، بينما قد تستغرق حلول المؤسسات الكبيرة 3-6 أشهر أو أكثر."
-        },
-        {
-          question: "هل تقدمون دعم مستمر؟",
-          answer: "نعم، نقدم حزم دعم شاملة تشمل الصيانة والتحديثات والمساعدة التقنية على مدار الساعة طوال أيام الأسبوع للأنظمة الحرجة."
-        }
-      ]
-    },
-    gallery: {
-      title: "مساحة عملنا",
-      subtitle: "ألق نظرة على مكتبنا الحديث وفريقنا"
-    }
-  }
-};
+import contactTranslations from '@/translations/ContactPage/contact.json';
 
 const Contact = () => {
   const { language } = useLanguage();
-  const currentLang = translations[language];
+  const currentLang = contactTranslations[language as keyof typeof contactTranslations];
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const faqRef = React.useRef(null);
   const isFaqInView = useInView(faqRef, { once: true, margin: "-100px" });
@@ -326,7 +196,7 @@ const Contact = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="space-y-4 sm:space-y-6"
             >
-              <h3 className="font-semibold text-[#19232e] text-lg sm:text-xl mb-3 sm:mb-4">Location</h3>
+              <h3 className="font-semibold text-[#19232e] text-lg sm:text-xl mb-3 sm:mb-4">{currentLang.location}</h3>
               <div className="w-full h-64 sm:h-80 bg-gray-200 rounded-lg overflow-hidden shadow-lg">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.698!2d46.6753!3d24.7136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03735a8e5a7f%3A0x2b066d4e1b3b3b3b!2sKing%20Fahd%20Road%2C%20Riyadh%2C%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1234567890"
@@ -342,9 +212,9 @@ const Contact = () => {
               
               {/* Services We Offer */}
               <div>
-                <h3 className="font-semibold text-[#19232e] text-lg sm:text-xl mb-3 sm:mb-4">Services We Offer</h3>
+                <h3 className="font-semibold text-[#19232e] text-lg sm:text-xl mb-3 sm:mb-4">{currentLang.servicesWeOffer}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                  {currentLang.services.map((service, index) => (
+                  {currentLang.services.map((service: string, index: number) => (
                     <motion.div 
                       key={service} 
                       initial={{ opacity: 0, x: -10 }}
@@ -382,7 +252,7 @@ const Contact = () => {
           </motion.div>
           
           <div className="space-y-4 sm:space-y-6">
-            {currentLang.faq.items.map((item, index) => (
+            {currentLang.faq.items.map((item: { question: string; answer: string }, index: number) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
