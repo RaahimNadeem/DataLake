@@ -1,35 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    expertise: {
-      subtitle: "OUR EXPERTISE",
-      title: "Comprehensive Technology Consulting Services",
-      description2: "Our expertise spans data strategy, digital infrastructure, cloud solutions, and technological innovation, helping organizations navigate the digital landscape with confidence and achieve sustainable competitive advantages."
-    },
-    clients: {
-      subtitle: "TRUSTED BY LEADING ORGANIZATIONS",
-      title: "Partnering with Industry Leaders"
-    }
-  },
-  ar: {
-    expertise: {
-      subtitle: "خبرتنا",
-      title: "خدمات استشارات تقنية شاملة",
-      description2: "تمتد خبرتنا لتشمل استراتيجية البيانات والبنية التحتية الرقمية وحلول السحابة والابتكار التكنولوجي، مما يساعد المؤسسات على التنقل في المشهد الرقمي بثقة وتحقيق مزايا تنافسية مستدامة."
-    },
-    clients: {
-      subtitle: "موثوق به من قبل المؤسسات الرائدة",
-      title: "شراكة مع قادة الصناعة"
-    }
-  }
-};
+import overlayImageTranslations from '@/translations/ConsultingPage/overlayImage.json';
 
 const OverlayImageSection = () => {
   const { language } = useLanguage();
-  const currentLang = translations[language];
+  const currentLang = overlayImageTranslations[language as keyof typeof overlayImageTranslations];
 
   return (
     <section className="relative w-full my-12" dir={language === 'ar' ? 'rtl' : 'ltr'}>

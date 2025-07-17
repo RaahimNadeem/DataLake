@@ -1,0 +1,46 @@
+{
+  "en": {
+    "title": "Our Added Values",
+    "subtitle": "Why Choose Our Consulting Services",
+    "values": [
+      {
+        "title": "Talent Recruitment",
+        "description": "We have an optimized organization to recruit and provide to our client added value and certified talents"
+      },
+      {
+        "title": "Diversity and Flexible Expertise",
+        "description": "A comprehensive range of expertise to address all your business challenges"
+      },
+      {
+        "title": "Employee Commitment and Development",
+        "description": "Committed employees who are supported by us on a daily basis in their professional and personal development"
+      },
+      {
+        "title": "Client Centric Approach",
+        "description": "A strong focus on building long-term partnerships based on trust, transparency, and collaboration with regular follow-ups"
+      }
+    ]
+  },
+  "ar": {
+    "title": "قيمنا المضافة",
+    "subtitle": "لماذا تختار خدماتنا الاستشارية",
+    "values": [
+      {
+        "title": "توظيف المواهب",
+        "description": "لدينا منظمة محسنة لتوظيف وتقديم قيمة مضافة ومواهب معتمدة لعملائنا"
+      },
+      {
+        "title": "التنوع والخبرة المرنة",
+        "description": "نطاق شامل من الخبرات لمعالجة جميع تحديات عملك"
+      },
+      {
+        "title": "التزام الموظفين وتطويرهم",
+        "description": "موظفون ملتزمون يدعمون منا يومياً في تطورهم المهني والشخصي"
+      },
+      {
+        "title": "النهج المرتكز على العميل",
+        "description": "تركيز قوي على بناء شراكات طويلة المدى قائمة على الثقة والشفافية والتعاون مع متابعات منتظمة"
+      }
+    ]
+  }
+} 

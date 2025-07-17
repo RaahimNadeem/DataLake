@@ -1,0 +1,30 @@
+{
+  "en": {
+    "title": "Our Experts",
+    "expertise": [
+      { "label": "Big Data Architect" },
+      { "label": "Administrator" },
+      { "label": "Hadoop" },
+      { "label": "DevOps" },
+      { "label": "Project Manager" },
+      { "label": "Agile Coach" },
+      { "label": "Data Engineer" },
+      { "label": "Data Analyst" },
+      { "label": "Data Scientist" }
+    ]
+  },
+  "ar": {
+    "title": "خبراؤنا",
+    "expertise": [
+      { "label": "Big Data Architect" },
+      { "label": "Administrator" },
+      { "label": "Hadoop" },
+      { "label": "DevOps" },
+      { "label": "Project Manager" },
+      { "label": "Agile Coach" },
+      { "label": "Data Engineer" },
+      { "label": "Data Analyst" },
+      { "label": "Data Scientist" }
+    ]
+  }
+} 

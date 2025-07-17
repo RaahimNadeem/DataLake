@@ -1,0 +1,26 @@
+{
+  "en": {
+    "subtitle": "Our Consulting Services",
+    "title": {
+      "part1": "Looking for",
+      "part2": "once-in-a-lifetime",
+      "part3": "Consulting experiences?"
+    },
+    "description": [
+      "Specializing in high-impact, tailored consulting, we cater to clients who seek exclusive and transformative business solutions.",
+      "We offer a peerless collection of the best consulting expertise across industries. Our consultants deliver true people-to-people collaboration and provide insider access to outstanding strategies, offering a deeper view into your business's potential, technology, and growth."
+    ]
+  },
+  "ar": {
+    "subtitle": "خدماتنا الاستشارية",
+    "title": {
+      "part1": "تبحث عن",
+      "part2": "تجارب استشارية",
+      "part3": "فريدة من نوعها؟"
+    },
+    "description": [
+      "نحن متخصصون في تقديم استشارات عالية التأثير ومخصصة، نخدم العملاء الذين يسعون إلى حلول تجارية حصرية وتحويلية.",
+      "نقدم مجموعة لا مثيل لها من أفضل الخبرات الاستشارية عبر الصناعات. يقدم مستشارونا تعاوناً حقيقياً بين الأشخاص ويوفرون وصولاً داخلياً إلى استراتيجيات متميزة، مما يوفر رؤية أعمق لإمكانات عملك وتكنولوجيته ونموه."
+    ]
+  }
+} 

@@ -1,37 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    title: "Our Experts",
-    expertise: [
-      { label: 'Big Data Architect' },
-      { label: 'Administrator' },
-      { label: 'Hadoop' },
-      { label: 'DevOps' },
-      { label: 'Project Manager' },
-      { label: 'Agile Coach' },
-      { label: 'Data Engineer' },
-      { label: 'Data Analyst' },
-      { label: 'Data Scientist' }
-    ]
-  },
-  ar: {
-    title: "خبراؤنا",
-    expertise: [
-      { label: 'Big Data Architect' },
-      { label: 'Administrator' },
-      { label: 'Hadoop' },
-      { label: 'DevOps' },
-      { label: 'Project Manager' },
-      { label: 'Agile Coach' },
-      { label: 'Data Engineer' },
-      { label: 'Data Analyst' },
-      { label: 'Data Scientist' }
-    ]
-  }
-};
+import consultingExpertiseTranslations from '@/translations/ConsultingPage/consultingExpertise.json';
 
 const expertiseIcons = [
   { icon: (
@@ -86,7 +56,7 @@ const itemVariants = {
 
 export default function ConsultingExpertise() {
   const { language } = useLanguage();
-  const currentLang = translations[language];
+  const currentLang = consultingExpertiseTranslations[language as keyof typeof consultingExpertiseTranslations];
 
   return (
     <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} relative w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20 py-16 md:py-24 lg:py-36 px-4 md:px-10 overflow-hidden rounded-3xl mt-8 md:mt-16 shadow-2xl mb-16 md:mb-24 bg-gradient-to-br from-[#eaf1f7] via-[#f7fafc] to-[#dbeafe]`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
