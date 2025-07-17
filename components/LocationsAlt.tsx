@@ -8,14 +8,17 @@ import { useLanguage } from '@/contexts/LanguageContext';
 // @ts-ignore: No types for react-simple-maps
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
 import { motion, useInView } from 'framer-motion';
+// @ts-ignore: No types for react-world-flags
+import Flag from 'react-world-flags';
 
 // ISO Alpha-3 codes for the countries to highlight
-const HIGHLIGHTED = ["SAU", "FRA", "MAR", "TUN"];
+const HIGHLIGHTED = ["SAU", "FRA", "MAR", "ESH", "TUN"];
 const COUNTRY_COLORS = {
   SAU: "#2454a1",
   FRA: "#2454a1",
   TUN: "#2454a1",
-  MAR: "#2454a1"
+  MAR: "#2454a1",
+  ESH: "#2454a1" // Western Sahara
 };
 
 const COUNTRY_COORDS = {
@@ -114,6 +117,7 @@ const LocationsAlt = () => {
             name === "Saudi Arabia" || 
             name === "France" || 
             name === "Morocco" || 
+            name === "Western Sahara" ||
             name === "Tunisia") {
           return am5.color("#1c4c94");
         }
@@ -258,10 +262,12 @@ const LocationsAlt = () => {
           </p>
           <ul className={`text-lg text-gray-700 space-y-2 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
             {currentLang.countries.map((country, index) => {
-              const flags = ['🇸🇦', '🇫🇷', '🇲🇦', '🇹🇳'];
+              const countryCodes = ['SAU', 'FRA', 'MAR', 'TUN'];
               return (
                 <li key={index} className={`flex items-center ${language === 'ar' ? 'flex-row-reverse' : 'flex-row'}`}>
-                  <span className={`text-2xl ${language === 'ar' ? 'ml-3' : 'mr-3'}`}>{flags[index]}</span>
+                  <div className={`${language === 'ar' ? 'ml-3' : 'mr-3'} w-6 h-4`}>
+                    <Flag code={countryCodes[index]} className="w-full h-full object-cover rounded-sm" />
+                  </div>
                   <strong>{country.name}</strong>
                 </li>
               );
