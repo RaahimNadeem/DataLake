@@ -1,0 +1,62 @@
+{
+  "en": {
+    "title": "Our Digital Product Development Process",
+    "steps": [
+      {
+        "icon": "FaSearch",
+        "title": "Discovery",
+        "desc": "Research market opportunities, understand user needs, and define product requirements and success metrics."
+      },
+      {
+        "icon": "FaLightbulb",
+        "title": "Design",
+        "desc": "Create user-centered designs, wireframes, and prototypes that validate concepts and guide development."
+      },
+      {
+        "icon": "FaCogs",
+        "title": "Development",
+        "desc": "Build your digital product using modern technologies and best practices for performance, security, and scalability."
+      },
+      {
+        "icon": "FaRocket",
+        "title": "Testing",
+        "desc": "Rigorous testing ensures quality, usability, and performance across all devices and platforms."
+      },
+      {
+        "icon": "FaHandsHelping",
+        "title": "Launch",
+        "desc": "Deploy your product to market with comprehensive launch support, monitoring, and optimization strategies."
+      }
+    ]
+  },
+  "ar": {
+    "title": "عملية تطوير المنتجات الرقمية لدينا",
+    "steps": [
+      {
+        "icon": "FaSearch",
+        "title": "الاكتشاف",
+        "desc": "البحث عن فرص السوق، فهم احتياجات المستخدمين، وتحديد متطلبات المنتج ومقاييس النجاح."
+      },
+      {
+        "icon": "FaLightbulb",
+        "title": "التصميم",
+        "desc": "إنشاء تصاميم متمحورة حول المستخدم، وأطر سلكية، ونماذج أولية تتحقق من المفاهيم وتوجه التطوير."
+      },
+      {
+        "icon": "FaCogs",
+        "title": "التطوير",
+        "desc": "بناء منتجك الرقمي باستخدام التقنيات الحديثة وأفضل الممارسات للأداء والأمان والقابلية للتطوير."
+      },
+      {
+        "icon": "FaRocket",
+        "title": "الاختبار",
+        "desc": "الاختبار الصارم يضمن الجودة وسهولة الاستخدام والأداء عبر جميع الأجهزة والمنصات."
+      },
+      {
+        "icon": "FaHandsHelping",
+        "title": "الإطلاق",
+        "desc": "نشر منتجك في السوق بدعم شامل للإطلاق والمراقبة واستراتيجيات التحسين."
+      }
+    ]
+  }
+} 

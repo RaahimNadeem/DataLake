@@ -2,58 +2,14 @@ import React from 'react';
 import { FaSearch, FaLightbulb, FaCogs, FaRocket, FaHandsHelping } from 'react-icons/fa';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
+import translations from '@/translations/Services/DigitalBusinessProducts/digitalProcess.json';
 
-const translations = {
-  en: {
-    title: "Our Digital Product Development Process",
-    steps: [
-      {
-        title: 'Discovery',
-        desc: 'Research market opportunities, understand user needs, and define product requirements and success metrics.'
-      },
-      {
-        title: 'Design',
-        desc: 'Create user-centered designs, wireframes, and prototypes that validate concepts and guide development.'
-      },
-      {
-        title: 'Development',
-        desc: 'Build your digital product using modern technologies and best practices for performance, security, and scalability.'
-      },
-      {
-        title: 'Testing',
-        desc: 'Rigorous testing ensures quality, usability, and performance across all devices and platforms.'
-      },
-      {
-        title: 'Launch',
-        desc: 'Deploy your product to market with comprehensive launch support, monitoring, and optimization strategies.'
-      }
-    ]
-  },
-  ar: {
-    title: "عملية تطوير المنتجات الرقمية لدينا",
-    steps: [
-      {
-        title: 'الاكتشاف',
-        desc: 'البحث عن فرص السوق، فهم احتياجات المستخدمين، وتحديد متطلبات المنتج ومقاييس النجاح.'
-      },
-      {
-        title: 'التصميم',
-        desc: 'إنشاء تصاميم متمحورة حول المستخدم، وأطر سلكية، ونماذج أولية تتحقق من المفاهيم وتوجه التطوير.'
-      },
-      {
-        title: 'التطوير',
-        desc: 'بناء منتجك الرقمي باستخدام التقنيات الحديثة وأفضل الممارسات للأداء والأمان والقابلية للتطوير.'
-      },
-      {
-        title: 'الاختبار',
-        desc: 'الاختبار الصارم يضمن الجودة وسهولة الاستخدام والأداء عبر جميع الأجهزة والمنصات.'
-      },
-      {
-        title: 'الإطلاق',
-        desc: 'نشر منتجك في السوق بدعم شامل للإطلاق والمراقبة واستراتيجيات التحسين.'
-      }
-    ]
-  }
+const iconMap = {
+  FaSearch,
+  FaLightbulb,
+  FaCogs,
+  FaRocket,
+  FaHandsHelping
 };
 
 const DigitalProcess = () => {
@@ -82,7 +38,7 @@ const DigitalProcess = () => {
               <div className={`relative flex items-center ${idx % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`} style={{ minWidth: 0 }}>
                 {/* Icon in circle */}
                 <div className="flex-shrink-0 w-16 h-16 rounded-full bg-white shadow-lg flex items-center justify-center border-4 border-blue-200 z-10">
-                  {React.createElement([FaSearch, FaLightbulb, FaCogs, FaRocket, FaHandsHelping][idx], { size: 24, className: "text-blue-700" })}
+                  {React.createElement(iconMap[step.icon as keyof typeof iconMap], { size: 24, className: "text-blue-700" })}
                 </div>
                 {/* Connecting arrow */}
                 {idx < steps.length - 1 && (

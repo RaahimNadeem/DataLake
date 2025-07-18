@@ -1,0 +1,36 @@
+{
+  "en": {
+    "title": "Why Choose Datalake for Digital Products?",
+    "slides": [
+      {
+        "title": "Product Development Experts",
+        "desc": "Our team combines technical expertise with business acumen to deliver digital products that drive real business value and user satisfaction."
+      },
+      {
+        "title": "User-Centered Design",
+        "desc": "We prioritize user experience and design products that are intuitive, accessible, and delightful to use."
+      },
+      {
+        "title": "Agile Development",
+        "desc": "Our iterative development approach ensures rapid delivery, continuous improvement, and the ability to adapt to changing market needs."
+      }
+    ]
+  },
+  "ar": {
+    "title": "لماذا تختار Datalake للمنتجات الرقمية؟",
+    "slides": [
+      {
+        "title": "خبراء تطوير المنتجات",
+        "desc": "يجمع فريقنا بين الخبرة التقنية والفطنة التجارية لتقديم منتجات رقمية تدفع القيمة التجارية الحقيقية ورضا المستخدمين."
+      },
+      {
+        "title": "التصميم المتمحور حول المستخدم",
+        "desc": "نعطي الأولوية لتجربة المستخدم ونصمم منتجات بديهية وسهلة الوصول وممتعة للاستخدام."
+      },
+      {
+        "title": "التطوير الرشيق",
+        "desc": "نهج التطوير التكراري لدينا يضمن التسليم السريع والتحسين المستمر والقدرة على التكيف مع احتياجات السوق المتغيرة."
+      }
+    ]
+  }
+} 

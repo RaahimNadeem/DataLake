@@ -2,43 +2,7 @@ import React, { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    title: "Why Choose Datalake for Digital Products?",
-    slides: [
-      {
-        title: 'Product Development Experts',
-        desc: 'Our team combines technical expertise with business acumen to deliver digital products that drive real business value and user satisfaction.'
-      },
-      {
-        title: 'User-Centered Design',
-        desc: 'We prioritize user experience and design products that are intuitive, accessible, and delightful to use.'
-      },
-      {
-        title: 'Agile Development',
-        desc: 'Our iterative development approach ensures rapid delivery, continuous improvement, and the ability to adapt to changing market needs.'
-      }
-    ]
-  },
-  ar: {
-    title: "لماذا تختار Datalake للمنتجات الرقمية؟",
-    slides: [
-      {
-        title: 'خبراء تطوير المنتجات',
-        desc: 'يجمع فريقنا بين الخبرة التقنية والفطنة التجارية لتقديم منتجات رقمية تدفع القيمة التجارية الحقيقية ورضا المستخدمين.'
-      },
-      {
-        title: 'التصميم المتمحور حول المستخدم',
-        desc: 'نعطي الأولوية لتجربة المستخدم ونصمم منتجات بديهية وسهلة الوصول وممتعة للاستخدام.'
-      },
-      {
-        title: 'التطوير الرشيق',
-        desc: 'نهج التطوير التكراري لدينا يضمن التسليم السريع والتحسين المستمر والقدرة على التكيف مع احتياجات السوق المتغيرة.'
-      }
-    ]
-  }
-};
+import translations from '@/translations/Services/DigitalBusinessProducts/digitalWhyUS.json';
 
 const DigitalWhyUS = () => {
   const [current, setCurrent] = useState(0);
@@ -50,7 +14,7 @@ const DigitalWhyUS = () => {
   const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} w-full flex flex-col items-center py-12 lg:py-24 px-2`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section className="w-full flex flex-col items-center py-12 lg:py-24 px-2" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Section Heading */}
       <RevealAnimation direction="up" delay={0.2}>
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-[#101424]">

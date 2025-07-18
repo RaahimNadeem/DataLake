@@ -8,19 +8,21 @@ import DigitalWhyUS from "./DigitalWhyUS";
 import DigitalCTA from "./DigitalCTA";
 import DigitalProcess from "./DigitalProcess";
 import DigitalSlogan from "./DigitalSlogan";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-export default function DataPage() {
+export default function DigitalBusinessProductsPage() {
+  const { language } = useLanguage();
+
   return (
-    <>
+    <div className={language === 'ar' ? 'font-arabic' : 'font-sans'} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <Header />
       <DigitalHero />
       <DigitalDesc />
+      <DigitalProcess />
+      <DigitalSlogan />
       <DigitalCTA />
-
       <DigitalWhyUS />
-      {/* <DigitalProcess /> */}
-      {/* <DigitalSlogan /> */}
       <Footer />
-    </>
+    </div>
   );
-} 
+}

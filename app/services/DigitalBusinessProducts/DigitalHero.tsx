@@ -4,26 +4,10 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
+import translations from '@/translations/Services/DigitalBusinessProducts/digitalHero.json';
 
 const images = ['/services/Data.jpg', '/services/Data.jpg', '/services/Data.jpg'];
 const SLIDE_DURATION = 4000;
-
-const translations = {
-  en: {
-    title: "Digital Business & Products",
-    subtitle: "Build Innovation.",
-    description: "Transform your business with cutting-edge digital solutions. We help you create innovative products, shape remarkable customer experiences, and build scalable digital capabilities that drive sustainable growth in today's rapidly evolving market.",
-    cta: "Start Your Digital Journey",
-    imageAlt: "Data-Driven Intelligence background"
-  },
-  ar: {
-    title: "الأعمال الرقمية والمنتجات",
-    subtitle: "بناء الابتكار.",
-    description: "حول عملك باستخدام الحلول الرقمية المتطورة. نساعدك في إنشاء منتجات مبتكرة، وتشكيل تجارب عملاء استثنائية، وبناء قدرات رقمية قابلة للتطوير تدفع النمو المستدام في السوق المتطور بسرعة اليوم.",
-    cta: "ابدأ رحلتك الرقمية",
-    imageAlt: "خلفية الذكاء القائم على البيانات"
-  }
-};
 
 const DigitalHero = () => {
   const [current, setCurrent] = useState(0);
@@ -59,7 +43,7 @@ const DigitalHero = () => {
 
   return (
     <>
-      <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} relative w-full h-screen overflow-hidden flex items-center font-sans`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+      <section className="relative w-full h-screen overflow-hidden flex items-center" dir={language === 'ar' ? 'rtl' : 'ltr'}>
         {/* Slideshow Background */}
         <div className="absolute top-0 left-0 w-full h-full">
         <Image

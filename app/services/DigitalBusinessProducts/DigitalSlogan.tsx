@@ -1,17 +1,7 @@
 import React from 'react';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    slogan: "The best digital products don't just solve problems, they create possibilities.",
-    subtitle: "Let us help you build digital solutions that transform your business and delight your users."
-  },
-  ar: {
-    slogan: "أفضل المنتجات الرقمية لا تحل المشاكل فحسب، بل تخلق الإمكانيات.",
-    subtitle: "دعنا نساعدك في بناء حلول رقمية تحول عملك وتسعد مستخدميك."
-  }
-};
+import translations from '@/translations/Services/DigitalBusinessProducts/digitalSlogan.json';
 
 const DigitalSlogan = () => {
   const { language } = useLanguage();

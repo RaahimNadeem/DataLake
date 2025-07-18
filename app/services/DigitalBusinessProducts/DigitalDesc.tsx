@@ -1,53 +1,7 @@
 import React from 'react';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    mainTitle: "Your Digital Reinvention Journey",
-    subtitle: "Transform your business with innovative digital solutions.",
-    points: [
-      {
-        title: 'Digital Strategy',
-        desc: 'Develop comprehensive digital transformation roadmaps that align with your business objectives and drive sustainable competitive advantage.'
-      },
-      {
-        title: 'Product Innovation',
-        desc: 'Create cutting-edge digital products and services that meet evolving customer needs and position your business at the forefront of innovation.'
-      },
-      {
-        title: 'Customer Experience',
-        desc: 'Design and deliver exceptional digital experiences that engage customers, build loyalty, and drive measurable business outcomes.'
-      },
-      {
-        title: 'Digital Capabilities',
-        desc: 'Build scalable digital infrastructure and capabilities that enable rapid growth, operational efficiency, and continuous innovation.'
-      }
-    ]
-  },
-  ar: {
-    mainTitle: "رحلة إعادة اختراعك الرقمي",
-    subtitle: "حول عملك باستخدام الحلول الرقمية المبتكرة.",
-    points: [
-      {
-        title: 'الاستراتيجية الرقمية',
-        desc: 'طور خرائط طريق شاملة للتحول الرقمي تتوافق مع أهداف عملك وتدفع الميزة التنافسية المستدامة.'
-      },
-      {
-        title: 'ابتكار المنتجات',
-        desc: 'أنشئ منتجات وخدمات رقمية متطورة تلبي احتياجات العملاء المتطورة وتضع عملك في طليعة الابتكار.'
-      },
-      {
-        title: 'تجربة العملاء',
-        desc: 'صمم وقدم تجارب رقمية استثنائية تجذب العملاء وتبني الولاء وتدفع النتائج التجارية القابلة للقياس.'
-      },
-      {
-        title: 'القدرات الرقمية',
-        desc: 'ابنِ البنية التحتية الرقمية والقدرات القابلة للتطوير التي تمكن النمو السريع والكفاءة التشغيلية والابتكار المستمر.'
-      }
-    ]
-  }
-};
+import translations from '@/translations/Services/DigitalBusinessProducts/digitalDesc.json';
 
 const AnimatedPoint = ({ title, desc, index }: { title: string; desc: string; index: number }) => {
   return (
@@ -69,7 +23,7 @@ const DigitalDesc = () => {
   const currentLang = translations[language];
 
   return (
-    <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} w-full flex flex-col md:flex-row bg-white font-sans min-h-[120vh]`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section className="w-full flex flex-col md:flex-row bg-white min-h-[120vh]" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Sticky Left Column */}
       <div className={`md:w-1/2 flex flex-col justify-start items-start px-4 md:px-24 pt-16 md:pt-32 sticky top-0 h-fit md:h-screen z-10 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
         <RevealAnimation direction="up" delay={0.2}>

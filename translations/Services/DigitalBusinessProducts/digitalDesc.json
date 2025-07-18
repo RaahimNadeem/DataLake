@@ -1,0 +1,46 @@
+{
+  "en": {
+    "mainTitle": "Your Digital Reinvention Journey",
+    "subtitle": "Transform your business with innovative digital solutions.",
+    "points": [
+      {
+        "title": "Digital Strategy",
+        "desc": "Develop comprehensive digital transformation roadmaps that align with your business objectives and drive sustainable competitive advantage."
+      },
+      {
+        "title": "Product Innovation",
+        "desc": "Create cutting-edge digital products and services that meet evolving customer needs and position your business at the forefront of innovation."
+      },
+      {
+        "title": "Customer Experience",
+        "desc": "Design and deliver exceptional digital experiences that engage customers, build loyalty, and drive measurable business outcomes."
+      },
+      {
+        "title": "Digital Capabilities",
+        "desc": "Build scalable digital infrastructure and capabilities that enable rapid growth, operational efficiency, and continuous innovation."
+      }
+    ]
+  },
+  "ar": {
+    "mainTitle": "رحلة إعادة اختراعك الرقمي",
+    "subtitle": "حول عملك باستخدام الحلول الرقمية المبتكرة.",
+    "points": [
+      {
+        "title": "الاستراتيجية الرقمية",
+        "desc": "طور خرائط طريق شاملة للتحول الرقمي تتوافق مع أهداف عملك وتدفع الميزة التنافسية المستدامة."
+      },
+      {
+        "title": "ابتكار المنتجات",
+        "desc": "أنشئ منتجات وخدمات رقمية متطورة تلبي احتياجات العملاء المتطورة وتضع عملك في طليعة الابتكار."
+      },
+      {
+        "title": "تجربة العملاء",
+        "desc": "صمم وقدم تجارب رقمية استثنائية تجذب العملاء وتبني الولاء وتدفع النتائج التجارية القابلة للقياس."
+      },
+      {
+        "title": "القدرات الرقمية",
+        "desc": "ابنِ البنية التحتية الرقمية والقدرات القابلة للتطوير التي تمكن النمو السريع والكفاءة التشغيلية والابتكار المستمر."
+      }
+    ]
+  }
+} 
