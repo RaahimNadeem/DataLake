@@ -1,0 +1,46 @@
+{
+  "en": {
+    "mainTitle": "Making Data Your Business Driver",
+    "subtitle": "Transform your organization with data-driven insights.",
+    "dataPoints": [
+      {
+        "title": "Data Strategy",
+        "desc": "Develop a comprehensive data-led business model that maximizes value creation and ensures continued competitiveness in your market."
+      },
+      {
+        "title": "Business Intelligence",
+        "desc": "Enable your business users with actionable insights through advanced analytics, dashboards, and reporting solutions."
+      },
+      {
+        "title": "Data Foundation",
+        "desc": "Build strong data foundations with scalable infrastructure, data governance, and quality management systems."
+      },
+      {
+        "title": "Predictive Analytics",
+        "desc": "Leverage machine learning and AI to predict trends, identify opportunities, and make data-driven decisions with confidence."
+      }
+    ]
+  },
+  "ar": {
+    "mainTitle": "جعل البيانات محرك عملك",
+    "subtitle": "حول مؤسستك بالرؤى القائمة على البيانات.",
+    "dataPoints": [
+      {
+        "title": "استراتيجية البيانات",
+        "desc": "طور نموذج عمل شامل قائم على البيانات يزيد من خلق القيمة ويضمن الاستمرارية في التنافسية في سوقك."
+      },
+      {
+        "title": "ذكاء الأعمال",
+        "desc": "مكن مستخدمي عملك من الرؤى القابلة للتنفيذ من خلال التحليلات المتقدمة واللوحات الإعلامية وحلول التقارير."
+      },
+      {
+        "title": "أساس البيانات",
+        "desc": "ابن أساسات بيانات قوية مع بنية تحتية قابلة للتطوير وأطر حوكمة البيانات وأنظمة إدارة الجودة."
+      },
+      {
+        "title": "التحليلات التنبؤية",
+        "desc": "استفد من التعلم الآلي والذكاء الاصطناعي للتنبؤ بالاتجاهات وتحديد الفرص واتخاذ قرارات قائمة على البيانات بثقة."
+      }
+    ]
+  }
+} 

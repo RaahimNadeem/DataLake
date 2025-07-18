@@ -2,68 +2,14 @@ import React from 'react';
 import { FaSearch, FaLightbulb, FaCogs, FaRocket, FaHandsHelping } from 'react-icons/fa';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
+import translations from '@/translations/Services/Data/dataProcess.json';
 
-const translations = {
-  en: {
-    mainTitle: 'Our Data-Driven Intelligence Framework',
-    steps: [
-      {
-        icon: FaSearch,
-        title: 'Data Assessment',
-        desc: 'Evaluate your current data landscape, identify gaps, and assess maturity across strategy, business intelligence, and foundation dimensions.'
-      },
-      {
-        icon: FaLightbulb,
-        title: 'Strategy Development',
-        desc: 'Design a comprehensive data-led business model that aligns with your organizational goals and competitive landscape.'
-      },
-      {
-        icon: FaCogs,
-        title: 'Foundation Building',
-        desc: 'Establish robust data infrastructure, governance frameworks, and quality management systems for scalable operations.'
-      },
-      {
-        icon: FaRocket,
-        title: 'Intelligence Implementation',
-        desc: 'Deploy advanced analytics, AI solutions, and business intelligence tools to enable data-driven decision making.'
-      },
-      {
-        icon: FaHandsHelping,
-        title: 'Continuous Optimization',
-        desc: 'Monitor performance, refine strategies, and continuously improve data capabilities to maintain competitive advantage.'
-      }
-    ]
-  },
-  ar: {
-    mainTitle: 'إطار عملنا للذكاء القائم على البيانات',
-    steps: [
-      {
-        icon: FaSearch,
-        title: 'تقييم البيانات',
-        desc: 'تقييم مشهد بياناتك الحالي، وتحديد الفجوات، وتقييم النضج عبر أبعاد الاستراتيجية والذكاء التجاري والأساسيات.'
-      },
-      {
-        icon: FaLightbulb,
-        title: 'تطوير الاستراتيجية',
-        desc: 'تصميم نموذج أعمال شامل قائم على البيانات يتوافق مع أهداف مؤسستك والمشهد التنافسي.'
-      },
-      {
-        icon: FaCogs,
-        title: 'بناء الأساسيات',
-        desc: 'إنشاء بنية بيانات قوية، وأطر الحوكمة، وأنظمة إدارة الجودة للعمليات القابلة للتطوير.'
-      },
-      {
-        icon: FaRocket,
-        title: 'تنفيذ الذكاء',
-        desc: 'نشر التحليلات المتقدمة، وحلول الذكاء الاصطناعي، وأدوات الذكاء التجاري لتمكين اتخاذ القرارات القائمة على البيانات.'
-      },
-      {
-        icon: FaHandsHelping,
-        title: 'التحسين المستمر',
-        desc: 'مراقبة الأداء، وصقل الاستراتيجيات، والتحسين المستمر لقدرات البيانات للحفاظ على الميزة التنافسية.'
-      }
-    ]
-  }
+const iconMap = {
+  FaSearch,
+  FaLightbulb,
+  FaCogs,
+  FaRocket,
+  FaHandsHelping
 };
 
 const DataProcess = () => {
@@ -91,7 +37,7 @@ const DataProcess = () => {
               <div className={`relative flex items-center ${idx % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`} style={{ minWidth: 0 }}>
                 {/* Icon in circle */}
                 <div className="flex-shrink-0 w-16 h-16 rounded-full bg-white shadow-lg flex items-center justify-center border-4 border-blue-200 z-10">
-                  {React.createElement(step.icon, { size: 24, className: "text-blue-700" })}
+                  {React.createElement(iconMap[step.icon as keyof typeof iconMap], { size: 24, className: "text-blue-700" })}
                 </div>
                 {/* Connecting arrow */}
                 {idx < currentLang.steps.length - 1 && (

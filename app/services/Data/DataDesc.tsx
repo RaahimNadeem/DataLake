@@ -1,53 +1,7 @@
 import React from 'react';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    mainTitle: 'Making Data Your Business Driver',
-    subtitle: 'Transform your organization with data-driven insights.',
-    dataPoints: [
-      {
-        title: 'Data Strategy',
-        desc: 'Develop a comprehensive data-led business model that maximizes value creation and ensures continued competitiveness in your market.'
-      },
-      {
-        title: 'Business Intelligence',
-        desc: 'Enable your business users with actionable insights through advanced analytics, dashboards, and reporting solutions.'
-      },
-      {
-        title: 'Data Foundation',
-        desc: 'Build strong data foundations with scalable infrastructure, data governance, and quality management systems.'
-      },
-      {
-        title: 'Predictive Analytics',
-        desc: 'Leverage machine learning and AI to predict trends, identify opportunities, and make data-driven decisions with confidence.'
-      }
-    ]
-  },
-  ar: {
-    mainTitle: 'جعل البيانات محرك عملك',
-    subtitle: 'حول مؤسستك بالرؤى القائمة على البيانات.',
-    dataPoints: [
-      {
-        title: 'استراتيجية البيانات',
-        desc: 'طور نموذج عمل شامل قائم على البيانات يزيد من خلق القيمة ويضمن الاستمرارية في التنافسية في سوقك.'
-      },
-      {
-        title: 'ذكاء الأعمال',
-        desc: 'مكن مستخدمي عملك من الرؤى القابلة للتنفيذ من خلال التحليلات المتقدمة واللوحات الإعلامية وحلول التقارير.'
-      },
-      {
-        title: 'أساس البيانات',
-        desc: 'ابن أساسات بيانات قوية مع بنية تحتية قابلة للتطوير وأطر حوكمة البيانات وأنظمة إدارة الجودة.'
-      },
-      {
-        title: 'التحليلات التنبؤية',
-        desc: 'استفد من التعلم الآلي والذكاء الاصطناعي للتنبؤ بالاتجاهات وتحديد الفرص واتخاذ قرارات قائمة على البيانات بثقة.'
-      }
-    ]
-  }
-};
+import translations from '@/translations/Services/Data/dataDesc.json';
 
 const AnimatedPoint = ({ title, desc, index }: { title: string; desc: string; index: number }) => {
   return (
@@ -69,7 +23,7 @@ const DataDesc = () => {
   const currentLang = translations[language];
 
   return (
-    <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} w-full flex flex-col md:flex-row bg-white font-sans min-h-[120vh]`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section className="w-full flex flex-col md:flex-row bg-white min-h-[120vh]" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Sticky Left Column */}
       <div className="md:w-1/2 flex flex-col justify-start items-start px-4 md:pl-24 pt-16 md:pt-32 sticky top-0 h-fit md:h-screen z-10">
         <RevealAnimation direction="up" delay={0.2}>

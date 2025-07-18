@@ -1,17 +1,7 @@
 import React from 'react';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    slogan: "Data is only valuable when transformed into actionable intelligence.",
-    subtitle: "Let us help you unlock the full potential of your data assets and drive business success."
-  },
-  ar: {
-    slogan: "البيانات قيّمة فقط عندما تتحول إلى ذكاء قابل للتنفيذ.",
-    subtitle: "دعنا نساعدك في إطلاق الإمكانات الكاملة لأصول البيانات الخاصة بك ودفع نجاح الأعمال."
-  }
-};
+import translations from '@/translations/Services/Data/dataSlogan.json';
 
 const DataSlogan = () => {
   const { language } = useLanguage();

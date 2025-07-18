@@ -1,0 +1,18 @@
+{
+  "en": {
+    "title": {
+      "part1": "Data-Driven Intelligence",
+      "part2": "Unlock Your Data Potential"
+    },
+    "description": "Transform raw data into actionable insights. Make strategic decisions based on facts, not assumptions. We help you harness the power of your data to drive business growth and competitive advantage.",
+    "cta": "Let's Talk"
+  },
+  "ar": {
+    "title": {
+      "part1": "الذكاء القائم على البيانات",
+      "part2": "أطلق العنان لإمكانات بياناتك"
+    },
+    "description": "حول البيانات الخام إلى رؤى قابلة للتنفيذ. اتخذ قرارات استراتيجية بناءً على الحقائق، وليس الافتراضات. نساعدك في استغلال قوة بياناتك لدفع نمو الأعمال والميزة التنافسية.",
+    "cta": "دعنا نتحدث"
+  }
+} 

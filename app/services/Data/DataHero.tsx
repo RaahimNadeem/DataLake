@@ -4,25 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    title: {
-      part1: 'Data-Driven Intelligence',
-      part2: 'Unlock Your Data Potential'
-    },
-    description: 'Transform raw data into actionable insights. Make strategic decisions based on facts, not assumptions. We help you harness the power of your data to drive business growth and competitive advantage.',
-    cta: "Let's Talk"
-  },
-  ar: {
-    title: {
-      part1: 'الذكاء القائم على البيانات',
-      part2: 'أطلق العنان لإمكانات بياناتك'
-    },
-    description: 'حول البيانات الخام إلى رؤى قابلة للتنفيذ. اتخذ قرارات استراتيجية بناءً على الحقائق، وليس الافتراضات. نساعدك في استغلال قوة بياناتك لدفع نمو الأعمال والميزة التنافسية.',
-    cta: 'دعنا نتحدث'
-  }
-};
+import translations from '@/translations/Services/Data/dataHero.json';
 
 const images = ['/services/Data.jpg', '/services/Data.jpg', '/services/Data.jpg'];
 const SLIDE_DURATION = 4000;
@@ -61,7 +43,7 @@ const DataHero = () => {
 
   return (
     <>
-      <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} relative w-full h-screen overflow-hidden flex items-center font-sans`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+      <section className="relative w-full h-screen overflow-hidden flex items-center" dir={language === 'ar' ? 'rtl' : 'ltr'}>
         {/* Slideshow Background */}
         <div className="absolute top-0 left-0 w-full h-full">
         <Image

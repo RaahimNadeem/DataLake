@@ -2,49 +2,7 @@
 import { AnimatePresence } from "framer-motion";
 import RevealAnimation from "../../components/ui/RevealAnimation";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-const translations = {
-  en: {
-    mainTitle: "Why Choose Datalake for Data-Driven Intelligence?",
-    slides: [
-      {
-        image: "/services/Data2.jpg",
-        title: "Data Maturity Framework",
-        desc: "We assess your organization's data maturity across three key dimensions: Data Strategy, Business Intelligence, and Data Foundation to create a roadmap for success."
-      },
-      {
-        image: "/services/Data2.jpg",
-        title: "End-to-End Data Solutions",
-        desc: "From data collection and warehousing to advanced analytics and AI implementation, we provide comprehensive solutions that drive tangible business outcomes."
-      },
-      {
-        image: "/services/Data2.jpg",
-        title: "Actionable Business Insights",
-        desc: "We transform complex data into clear, actionable recommendations that help you differentiate products, services, and customer experiences."
-      }
-    ]
-  },
-  ar: {
-    mainTitle: "لماذا تختار داتاليك للذكاء القائم على البيانات؟",
-    slides: [
-      {
-        image: "/services/Data2.jpg",
-        title: "إطار عمل نضج البيانات",
-        desc: "نقيم نضج بيانات مؤسستك عبر ثلاثة أبعاد رئيسية: استراتيجية البيانات، وذكاء الأعمال، وأساس البيانات لإنشاء خارطة طريق للنجاح."
-      },
-      {
-        image: "/services/Data2.jpg",
-        title: "حلول البيانات الشاملة",
-        desc: "من جمع البيانات والتخزين إلى التحليلات المتقدمة وتنفيذ الذكاء الاصطناعي، نقدم حلولاً شاملة تدفع نتائج أعمال ملموسة."
-      },
-      {
-        image: "/services/Data2.jpg",
-        title: "رؤى أعمال قابلة للتنفيذ",
-        desc: "نحول البيانات المعقدة إلى توصيات واضحة وقابلة للتنفيذ تساعدك على تمييز المنتجات والخدمات وتجارب العملاء."
-      }
-    ]
-  }
-};
+import translations from "@/translations/Services/Data/dataWhyUS.json";
 
 const DataWhyUS = () => {
   const { language } = useLanguage();
@@ -55,7 +13,7 @@ const DataWhyUS = () => {
   const prevSlide = () => setCurrent((prev) => (prev - 1 + currentLang.slides.length) % currentLang.slides.length);
 
   return (
-    <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} w-full flex flex-col items-center py-12 lg:py-24 px-2`} dir={language === "ar" ? "rtl" : "ltr"}>
+    <section className="w-full flex flex-col items-center py-12 lg:py-24 px-2" dir={language === "ar" ? "rtl" : "ltr"}>
       <RevealAnimation direction="up" delay={0.2}>
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-[#101424]">
           {currentLang.mainTitle}
