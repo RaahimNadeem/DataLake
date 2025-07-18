@@ -1,17 +1,7 @@
 import React from 'react';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    slogan: "Cloud is not just technology, it's a business transformation.",
-    subtitle: "Let us help you navigate your cloud journey with confidence and expertise."
-  },
-  ar: {
-    slogan: "السحابة ليست مجرد تقنية، بل هي تحول في الأعمال.",
-    subtitle: "دعنا نساعدك في التنقل في رحلتك السحابية بثقة وخبرة."
-  }
-};
+import translations from '@/translations/Services/Cloud/cloudSlogan.json';
 
 const CloudSlogan = () => {
   const { language } = useLanguage();

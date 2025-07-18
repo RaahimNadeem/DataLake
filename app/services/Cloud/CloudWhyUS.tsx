@@ -2,49 +2,7 @@ import React, { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    mainTitle: "Why Choose Datalake for Your Cloud Solutions?",
-    slides: [
-      {
-        image: '/services/Cloud2.jpg',
-        title: 'Cloud Infrastructure Experts',
-        desc: 'Our certified cloud architects and engineers have extensive experience designing and implementing scalable cloud solutions. We ensure your infrastructure is optimized for performance, security, and cost efficiency.'
-      },
-      {
-        image: '/services/Cloud2.jpg',
-        title: 'Comprehensive Cloud Strategy',
-        desc: 'We develop holistic cloud strategies that align with your business objectives. From migration planning to ongoing optimization, we guide your cloud journey every step of the way.'
-      },
-      {
-        image: '/services/Cloud2.jpg',
-        title: 'Multi-Cloud Excellence',
-        desc: 'Leverage the best of multiple cloud providers with our multi-cloud expertise. We help you avoid vendor lock-in while optimizing costs and performance across different platforms.'
-      }
-    ]
-  },
-  ar: {
-    mainTitle: "لماذا تختار Datalake لحلولك السحابية؟",
-    slides: [
-      {
-        image: '/services/Cloud2.jpg',
-        title: 'خبراء البنية التحتية السحابية',
-        desc: 'يتمتع مهندسو ومصممو السحابة المعتمدون لدينا بخبرة واسعة في تصميم وتنفيذ الحلول السحابية القابلة للتطوير. نضمن تحسين بنيتك التحتية للأداء والأمان وكفاءة التكلفة.'
-      },
-      {
-        image: '/services/Cloud2.jpg',
-        title: 'استراتيجية سحابية شاملة',
-        desc: 'نطور استراتيجيات سحابية شاملة تتماشى مع أهداف عملك. من تخطيط الهجرة إلى التحسين المستمر، نوجه رحلتك السحابية في كل خطوة.'
-      },
-      {
-        image: '/services/Cloud2.jpg',
-        title: 'التميز متعدد السحابة',
-        desc: 'استفد من أفضل مزودي السحابة المتعددين من خلال خبرتنا في السحابة المتعددة. نساعدك على تجنب الاعتماد على مورد واحد مع تحسين التكاليف والأداء عبر منصات مختلفة.'
-      }
-    ]
-  }
-};
+import translations from '@/translations/Services/Cloud/cloudWhyUS.json';
 
 const CloudWhyUS = () => {
   const [current, setCurrent] = useState(0);
@@ -56,7 +14,7 @@ const CloudWhyUS = () => {
   const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} w-full flex flex-col items-center py-12 lg:py-24 px-2`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section className={`w-full flex flex-col items-center py-12 lg:py-24 px-2`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Section Heading */}
       <RevealAnimation direction="up" delay={0.2}>
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-[#101424]">

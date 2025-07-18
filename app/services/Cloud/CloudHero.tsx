@@ -4,19 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    title: "Cloud Solutions for Scalable Growth",
-    description: "Transform your business with enterprise-grade cloud infrastructure. We design, deploy, and manage scalable cloud solutions that drive efficiency, security, and innovation for your organization.",
-    button: "Let's Talk"
-  },
-  ar: {
-    title: "حلول الحوسبة السحابية للنمو القابل للتطوير",
-    description: "حول عملك من خلال البنية التحتية السحابية على مستوى المؤسسات. نقوم بتصميم ونشر وإدارة حلول سحابية قابلة للتطوير تدفع الكفاءة والأمان والابتكار لمؤسستك.",
-    button: "لنتحدث"
-  }
-};
+import translations from '@/translations/Services/Cloud/cloudHero.json';
 
 const CloudHero = () => {
   const { language } = useLanguage();
@@ -24,7 +12,7 @@ const CloudHero = () => {
 
   return (
     <>
-      <section className={` ${language === 'ar' ? 'font-arabic' : 'font-sans'} relative w-full h-screen overflow-hidden flex items-center font-sans`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+      <section className={`relative w-full h-screen overflow-hidden flex items-center`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
         {/* Static Background Image */}
         <div className="absolute top-0 left-0 w-full h-full">
           <Image

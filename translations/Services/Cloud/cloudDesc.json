@@ -1,0 +1,46 @@
+{
+  "en": {
+    "mainTitle": "Why Choose Cloud Solutions?",
+    "subtitle": "Unlock agility, security, and cost efficiency.",
+    "points": [
+      {
+        "title": "Scale Seamlessly",
+        "desc": "Grow your infrastructure automatically to meet demand without the complexity of traditional scaling. Our cloud solutions adapt to your business needs, ensuring optimal performance during peak times and cost efficiency during quiet periods."
+      },
+      {
+        "title": "Secure by Design",
+        "desc": "Protect your data with enterprise-grade security built into every layer of your cloud infrastructure. From encryption at rest and in transit to advanced threat detection, we ensure your applications and data remain secure and compliant."
+      },
+      {
+        "title": "Reduce Complexity",
+        "desc": "Simplify your IT operations with managed cloud services that handle the heavy lifting. Focus on your core business while we manage infrastructure, updates, security, and performance optimization—allowing you to innovate faster."
+      },
+      {
+        "title": "Drive Innovation",
+        "desc": "Accelerate your digital transformation with modern cloud-native technologies. Deploy applications faster, experiment with new features, and leverage cutting-edge services like serverless computing and container orchestration."
+      }
+    ]
+  },
+  "ar": {
+    "mainTitle": "لماذا تختار حلول الحوسبة السحابية؟",
+    "subtitle": "أطلق العنان للرشاقة والأمان وكفاءة التكلفة.",
+    "points": [
+      {
+        "title": "التطوير السلس",
+        "desc": "نمّ بنيتك التحتية تلقائيًا لتلبية الطلب دون تعقيد التطوير التقليدي. تتكيف حلولنا السحابية مع احتياجات عملك، مما يضمن الأداء الأمثل خلال أوقات الذروة وكفاءة التكلفة خلال الفترات الهادئة."
+      },
+      {
+        "title": "آمن بالتصميم",
+        "desc": "احمِ بياناتك بأمان على مستوى المؤسسات مدمج في كل طبقة من بنيتك التحتية السحابية. من التشفير في حالة الراحة وفي النقل إلى كشف التهديدات المتقدم، نضمن بقاء تطبيقاتك وبياناتك آمنة ومتوافقة."
+      },
+      {
+        "title": "تقليل التعقيد",
+        "desc": "بسّط عمليات تكنولوجيا المعلومات الخاصة بك من خلال الخدمات السحابية المدارة التي تتعامل مع العمل الشاق. ركز على عملك الأساسي بينما ندير البنية التحتية والتحديثات والأمان وتحسين الأداء - مما يتيح لك الابتكار بشكل أسرع."
+      },
+      {
+        "title": "دفع الابتكار",
+        "desc": "عجّل تحولك الرقمي من خلال تقنيات سحابية حديثة. انشر التطبيقات بشكل أسرع، وجرب الميزات الجديدة، واستفد من الخدمات المتطورة مثل الحوسبة بدون خادم وتنسيق الحاويات."
+      }
+    ]
+  }
+} 

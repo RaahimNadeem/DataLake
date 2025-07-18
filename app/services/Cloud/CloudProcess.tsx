@@ -2,68 +2,15 @@ import React from 'react';
 import { FaSearch, FaLightbulb, FaCogs, FaRocket, FaHandsHelping } from 'react-icons/fa';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
+import translations from '@/translations/Services/Cloud/cloudProcess.json';
 
-const translations = {
-  en: {
-    mainTitle: "Our Cloud Migration Journey",
-    steps: [
-      {
-        icon: FaSearch,
-        title: 'Assessment',
-        desc: 'We evaluate your current infrastructure, applications, and business requirements to understand your cloud migration needs.'
-      },
-      {
-        icon: FaLightbulb,
-        title: 'Strategy',
-        desc: 'We design a comprehensive cloud strategy, selecting the right platforms and services for your specific use cases.'
-      },
-      {
-        icon: FaCogs,
-        title: 'Migration',
-        desc: 'Our experts execute a phased migration plan, ensuring minimal downtime and seamless transition to the cloud.'
-      },
-      {
-        icon: FaRocket,
-        title: 'Optimization',
-        desc: 'We fine-tune your cloud infrastructure for performance, cost efficiency, and security best practices.'
-      },
-      {
-        icon: FaHandsHelping,
-        title: 'Management',
-        desc: 'Ongoing cloud management, monitoring, and support to ensure your infrastructure runs smoothly and efficiently.'
-      }
-    ]
-  },
-  ar: {
-    mainTitle: "رحلة هجرتنا إلى السحابة",
-    steps: [
-      {
-        icon: FaSearch,
-        title: 'التقييم',
-        desc: 'نقيم بنيتك التحتية الحالية والتطبيقات ومتطلبات الأعمال لفهم احتياجات هجرتك إلى السحابة.'
-      },
-      {
-        icon: FaLightbulb,
-        title: 'الاستراتيجية',
-        desc: 'نصمم استراتيجية سحابية شاملة، ونختار المنصات والخدمات المناسبة لحالات الاستخدام المحددة.'
-      },
-      {
-        icon: FaCogs,
-        title: 'الهجرة',
-        desc: 'ينفذ خبراؤنا خطة هجرة مرحلية، مما يضمن الحد الأدنى من التوقف والت过渡 السلس إلى السحابة.'
-      },
-      {
-        icon: FaRocket,
-        title: 'التحسين',
-        desc: 'نضبط بنيتك التحتية السحابية للأداء وكفاءة التكلفة وأفضل ممارسات الأمان.'
-      },
-      {
-        icon: FaHandsHelping,
-        title: 'الإدارة',
-        desc: 'إدارة سحابية مستمرة ومراقبة ودعم لضمان تشغيل بنيتك التحتية بسلاسة وكفاءة.'
-      }
-    ]
-  }
+// Define icons mapping
+const icons = {
+  FaSearch,
+  FaLightbulb,
+  FaCogs,
+  FaRocket,
+  FaHandsHelping
 };
 
 const CloudProcess = () => {
@@ -92,7 +39,7 @@ const CloudProcess = () => {
               <div className={`relative flex items-center ${idx % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`} style={{ minWidth: 0 }}>
                 {/* Icon in circle */}
                 <div className="flex-shrink-0 w-16 h-16 rounded-full bg-white shadow-lg flex items-center justify-center border-4 border-blue-200 z-10">
-                  {React.createElement(step.icon, { size: 24, className: "text-blue-700" })}
+                  {React.createElement(icons[step.icon as keyof typeof icons], { size: 24, className: "text-blue-700" })}
                 </div>
                 {/* Connecting arrow */}
                 {idx < steps.length - 1 && (
