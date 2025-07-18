@@ -2,43 +2,7 @@ import React, { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    title: "Why Choose Datalake for Sustainability?",
-    slides: [
-      {
-        title: 'Sustainability Experts',
-        desc: 'Our team brings deep expertise in ESG frameworks, carbon accounting, and sustainable business practices across industries.'
-      },
-      {
-        title: 'Holistic Approach',
-        desc: 'We integrate sustainability into every aspect of your business strategy, from operations to product development and stakeholder engagement.'
-      },
-      {
-        title: 'Measurable Impact',
-        desc: 'We help you set meaningful sustainability goals, track progress, and communicate your impact with transparent reporting and analytics.'
-      }
-    ]
-  },
-  ar: {
-    title: "لماذا تختار Datalake للاستدامة؟",
-    slides: [
-      {
-        title: 'خبراء الاستدامة',
-        desc: 'يجلب فريقنا خبرة عميقة في أطر ESG، والمحاسبة الكربونية، والممارسات التجارية المستدامة عبر الصناعات.'
-      },
-      {
-        title: 'النهج الشامل',
-        desc: 'ندمج الاستدامة في كل جانب من جوانب استراتيجية عملك، من العمليات إلى تطوير المنتجات والمشاركة مع أصحاب المصلحة.'
-      },
-      {
-        title: 'التأثير القابل للقياس',
-        desc: 'نساعدك في تحديد أهداف الاستدامة الهادفة، وتتبع التقدم، والتواصل حول تأثيرك مع التقارير والتحليلات الشفافة.'
-      }
-    ]
-  }
-};
+import translations from '@/translations/Services/Sustainability/sustainabilityWhyUS.json';
 
 const SustainabilityWhyUS = () => {
   const [current, setCurrent] = useState(0);
@@ -50,7 +14,7 @@ const SustainabilityWhyUS = () => {
   const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} w-full flex flex-col items-center py-12 lg:py-24 px-2`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section className="w-full flex flex-col items-center py-12 lg:py-24 px-2" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Section Heading */}
       <RevealAnimation direction="up" delay={0.2}>
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-[#101424]">

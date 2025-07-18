@@ -2,58 +2,14 @@ import React from 'react';
 import { FaSearch, FaLightbulb, FaCogs, FaRocket, FaHandsHelping } from 'react-icons/fa';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
+import translations from '@/translations/Services/Sustainability/sustainabilityProcess.json';
 
-const translations = {
-  en: {
-    title: "Our Sustainability Implementation Process",
-    steps: [
-      {
-        title: 'Assessment',
-        desc: 'Evaluate your current environmental and social impact to establish baseline metrics and identify improvement opportunities.'
-      },
-      {
-        title: 'Strategy',
-        desc: 'Develop a comprehensive sustainability strategy aligned with your business objectives and stakeholder expectations.'
-      },
-      {
-        title: 'Implementation',
-        desc: 'Execute sustainability initiatives across your organization, from operational changes to stakeholder engagement programs.'
-      },
-      {
-        title: 'Measurement',
-        desc: 'Establish monitoring and reporting systems to track progress and demonstrate impact to stakeholders.'
-      },
-      {
-        title: 'Optimization',
-        desc: 'Continuously improve your sustainability performance through data-driven insights and stakeholder feedback.'
-      }
-    ]
-  },
-  ar: {
-    title: "عملية تنفيذ الاستدامة لدينا",
-    steps: [
-      {
-        title: 'التقييم',
-        desc: 'قيّم تأثيرك البيئي والاجتماعي الحالي لتأسيس مقاييس أساسية وتحديد فرص التحسين.'
-      },
-      {
-        title: 'الاستراتيجية',
-        desc: 'طور استراتيجية استدامة شاملة متوافقة مع أهداف عملك وتوقعات أصحاب المصلحة.'
-      },
-      {
-        title: 'التنفيذ',
-        desc: 'نفذ مبادرات الاستدامة عبر مؤسستك، من التغييرات التشغيلية إلى برامج مشاركة أصحاب المصلحة.'
-      },
-      {
-        title: 'القياس',
-        desc: 'أنشئ أنظمة المراقبة والتقارير لتتبع التقدم وإظهار التأثير لأصحاب المصلحة.'
-      },
-      {
-        title: 'التحسين',
-        desc: 'حسّن أداء الاستدامة لديك باستمرار من خلال الرؤى القائمة على البيانات وملاحظات أصحاب المصلحة.'
-      }
-    ]
-  }
+const iconMap = {
+  FaSearch,
+  FaLightbulb,
+  FaCogs,
+  FaRocket,
+  FaHandsHelping
 };
 
 const SustainabilityProcess = () => {
@@ -82,7 +38,7 @@ const SustainabilityProcess = () => {
               <div className={`relative flex items-center ${idx % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`} style={{ minWidth: 0 }}>
                 {/* Icon in circle */}
                 <div className="flex-shrink-0 w-16 h-16 rounded-full bg-white shadow-lg flex items-center justify-center border-4 border-blue-200 z-10">
-                  {React.createElement([FaSearch, FaLightbulb, FaCogs, FaRocket, FaHandsHelping][idx], { size: 24, className: "text-blue-700" })}
+                  {React.createElement(iconMap[step.icon as keyof typeof iconMap], { size: 24, className: "text-blue-700" })}
                 </div>
                 {/* Connecting arrow */}
                 {idx < steps.length - 1 && (

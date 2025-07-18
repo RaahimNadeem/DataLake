@@ -1,17 +1,7 @@
 import React from 'react';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    slogan: "Sustainability is not just good for the planet, it's good for business.",
-    subtitle: "Let us help you build a sustainable business that thrives in the future."
-  },
-  ar: {
-    slogan: "الاستدامة ليست جيدة للكوكب فحسب، بل هي جيدة للأعمال.",
-    subtitle: "دعنا نساعدك في بناء عمل مستدام يزدهر في المستقبل."
-  }
-};
+import translations from '@/translations/Services/Sustainability/sustainabilitySlogan.json';
 
 const SustainabilitySlogan = () => {
   const { language } = useLanguage();

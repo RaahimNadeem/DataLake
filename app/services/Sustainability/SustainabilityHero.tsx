@@ -4,26 +4,10 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
+import translations from '@/translations/Services/Sustainability/sustainabilityHero.json';
 
 const images = ['/services/Data.jpg', '/services/Data.jpg', '/services/Data.jpg'];
 const SLIDE_DURATION = 4000;
-
-const translations = {
-  en: {
-    title: "Sustainability",
-    subtitle: "Enabled by Digital.",
-    description: "Realise better change in a responsible way. Foster sustainable digital transformation. Understand your impact, adapt information systems to environmental challenges, and leverage digital tools to build responsible digital services.",
-    cta: "Start Your Sustainable Journey",
-    imageAlt: "Sustainability background"
-  },
-  ar: {
-    title: "الاستدامة",
-    subtitle: "ممكنة رقمياً.",
-    description: "حقق تغييراً أفضل بطريقة مسؤولة. عزز التحول الرقمي المستدام. افهم تأثيرك، وعدل أنظمة المعلومات لتحديات البيئة، واستفد من الأدوات الرقمية لبناء خدمات رقمية مسؤولة.",
-    cta: "ابدأ رحلتك المستدامة",
-    imageAlt: "خلفية الاستدامة"
-  }
-};
 
 
 const SustainabilityHero = () => {
@@ -60,7 +44,7 @@ const SustainabilityHero = () => {
 
   return (
     <>
-      <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} relative w-full h-screen overflow-hidden flex items-center font-sans`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+      <section className="relative w-full h-screen overflow-hidden flex items-center" dir={language === 'ar' ? 'rtl' : 'ltr'}>
         {/* Slideshow Background */}
         <div className="absolute top-0 left-0 w-full h-full">
         <Image

@@ -1,0 +1,62 @@
+{
+  "en": {
+    "title": "Our Sustainability Implementation Process",
+    "steps": [
+      {
+        "icon": "FaSearch",
+        "title": "Assessment",
+        "desc": "Evaluate your current environmental and social impact to establish baseline metrics and identify improvement opportunities."
+      },
+      {
+        "icon": "FaLightbulb",
+        "title": "Strategy",
+        "desc": "Develop a comprehensive sustainability strategy aligned with your business objectives and stakeholder expectations."
+      },
+      {
+        "icon": "FaCogs",
+        "title": "Implementation",
+        "desc": "Execute sustainability initiatives across your organization, from operational changes to stakeholder engagement programs."
+      },
+      {
+        "icon": "FaRocket",
+        "title": "Measurement",
+        "desc": "Establish monitoring and reporting systems to track progress and demonstrate impact to stakeholders."
+      },
+      {
+        "icon": "FaHandsHelping",
+        "title": "Optimization",
+        "desc": "Continuously improve your sustainability performance through data-driven insights and stakeholder feedback."
+      }
+    ]
+  },
+  "ar": {
+    "title": "عملية تنفيذ الاستدامة لدينا",
+    "steps": [
+      {
+        "icon": "FaSearch",
+        "title": "التقييم",
+        "desc": "قيّم تأثيرك البيئي والاجتماعي الحالي لتأسيس مقاييس أساسية وتحديد فرص التحسين."
+      },
+      {
+        "icon": "FaLightbulb",
+        "title": "الاستراتيجية",
+        "desc": "طور استراتيجية استدامة شاملة متوافقة مع أهداف عملك وتوقعات أصحاب المصلحة."
+      },
+      {
+        "icon": "FaCogs",
+        "title": "التنفيذ",
+        "desc": "نفذ مبادرات الاستدامة عبر مؤسستك، من التغييرات التشغيلية إلى برامج مشاركة أصحاب المصلحة."
+      },
+      {
+        "icon": "FaRocket",
+        "title": "القياس",
+        "desc": "أنشئ أنظمة المراقبة والتقارير لتتبع التقدم وإظهار التأثير لأصحاب المصلحة."
+      },
+      {
+        "icon": "FaHandsHelping",
+        "title": "التحسين",
+        "desc": "حسّن أداء الاستدامة لديك باستمرار من خلال الرؤى القائمة على البيانات وملاحظات أصحاب المصلحة."
+      }
+    ]
+  }
+} 

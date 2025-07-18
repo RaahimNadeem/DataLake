@@ -1,53 +1,7 @@
 import React from 'react';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    mainTitle: "Think – Design – Build – Run",
-    subtitle: "Turn your vision into action with sustainable IT transformation.",
-    points: [
-      {
-        title: 'Sustainable IT Strategy',
-        desc: 'Set a trajectory for your sustainable transformation to acquire a comprehensive view of the IT footprint, while fostering a culture of sustainability.'
-      },
-      {
-        title: 'Sustainable IT Foundations',
-        desc: 'Ensure your infrastructures, data & AI, architecture principles and digital workplace are optimised for environmental impact reduction.'
-      },
-      {
-        title: 'Tooling for Sustainable IT',
-        desc: 'Save time to prove impact through easily accessible data and relevant sustainable performance indicators for better decision making.'
-      },
-      {
-        title: 'Eco-Design & GreenOps',
-        desc: 'Create eco-designed resource efficient digital services and embrace continuous improvement for all IT operations across business layers.'
-      }
-    ]
-  },
-  ar: {
-    mainTitle: "فكر – صمم – ابنِ – شغل",
-    subtitle: "حول رؤيتك إلى عمل مع التحول المستدام لتكنولوجيا المعلومات.",
-    points: [
-      {
-        title: 'استراتيجية تكنولوجيا المعلومات المستدامة',
-        desc: 'حدد مساراً لتحولك المستدام للحصول على رؤية شاملة للبصمة التقنية، مع تعزيز ثقافة الاستدامة.'
-      },
-      {
-        title: 'أسس تكنولوجيا المعلومات المستدامة',
-        desc: 'تأكد من أن بنيتك التحتية والبيانات والذكاء الاصطناعي ومبادئ الهندسة المعمارية ومكان العمل الرقمي محسنة لتقليل التأثير البيئي.'
-      },
-      {
-        title: 'أدوات تكنولوجيا المعلومات المستدامة',
-        desc: 'وفر الوقت لإثبات التأثير من خلال البيانات سهلة الوصول ومؤشرات الأداء المستدامة ذات الصلة لاتخاذ قرارات أفضل.'
-      },
-      {
-        title: 'التصميم البيئي والعمليات الخضراء',
-        desc: 'أنشئ خدمات رقمية مصممة بيئياً وفعالة في استخدام الموارد واعتنق التحسين المستمر لجميع عمليات تكنولوجيا المعلومات عبر طبقات الأعمال.'
-      }
-    ]
-  }
-};
+import translations from '@/translations/Services/Sustainability/sustainabilityDesc.json';
 
 const AnimatedPoint = ({ title, desc, index }: { title: string; desc: string; index: number }) => {
   return (
@@ -69,7 +23,7 @@ const SustainabilityDesc = () => {
   const currentLang = translations[language];
 
   return (
-    <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} w-full flex flex-col md:flex-row bg-white font-sans min-h-[120vh]`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section className="w-full flex flex-col md:flex-row bg-white min-h-[120vh]" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Sticky Left Column */}
       <div className={`md:w-1/2 flex flex-col justify-start items-start px-4 md:px-24 pt-16 md:pt-32 sticky top-0 h-fit md:h-screen z-10 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
         <RevealAnimation direction="up" delay={0.2}>
