@@ -2,49 +2,7 @@ import React, { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    mainTitle: "Why Choose Datalake for Cybersecurity?",
-    slides: [
-      {
-        image: '/services/Cyber2.jpg',
-        title: 'Security Experts',
-        desc: 'Our certified security professionals bring deep expertise in threat intelligence, incident response, and security architecture to protect your organization.'
-      },
-      {
-        image: '/services/Cyber2.jpg',
-        title: 'Comprehensive Protection',
-        desc: 'We provide end-to-end security solutions covering network security, application security, data protection, and compliance management.'
-      },
-      {
-        image: '/services/Cyber2.jpg',
-        title: 'Proactive Defense',
-        desc: 'Stay ahead of threats with our proactive security approach, including threat hunting, vulnerability assessments, and security awareness training.'
-      }
-    ]
-  },
-  ar: {
-    mainTitle: "لماذا تختار Datalake للأمن السيبراني؟",
-    slides: [
-      {
-        image: '/services/Cyber2.jpg',
-        title: 'خبراء الأمن',
-        desc: 'يقدم محترفو الأمن المعتمدون لدينا خبرة عميقة في استخبارات التهديدات والاستجابة للحوادث وهندسة الأمن لحماية مؤسستك.'
-      },
-      {
-        image: '/services/Cyber2.jpg',
-        title: 'حماية شاملة',
-        desc: 'نحن نقدم حلول أمنية شاملة تغطي أمن الشبكات وأمن التطبيقات وحماية البيانات وإدارة الامتثال.'
-      },
-      {
-        image: '/services/Cyber2.jpg',
-        title: 'الدفاع الاستباقي',
-        desc: 'ابق في صدارة التهديدات من خلال نهجنا الأمني الاستباقي، بما في ذلك البحث عن التهديدات وتقييمات الضعف والتدريب على الوعي الأمني.'
-      }
-    ]
-  }
-};
+import translations from '@/translations/Services/Cyber/cyberWhyUS.json';
 
 const CyberWhyUS = () => {
   const [current, setCurrent] = useState(0);
@@ -56,7 +14,7 @@ const CyberWhyUS = () => {
   const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} w-full flex flex-col items-center py-12 lg:py-24 px-2`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section className={`w-full flex flex-col items-center py-12 lg:py-24 px-2`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Section Heading */}
       <RevealAnimation direction="up" delay={0.2}>
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-[#101424]">

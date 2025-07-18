@@ -1,0 +1,62 @@
+{
+  "en": {
+    "mainTitle": "Our Security Implementation Process",
+    "steps": [
+      {
+        "icon": "FaSearch",
+        "title": "Assessment",
+        "desc": "We conduct comprehensive security assessments to identify vulnerabilities and understand your current security posture."
+      },
+      {
+        "icon": "FaLightbulb",
+        "title": "Strategy",
+        "desc": "Develop a tailored security strategy that addresses your specific risks and compliance requirements."
+      },
+      {
+        "icon": "FaCogs",
+        "title": "Implementation",
+        "desc": "Deploy security solutions and establish security policies and procedures across your organization."
+      },
+      {
+        "icon": "FaRocket",
+        "title": "Monitoring",
+        "desc": "Implement continuous monitoring and threat detection systems to identify and respond to security incidents."
+      },
+      {
+        "icon": "FaHandsHelping",
+        "title": "Maintenance",
+        "desc": "Ongoing security updates, training, and optimization to maintain robust protection against evolving threats."
+      }
+    ]
+  },
+  "ar": {
+    "mainTitle": "عملية تنفيذ الأمان لدينا",
+    "steps": [
+      {
+        "icon": "FaSearch",
+        "title": "التقييم",
+        "desc": "نجري تقييمات أمنية شاملة لتحديد نقاط الضعف وفهم وضعك الأمني الحالي."
+      },
+      {
+        "icon": "FaLightbulb",
+        "title": "الاستراتيجية",
+        "desc": "تطوير استراتيجية أمان مخصصة تعالج مخاطرك المحددة ومتطلبات الامتثال."
+      },
+      {
+        "icon": "FaCogs",
+        "title": "التنفيذ",
+        "desc": "نشر حلول الأمان وإنشاء سياسات وإجراءات أمنية عبر مؤسستك."
+      },
+      {
+        "icon": "FaRocket",
+        "title": "المراقبة",
+        "desc": "تنفيذ أنظمة المراقبة المستمرة وكشف التهديدات لتحديد الحوادث الأمنية والاستجابة لها."
+      },
+      {
+        "icon": "FaHandsHelping",
+        "title": "الصيانة",
+        "desc": "تحديثات أمنية مستمرة وتدريب وتحسين للحفاظ على حماية قوية ضد التهديدات المتطورة."
+      }
+    ]
+  }
+} 

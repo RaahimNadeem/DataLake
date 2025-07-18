@@ -1,17 +1,7 @@
 import React from 'react';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    slogan: "Security is not a cost, it's an investment in your business future.",
-    subtitle: "Let us help you build a resilient security foundation for your digital transformation."
-  },
-  ar: {
-    slogan: "الأمن ليس تكلفة، بل هو استثمار في مستقبل عملك.",
-    subtitle: "دعنا نساعدك في بناء أساس أمني مرن لتحولك الرقمي."
-  }
-};
+import translations from '@/translations/Services/Cyber/cyberSlogan.json';
 
 const CyberSlogan = () => {
   const { language } = useLanguage();

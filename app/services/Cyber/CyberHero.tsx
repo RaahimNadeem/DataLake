@@ -4,22 +4,10 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
+import translations from '@/translations/Services/Cyber/cyberHero.json';
 
 const images = ['/services/Cyber.jpg', '/services/Cyber.jpg', '/services/Cyber.jpg'];
 const SLIDE_DURATION = 4000;
-
-const translations = {
-  en: {
-    title: "Cybersecurity Solutions for Digital Protection",
-    description: "Protect your digital assets with comprehensive cybersecurity solutions. We help you build robust defenses, detect threats, and respond to incidents with confidence.",
-    button: "Let's Talk"
-  },
-  ar: {
-    title: "حلول الأمن السيبراني للحماية الرقمية",
-    description: "قم بحماية أصولك الرقمية بحلول شاملة للأمن السيبراني. نحن نساعدك على بناء دفاعات قوية، واكتشاف التهديدات، والاستجابة للحوادث بثقة.",
-    button: "لنتحدث"
-  }
-};
 
 const CyberHero = () => {
   const [current, setCurrent] = useState(0);
@@ -55,7 +43,7 @@ const CyberHero = () => {
 
   return (
     <>
-      <section className={`relative w-full h-screen overflow-hidden flex items-center font-sans ${language === 'ar' ? 'font-arabic' : 'font-sans'}`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+      <section className={`relative w-full h-screen overflow-hidden flex items-center`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
         {/* Slideshow Background */}
         <div className="absolute top-0 left-0 w-full h-full">
         <Image
