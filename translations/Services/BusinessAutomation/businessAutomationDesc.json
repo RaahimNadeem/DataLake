@@ -1,0 +1,46 @@
+{
+  "en": {
+    "mainTitle": "Why Automate Your Business?",
+    "subtitle": "Unlock efficiency, accuracy, and growth.",
+    "points": [
+      {
+        "title": "Eliminate Manual Work",
+        "desc": "Automate repetitive tasks and processes to free up your team for strategic work. Reduce human error and increase consistency across all operations while saving time and resources."
+      },
+      {
+        "title": "Boost Productivity",
+        "desc": "Streamline workflows and eliminate bottlenecks with intelligent automation. Your team can focus on high-value activities while automated systems handle routine tasks efficiently."
+      },
+      {
+        "title": "Improve Accuracy",
+        "desc": "Reduce errors and ensure consistency with automated processes that follow predefined rules and workflows. Achieve higher quality outputs and better compliance."
+      },
+      {
+        "title": "Scale Operations",
+        "desc": "Handle increased workloads without proportional increases in staff or resources. Automation scales with your business, maintaining efficiency as you grow."
+      }
+    ]
+  },
+  "ar": {
+    "mainTitle": "لماذا تقوم بأتمتة أعمالك؟",
+    "subtitle": "أطلق العنان للكفاءة والدقة والنمو.",
+    "points": [
+      {
+        "title": "التخلص من العمل اليدوي",
+        "desc": "أتمتة المهام والعمليات المتكررة لتحرير فريقك للعمل الاستراتيجي. قلل من الخطأ البشري وزد من الاتساق عبر جميع العمليات مع توفير الوقت والموارد."
+      },
+      {
+        "title": "زيادة الإنتاجية",
+        "desc": "قم بتبسيط سير العمل والقضاء على الاختناقات باستخدام الأتمتة الذكية. يمكن لفريقك التركيز على الأنشطة عالية القيمة بينما تتعامل الأنظمة الآلية مع المهام الروتينية بكفاءة."
+      },
+      {
+        "title": "تحسين الدقة",
+        "desc": "قلل الأخطاء واضمن الاتساق مع العمليات الآلية التي تتبع قواعد وسير عمل محددة مسبقًا. حقق مخرجات عالية الجودة وامتثالًا أفضل."
+      },
+      {
+        "title": "توسيع نطاق العمليات",
+        "desc": "تعامل مع أعباء العمل المتزايدة دون زيادات متناسبة في الموظفين أو الموارد. تتوسع الأتمتة مع عملك ، مع الحفاظ على الكفاءة أثناء نموك."
+      }
+    ]
+  }
+} 

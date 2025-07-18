@@ -4,22 +4,10 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
+import translations from '@/translations/Services/BusinessAutomation/businessAutomationHero.json';
 
 const images = ['/services/BusinessAutomation.jpg', '/services/BusinessAutomation.jpg', '/services/BusinessAutomation.jpg'];
 const SLIDE_DURATION = 4000;
-
-const translations = {
-  en: {
-    title: "Business Automation for Operational Excellence",
-    description: "Streamline your operations and boost productivity with intelligent automation solutions. We help you eliminate manual processes, reduce errors, and focus on what matters most to your business.",
-    button: "Let's Talk"
-  },
-  ar: {
-    title: "أتمتة الأعمال للتميز التشغيلي",
-    description: "قم بتبسيط عملياتك وزيادة الإنتاجية من خلال حلول الأتمتة الذكية. نحن نساعدك على التخلص من العمليات اليدوية وتقليل الأخطاء والتركيز على الأمور الأكثر أهمية لعملك.",
-    button: "لنتحدث"
-  }
-};
 
 const BusinessAutomationHero = () => {
   const [current, setCurrent] = useState(0);
@@ -55,7 +43,7 @@ const BusinessAutomationHero = () => {
 
   return (
     <>
-      <section className={`relative w-full h-screen overflow-hidden flex items-center font-sans ${language === 'ar' ? 'font-arabic' : 'font-sans'}`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+      <section className={`relative w-full h-screen overflow-hidden flex items-center`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
         {/* Slideshow Background */}
         <div className="absolute top-0 left-0 w-full h-full">
         <Image

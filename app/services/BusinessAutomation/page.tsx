@@ -8,10 +8,13 @@ import BusinessAutomationWhyUS from "./BusinessAutomationWhyUS";
 import BusinessAutomationCTA from "./BusinessAutomationCTA";
 import BusinessAutomationProcess from "./BusinessAutomationProcess";
 import BusinessAutomationSlogan from "./BusinessAutomationSlogan";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function BusinessAutomationPage() {
+  const { language } = useLanguage();
+  
   return (
-    <>
+    <div className={language === 'ar' ? 'font-arabic' : 'font-sans'} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <Header />
       <BusinessAutomationHero />
       <BusinessAutomationDesc />
@@ -20,6 +23,6 @@ export default function BusinessAutomationPage() {
       {/* <BusinessAutomationProcess /> */}
       {/* <BusinessAutomationSlogan /> */}
       <Footer />
-    </>
+    </div>
   );
 } 

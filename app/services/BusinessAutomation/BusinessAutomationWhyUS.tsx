@@ -2,49 +2,7 @@ import React, { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    mainTitle: "Why Choose Datalake for Business Automation?",
-    slides: [
-      {
-        image: '/services/BusinessAutomation2.jpg',
-        title: 'Process Optimization Experts',
-        desc: 'Our team specializes in analyzing and optimizing business processes to identify automation opportunities that deliver maximum ROI and operational efficiency.'
-      },
-      {
-        image: '/services/BusinessAutomation2.jpg',
-        title: 'End-to-End Implementation',
-        desc: 'From process analysis to deployment and ongoing optimization, we handle every aspect of your automation journey with proven methodologies and best practices.'
-      },
-      {
-        image: '/services/BusinessAutomation2.jpg',
-        title: 'Technology Agnostic',
-        desc: 'We select the right automation tools and platforms for your specific needs, whether it is RPA, workflow automation, or custom integrations.'
-      }
-    ]
-  },
-  ar: {
-    mainTitle: "لماذا تختار Datalake لأتمتة الأعمال؟",
-    slides: [
-      {
-        image: '/services/BusinessAutomation2.jpg',
-        title: 'خبراء تحسين العمليات',
-        desc: 'يتخصص فريقنا في تحليل وتحسين عمليات الأعمال لتحديد فرص الأتمتة التي توفر أقصى عائد على الاستثمار والكفاءة التشغيلية.'
-      },
-      {
-        image: '/services/BusinessAutomation2.jpg',
-        title: 'تنفيذ شامل',
-        desc: 'من تحليل العمليات إلى النشر والتحسين المستمر، نتعامل مع كل جانب من رحلة الأتمتة الخاصة بك باستخدام منهجيات مثبتة وأفضل الممارسات.'
-      },
-      {
-        image: '/services/BusinessAutomation2.jpg',
-        title: 'محايدون تقنيًا',
-        desc: 'نختار أدوات ومنصات الأتمتة المناسبة لاحتياجاتك المحددة، سواء كانت RPA أو أتمتة سير العمل أو التكاملات المخصصة.'
-      }
-    ]
-  }
-};
+import translations from '@/translations/Services/BusinessAutomation/businessAutomationWhyUS.json';
 
 const BusinessAutomationWhyUS = () => {
   const [current, setCurrent] = useState(0);
@@ -56,7 +14,7 @@ const BusinessAutomationWhyUS = () => {
   const prevSlide = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className={`w-full flex flex-col items-center py-12 lg:py-24 px-2 ${language === 'ar' ? 'font-arabic' : 'font-sans'}`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section className={`w-full flex flex-col items-center py-12 lg:py-24 px-2`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Section Heading */}
       <RevealAnimation direction="up" delay={0.2}>
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-[#101424]">

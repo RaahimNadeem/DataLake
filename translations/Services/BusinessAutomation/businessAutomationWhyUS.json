@@ -1,0 +1,42 @@
+{
+  "en": {
+    "mainTitle": "Why Choose Datalake for Business Automation?",
+    "slides": [
+      {
+        "image": "/services/BusinessAutomation2.jpg",
+        "title": "Process Optimization Experts",
+        "desc": "Our team specializes in analyzing and optimizing business processes to identify automation opportunities that deliver maximum ROI and operational efficiency."
+      },
+      {
+        "image": "/services/BusinessAutomation2.jpg",
+        "title": "End-to-End Implementation",
+        "desc": "From process analysis to deployment and ongoing optimization, we handle every aspect of your automation journey with proven methodologies and best practices."
+      },
+      {
+        "image": "/services/BusinessAutomation2.jpg",
+        "title": "Technology Agnostic",
+        "desc": "We select the right automation tools and platforms for your specific needs, whether it is RPA, workflow automation, or custom integrations."
+      }
+    ]
+  },
+  "ar": {
+    "mainTitle": "لماذا تختار Datalake لأتمتة الأعمال؟",
+    "slides": [
+      {
+        "image": "/services/BusinessAutomation2.jpg",
+        "title": "خبراء تحسين العمليات",
+        "desc": "يتخصص فريقنا في تحليل وتحسين عمليات الأعمال لتحديد فرص الأتمتة التي توفر أقصى عائد على الاستثمار والكفاءة التشغيلية."
+      },
+      {
+        "image": "/services/BusinessAutomation2.jpg",
+        "title": "تنفيذ شامل",
+        "desc": "من تحليل العمليات إلى النشر والتحسين المستمر، نتعامل مع كل جانب من رحلة الأتمتة الخاصة بك باستخدام منهجيات مثبتة وأفضل الممارسات."
+      },
+      {
+        "image": "/services/BusinessAutomation2.jpg",
+        "title": "محايدون تقنيًا",
+        "desc": "نختار أدوات ومنصات الأتمتة المناسبة لاحتياجاتك المحددة، سواء كانت RPA أو أتمتة سير العمل أو التكاملات المخصصة."
+      }
+    ]
+  }
+} 

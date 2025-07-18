@@ -1,17 +1,7 @@
 import React from 'react';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const translations = {
-  en: {
-    slogan: "Automation is not about replacing people, it's about amplifying their potential.",
-    subtitle: "Let us help you unlock the full potential of your team through intelligent automation."
-  },
-  ar: {
-    slogan: "الأتمتة ليست حول استبدال الناس، بل حول تضخيم إمكاناتهم.",
-    subtitle: "دعنا نساعدك في إطلاق العنان للإمكانات الكاملة لفريقك من خلال الأتمتة الذكية."
-  }
-};
+import translations from '@/translations/Services/BusinessAutomation/businessAutomationSlogan.json';
 
 const BusinessAutomationSlogan = () => {
   const { language } = useLanguage();

@@ -2,68 +2,15 @@ import React from 'react';
 import { FaSearch, FaLightbulb, FaCogs, FaRocket, FaHandsHelping } from 'react-icons/fa';
 import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
+import translations from '@/translations/Services/BusinessAutomation/businessAutomationProcess.json';
 
-const translations = {
-  en: {
-    mainTitle: "Our Automation Journey",
-    steps: [
-      {
-        icon: FaSearch,
-        title: 'Discovery',
-        desc: 'We analyze your current processes to identify automation opportunities and prioritize based on impact and feasibility.'
-      },
-      {
-        icon: FaLightbulb,
-        title: 'Design',
-        desc: 'We design automated workflows and select the right technologies to optimize your specific business processes.'
-      },
-      {
-        icon: FaCogs,
-        title: 'Development',
-        desc: 'Our experts build and configure automation solutions, ensuring seamless integration with your existing systems.'
-      },
-      {
-        icon: FaRocket,
-        title: 'Deployment',
-        desc: 'We implement automation solutions with minimal disruption, providing training and support for your team.'
-      },
-      {
-        icon: FaHandsHelping,
-        title: 'Optimization',
-        desc: 'Ongoing monitoring and refinement to ensure your automation continues to deliver maximum value and efficiency.'
-      }
-    ]
-  },
-  ar: {
-    mainTitle: "رحلة الأتمتة لدينا",
-    steps: [
-      {
-        icon: FaSearch,
-        title: 'الاكتشاف',
-        desc: 'نحلل عملياتك الحالية لتحديد فرص الأتمتة وتحديد الأولويات بناءً على التأثير والجدوى.'
-      },
-      {
-        icon: FaLightbulb,
-        title: 'التصميم',
-        desc: 'نصمم سير العمل الآلي ونختار التقنيات المناسبة لتحسين عمليات أعمالك المحددة.'
-      },
-      {
-        icon: FaCogs,
-        title: 'التطوير',
-        desc: 'يقوم خبراؤنا ببناء وتكوين حلول الأتمتة، مما يضمن التكامل السلس مع أنظمتك الموجودة.'
-      },
-      {
-        icon: FaRocket,
-        title: 'النشر',
-        desc: 'ننفذ حلول الأتمتة بأقل قدر من الاضطراب، ونقدم التدريب والدعم لفريقك.'
-      },
-      {
-        icon: FaHandsHelping,
-        title: 'التحسين',
-        desc: 'مراقبة وتحسين مستمر لضمان استمرار أتمتتك في تقديم أقصى قيمة وكفاءة.'
-      }
-    ]
-  }
+// Define icons mapping
+const icons = {
+  FaSearch,
+  FaLightbulb,
+  FaCogs,
+  FaRocket,
+  FaHandsHelping
 };
 
 const BusinessAutomationProcess = () => {
@@ -92,7 +39,7 @@ const BusinessAutomationProcess = () => {
               <div className={`relative flex items-center ${idx % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`} style={{ minWidth: 0 }}>
                 {/* Icon in circle */}
                 <div className="flex-shrink-0 w-16 h-16 rounded-full bg-white shadow-lg flex items-center justify-center border-4 border-blue-200 z-10">
-                  {React.createElement(step.icon, { size: 24, className: "text-blue-700" })}
+                  {React.createElement(icons[step.icon as keyof typeof icons], { size: 24, className: "text-blue-700" })}
                 </div>
                 {/* Connecting arrow */}
                 {idx < steps.length - 1 && (
