@@ -1,14 +1,15 @@
 {
   "en": {
     "subtitle": "OUR MISSION",
-    "title": "Helping Organizations Achieve Their Ambitions",
-    "description": "Our mission is to help organizations achieve their ambitions through comprehensive expertise in data strategy, digital infrastructure, and technological innovation.",
-    "description2": "We support clients in realizing their digital and technological projects with cutting-edge solutions that drive measurable business outcomes."
+    "title": "Empowering Saudi Enterprises with Global Expertise",
+    "description": "We bring French strategic and technical expertise, aligned with deep local market understanding—to help our partners in Saudi Arabia achieve their goals with confidence and clarity.",
+      "description2": "By operating locally in the Kingdom, we contribute to Vision 2030 with smart, impactful digital solutions."
   },
   "ar": {
-    "subtitle": "مهمتنا",
-    "title": "مساعدة المؤسسات على تحقيق طموحاتها",
-    "description": "مهمتنا هي مساعدة المؤسسات على تحقيق طموحاتها من خلال خبرة شاملة في استراتيجية البيانات والبنية التحتية الرقمية والابتكار التكنولوجي.",
-    "description2": "ندعم العملاء في تحقيق مشاريعهم الرقمية والتكنولوجية من خلال حلول متطورة تدفع النتائج التجارية القابلة للقياس."
+  "subtitle": "رسالتنا",
+      "title": "نمكّن المؤسسات من تحقيق طموحاتها",
+      "description": "رسالتنا هي مساعدة المؤسسات في المملكة والعالم على تحقيق أهدافها من خلال خبرة شاملة في استراتيجية البيانات والبنية الرقمية والابتكار التقني.",
+      "description2": "نجمع بين أفضل الممارسات العالمية والفهم العميق للسوق المحلي لتقديم حلول تحقق نتائج ملموسة وتدعم التحول الرقمي في المملكة."
+   
   }
 } 
