@@ -25,9 +25,9 @@ import aboutUsLandingTranslations from '@/translations/LandingPage/aboutUsLandin
   const renderHeading = (text: string) => {
     if (language === 'en') {
       return text.split(' ').map((word, index) => {
-        if (word === 'Innovation') {
+        if (word === 'French') {
           return <span key={index} style={{ color: '#2254a0' }}>{word} </span>;
-        } else if (word === 'Excellence') {
+        } else if ((word === 'Saudi') || (word === 'Arabia'))  {
           return <span key={index} style={{ color: '#e08d37' }}>{word} </span>;
         }
         return word + (index < text.split(' ').length - 1 ? ' ' : '');
@@ -37,9 +37,9 @@ import aboutUsLandingTranslations from '@/translations/LandingPage/aboutUsLandin
       const words = text.split(' ');
       return words.map((word, index) => {
         // Check if the word contains the target Arabic words
-        if (word.includes('الابتكار')) {
+        if (word.includes('الخبرة') || (word.includes('العالمية'))) {
           return <span key={index} style={{ color: '#2254a0' }}>{word} </span>;
-        } else if (word.includes('التميز')) {
+        } else if (word.includes('الطموح') || (word.includes('السعودي'))) {
           return <span key={index} style={{ color: '#e08d37' }}>{word} </span>;
         }
         return word + (index < words.length - 1 ? ' ' : '');
