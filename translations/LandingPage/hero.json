@@ -1,14 +1,14 @@
 {
   "en": {
     "heading": ["Data Analytics for Modern Enterprises"],
-    "description": "We proudly architect, analyze, and deliver enterprise-grade data solutions for innovators and industry leaders across every sector.",
-    "cta": "Get in Touch",
+    "description": "We deliver advanced data solutions that blend French innovation with deep understanding of the Saudi market—empowering your business to move forward with confidence.",
+    "cta": "Start with us today",
     "scrollText": "Scroll below to explore"
   },
   "ar": {
-    "heading": ["تحليلات البيانات للمؤسسات الحديثة"],
-    "description": "نحن نقوم بتصميم وتحليل وتقديم حلول بيانات على مستوى المؤسسات للمبتكرين وقادة الصناعة في جميع القطاعات.",
-    "cta": "تواصل معنا",
-    "scrollText": "مرر للأسفل لاستكشاف"
+    "heading": ["خبرة عالمية بلمسة محلية\nحلول بيانات متقدمة للشركات السعودية"],
+      "description": "نجمع بين التميز الفرنسي في التقنية والفهم العميق للسوق السعودي. نقدم حلول بيانات على مستوى عالمي لقادة الأعمال في المملكة.",
+      "cta": "ابدأ رحلتك معنا",
+      "scrollText": "اكتشف المزيد"
   }
 } 
