@@ -21,20 +21,20 @@
     ],
     "benefits": [
       {
-        "title": "Global Collaboration",
-        "description": "Work with diverse international teams on cutting-edge projects"
+        "title": "AI-First Mentality",
+        "description": "Every project starts with 'How can AI solve this?' - not as an afterthought"
       },
       {
-        "title": "Cultural Diversity",
-        "description": "Experience different business cultures and perspectives"
+        "title": "Real Impact, Real Fast",
+        "description": "See your code in production within weeks, not months. No endless meetings"
       },
       {
-        "title": "Worldwide Projects",
-        "description": "Access to global project opportunities and client networks"
+        "title": "Learn from the Best",
+        "description": "Work alongside engineers who've built systems for world's leading companies"
       },
       {
-        "title": "Cross-Border Growth",
-        "description": "Develop skills through international collaboration and mentorship"
+        "title": "Build the Future",
+        "description": "We're not just using AI tools - we're creating the next generation of them"
       }
     ]
   },
@@ -56,6 +56,24 @@
       {
         "number": "2017",
         "label": "سنة التأسيس"
+      }
+    ],
+    "benefits": [
+      {
+        "title": "عقلية الذكاء الاصطناعي أولاً",
+        "description": "كل مشروع يبدأ بـ 'كيف يمكن للذكاء الاصطناعي حل هذا؟' - وليس كفكرة لاحقة"
+      },
+      {
+        "title": "تأثير حقيقي وسريع",
+        "description": "شاهد كودك في الإنتاج خلال أسابيع، وليس أشهر. بدون اجتماعات لا تنتهي"
+      },
+      {
+        "title": "تعلم من الأفضل",
+        "description": "اعمل مع مهندسين بنوا أنظمة لأكبر الشركات العالمية"
+      },
+      {
+        "title": "ابن المستقبل",
+        "description": "نحن لا نستخدم أدوات الذكاء الاصطناعي فقط - نحن نبتكر الجيل القادم منها"
       }
     ]
   }
