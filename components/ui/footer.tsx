@@ -78,7 +78,7 @@ const Footer = () => {
           <div className="mt-6 text-sm text-gray-400">
             <span className="block">DataLake AI Solutions</span>
             <span className="block">{currentLang.address}</span>
-            <span className="block">{currentLang.email} <a href="mailto:hello@datalake.com" className="underline hover:text-white">hello@datalake.com</a></span>
+            <span className="block">{currentLang.email} <a href="mailto:HR@datalake.sa" className="underline hover:text-white">HR@datalake.sa</a></span>
           </div>
         </motion.div>
 
@@ -157,30 +157,11 @@ const Footer = () => {
         >
           <FaLinkedin size={24} />
         </motion.a>
+       
         <motion.a 
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          href="https://twitter.com/datalakeai" 
-          target="_blank" rel="noopener noreferrer"
-          className="text-gray-400 hover:text-white transition-colors duration-300"
-          aria-label="Twitter"
-        >
-          <FaTwitter size={24} />
-        </motion.a>
-        <motion.a 
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          href="https://github.com/datalake-ai" 
-          target="_blank" rel="noopener noreferrer"
-          className="text-gray-400 hover:text-white transition-colors duration-300"
-          aria-label="GitHub"
-        >
-          <FaGithub size={24} />
-        </motion.a>
-        <motion.a 
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          href="mailto:hello@datalake.com" 
+          href="mailto:HR@datalake.sa" 
           className="text-gray-400 hover:text-white transition-colors duration-300"
           aria-label="Email"
         >
