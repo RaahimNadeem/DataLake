@@ -32,7 +32,7 @@ const AIHero = () => {
         {/* Content */}
         <div className={`relative z-20 flex flex-col items-start justify-center h-full pl-4 pr-4 md:px-24 max-w-full md:max-w-4xl w-full ${language === 'ar' ? 'text-right' : 'text-left'}`}>
           <RevealAnimation direction="up" delay={0.2}>
-            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-4 sm:mb-6 whitespace-pre-line">
+            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight py-4 sm:py-6 whitespace-pre-line">
               {currentLang.title}
             </h1>
           </RevealAnimation>
