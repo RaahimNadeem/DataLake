@@ -3,33 +3,41 @@ import jobsData from '../data/jobs.json';
 export interface Job {
   id: string;
   title: string;
-  location: string;
   type: string;
   team: string;
   description: string;
   requirements: string[];
   isActive: boolean;
-  link: string;
 }
 
-export function getJobs(): Job[] {
+// Function to fetch jobs from Airtable API
+export async function getJobsFromAPI(language: string = 'English'): Promise<Job[]> {
+  try {
+    const response = await fetch(`/api/jobs?language=${language}`);
+    const data = await response.json();
+    return data.jobs || [];
+  } catch (error) {
+    console.error('Error fetching jobs from API:', error);
+    // Fallback to local data
+    return getJobsFromLocal();
+  }
+}
+
+// Fallback to local JSON data
+export function getJobsFromLocal(): Job[] {
   return jobsData.jobs.filter(job => job.isActive);
+}
+
+// Keep existing function for backward compatibility
+export function getJobs(): Job[] {
+  return getJobsFromLocal();
 }
 
 export function getJobsByTeam(team: string): Job[] {
   return getJobs().filter(job => job.team === team);
 }
 
-export function getJobsByLocation(location: string): Job[] {
-  return getJobs().filter(job => job.location === location);
-}
-
 export function getUniqueTeams(): string[] {
   const teams = getJobs().map(job => job.team);
   return [...new Set(teams)];
-}
-
-export function getUniqueLocations(): string[] {
-  const locations = getJobs().map(job => job.location);
-  return [...new Set(locations)];
 } 
