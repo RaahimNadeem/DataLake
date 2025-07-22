@@ -136,7 +136,7 @@ const Hero = () => {
         {/* Content */}
         <motion.div
           style={{ opacity, scale: contentScale }}
-          className={`relative z-20 flex flex-col items-${language === 'ar' ? 'end' : 'start'} justify-center h-full px-4 md:px-24 max-w-full md:max-w-4xl w-full`}
+          className={`relative z-20 flex flex-col items-${language === 'ar' ? 'end' : 'start'} justify-center h-full px-4 md:px-24 max-w-full md:max-w-[65rem] w-full`}
         >
           <motion.h1
             className={`text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-4 sm:mb-6 break-words flex flex-wrap ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
