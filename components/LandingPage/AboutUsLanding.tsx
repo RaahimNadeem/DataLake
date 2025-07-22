@@ -98,7 +98,7 @@ import aboutUsLandingTranslations from '@/translations/LandingPage/aboutUsLandin
         </motion.div>
       </div>
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 mt-16 md:mt-16">
         <div className="relative">
           <div className="flex animate-scroll">
             {/* First set of images */}
