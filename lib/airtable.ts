@@ -29,6 +29,27 @@ function checkRateLimit(): boolean {
   return true;
 }
 
+// Log data processing activity
+const logDataActivity = async (activity: {
+  type: string;
+  description: string;
+  dataType?: string;
+  legalBasis?: string;
+  consent?: boolean;
+}) => {
+  try {
+    await fetch('/api/data-logs', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(activity),
+    });
+  } catch (error) {
+    console.error('Failed to log data activity:', error);
+  }
+};
+
 export interface AirtableJob {
   id: string;
   title: string;
@@ -52,7 +73,7 @@ export async function getJobsFromAirtable(language: string = 'English'): Promise
       sort: [{ field: 'Title', direction: 'asc' }]
     }).firstPage();
 
-    return records.map(record => ({
+    const jobs = records.map(record => ({
       id: record.id,
       title: record.get('Title') as string || '',
       description: record.get('Description') as string || '',
@@ -62,8 +83,28 @@ export async function getJobsFromAirtable(language: string = 'English'): Promise
       active: record.get('Active') as boolean || false,
       language: record.get('Language') as string || 'English'
     }));
+
+    // Log data processing activity
+    await logDataActivity({
+      type: 'JOB_LISTINGS_FETCH',
+      description: `Fetched ${jobs.length} job listings for language: ${language}`,
+      dataType: 'Job listings',
+      legalBasis: 'Legitimate interest (service provision)',
+      consent: false
+    });
+
+    return jobs;
   } catch (error: any) {
     console.error('Error fetching jobs from Airtable:', error);
+    
+    // Log error
+    await logDataActivity({
+      type: 'JOB_LISTINGS_ERROR',
+      description: `Error fetching job listings: ${error.message}`,
+      dataType: 'Job listings',
+      legalBasis: 'Legitimate interest (service provision)',
+      consent: false
+    });
     
     // Handle specific Airtable errors
     if (error.statusCode === 429) {

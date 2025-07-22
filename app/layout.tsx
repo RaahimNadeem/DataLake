@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import { LanguageProvider } from '@/contexts/LanguageContext'
 import { FontProvider } from '@/components/FontProvider'
+import CookieBanner from '@/components/ui/CookieBanner'
 
 const inter = Inter({
   subsets: ["latin"],
@@ -52,6 +53,7 @@ export default function RootLayout({
           <FontProvider className="min-h-screen">
             <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
               {children}
+              <CookieBanner />
             </ThemeProvider>
           </FontProvider>
         </LanguageProvider>
