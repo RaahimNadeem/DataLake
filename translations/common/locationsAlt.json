@@ -1,24 +1,24 @@
 {
   "en": {
-    "subtitle": "OUR LOCATIONS",
-    "title": "4 Countries, 1 Vision",
-    "description": "Our company operates across four strategic countries, building connections that span continents and cultures:",
-    "countries": [
-      { "name": "Saudi Arabia" },
-      { "name": "France" },
-      { "name": "Morocco" },
-      { "name": "Tunisia" }
-    ]
+    "subtitle": "Global Presence",
+      "title": "Operating in 4 Countries, Sharing One Vision",
+      "description": "From Paris to Riyadh, we build bridges of innovation across four strategic locations—uniting diversity and expertise:",
+      "countries": [
+        { "name": "Saudi Arabia" },
+        { "name": "France" },
+        { "name": "Morocco" },
+        { "name": "Tunisia" }
+      ]
   },
   "ar": {
-    "subtitle": "مواقعنا",
-    "title": "أربع دول، رؤية واحدة",
-    "description": "تعمل شركتنا في أربع دول استراتيجية، وتبني روابط تمتد عبر القارات والثقافات:",
-    "countries": [
-      { "name": "المملكة العربية السعودية" },
-      { "name": "فرنسا" },
-      { "name": "المغرب" },
-      { "name": "تونس" }
-    ]
+    "subtitle": "تواجدنا العالمي",
+      "title": "4 دول، رؤية واحدة",
+      "description": "من مقرنا الرئيسي في فرنسا، نعمل عبر أربع دول استراتيجية، نبني جسور المعرفة والخبرة عبر القارات:",
+      "countries": [
+        { "name": "فرنسا (المقر الرئيسي)" },
+        { "name": "المملكة العربية السعودية" },
+        { "name": "المغرب" },
+        { "name": "تونس" }
+      ]
   }
 } 

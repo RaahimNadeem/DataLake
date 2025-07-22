@@ -231,7 +231,22 @@ const LocationsAlt = () => {
             {currentLang.subtitle}
           </div>
           <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 leading-tight ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-            {currentLang.title}
+            {language === 'en' ? (
+              <>
+                Operating in{' '}
+                <span style={{ color: '#2254a0' }}>4 Countries</span>
+                , Sharing{' '}
+                <span style={{ color: '#e08d37' }}>One Vision</span>
+              </>
+            ) : language === 'ar' ? (
+              <>
+                <span style={{ color: '#2254a0' }}>4 دول</span>
+                ،{' '}
+                <span style={{ color: '#e08d37' }}>رؤية واحدة</span>
+              </>
+            ) : (
+              currentLang.title
+            )}
           </h1>
           <p className={`text-lg text-gray-700 max-w-xl ${language === 'ar' ? 'text-right' : 'text-left'}`}>
             {currentLang.description}
