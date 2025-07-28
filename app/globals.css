@@ -2,18 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import NotoSansArabic font */
+/* Import IBM Plex Sans Arabic font */
 @font-face {
-  font-family: 'NotoSansArabic';
-  src: url('/NotoSansArabic-VariableFont_wdth,wght.ttf') format('truetype');
-  font-weight: 100 900;
+  font-family: 'IBMPlexSansArabic';
+  src: url('/IBMPlexSansArabic-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 700;
   font-style: normal;
   font-display: swap;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap');
-.noto-kufi-arabic {
-  font-family: 'Noto Kufi Arabic', sans-serif !important;
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
+
+.ibm-plex-sans-arabic {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -82,7 +83,7 @@
 
   /* Global font application based on language */
   html[data-lang="ar"] {
-    font-family: var(--font-arabic), 'Noto Sans Arabic', Arial, sans-serif !important;
+    font-family: var(--font-arabic), 'IBM Plex Sans Arabic', Arial, sans-serif !important;
   }
 
   html[data-lang="en"] {
@@ -91,7 +92,7 @@
 
   /* Alternative approach using body class */
   body[data-lang="ar"] {
-    font-family: var(--font-arabic), 'Noto Sans Arabic', Arial, sans-serif !important;
+    font-family: var(--font-arabic), 'IBM Plex Sans Arabic', Arial, sans-serif !important;
   }
 
   body[data-lang="en"] {
@@ -100,7 +101,7 @@
 
   /* RTL Support and Arabic Font */
   [dir="rtl"] {
-    font-family: 'NotoSansArabic', var(--font-sans), system-ui, sans-serif;
+    font-family: 'IBM Plex Sans Arabic', var(--font-sans), system-ui, sans-serif;
   }
 
   [dir="rtl"] * {
@@ -109,7 +110,7 @@
 
   /* Arabic font utility class */
   .font-arabic {
-    font-family: 'NotoSansArabic', var(--font-sans), system-ui, sans-serif;
+    font-family: 'IBM Plex Sans Arabic', var(--font-sans), system-ui, sans-serif;
   }
 }
 
@@ -185,4 +186,27 @@ select:focus {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* Arabic text specific fixes */
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 {
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+
+[dir="rtl"] p {
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+}
+
+.font-arabic {
+  font-family: 'IBM Plex Sans Arabic', var(--font-sans), system-ui, sans-serif;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+
+/* Fix for colored text spans in Arabic */
+[dir="rtl"] span {
+  display: inline;
+  vertical-align: baseline;
 }

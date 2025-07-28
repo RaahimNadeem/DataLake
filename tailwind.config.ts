@@ -21,7 +21,7 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)", 'Helvetica', 'Arial', 'sans-serif'],
         serif: ["var(--font-serif)"],
-        arabic: ["var(--font-arabic)", 'Noto Sans Arabic', 'Arial', 'sans-serif'],
+        arabic: ["var(--font-arabic)", 'IBM Plex Sans Arabic', 'Arial', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

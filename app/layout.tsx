@@ -1,7 +1,7 @@
 import type React from "react"
 import "./globals.css"
 import type { Metadata } from "next"
-import { Georama as Georgia, Inter, Noto_Kufi_Arabic, Noto_Sans_Arabic } from "next/font/google"
+import { Georama as Georgia, Inter, IBM_Plex_Sans_Arabic } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import { LanguageProvider } from '@/contexts/LanguageContext'
@@ -20,8 +20,8 @@ const georgia = Georgia({
   subsets: ["latin"],
 })
 
-const notoSansArabic = Noto_Sans_Arabic({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
   subsets: ["arabic"],
   variable: "--font-arabic",
 })
@@ -48,7 +48,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/Logo.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/Logo.svg" />
       </head>
-      <body className={cn("min-h-screen font-sans antialiased", inter.variable, georgia.variable, notoSansArabic.variable)}>
+      <body className={cn("min-h-screen font-sans antialiased", inter.variable, georgia.variable, ibmPlexSansArabic.variable)}>
         <LanguageProvider>
           <FontProvider className="min-h-screen">
             <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
