@@ -1,14 +1,15 @@
 import type React from "react"
 import "./globals.css"
 import type { Metadata } from "next"
-import { Georama as Georgia, Inter, IBM_Plex_Sans_Arabic } from "next/font/google"
+import { Georama as Georgia, Roboto, IBM_Plex_Sans_Arabic } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import { LanguageProvider } from '@/contexts/LanguageContext'
 import { FontProvider } from '@/components/FontProvider'
 import CookieBanner from '@/components/ui/CookieBanner'
 
-const inter = Inter({
+const roboto = Roboto({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
   variable: "--font-sans",
 })
@@ -48,7 +49,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/Logo.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/Logo.svg" />
       </head>
-      <body className={cn("min-h-screen font-sans antialiased", inter.variable, georgia.variable, ibmPlexSansArabic.variable)}>
+      <body className={cn("min-h-screen font-sans antialiased", roboto.variable, georgia.variable, ibmPlexSansArabic.variable)}>
         <LanguageProvider>
           <FontProvider className="min-h-screen">
             <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>

@@ -87,7 +87,7 @@
   }
 
   html[data-lang="en"] {
-    font-family: var(--font-sans), Helvetica, Arial, sans-serif !important;
+    font-family: var(--font-sans), 'Roboto', Arial, sans-serif !important;
   }
 
   /* Alternative approach using body class */
@@ -96,7 +96,7 @@
   }
 
   body[data-lang="en"] {
-    font-family: var(--font-sans), Helvetica, Arial, sans-serif !important;
+    font-family: var(--font-sans), 'Roboto', Arial, sans-serif !important;
   }
 
   /* RTL Support and Arabic Font */

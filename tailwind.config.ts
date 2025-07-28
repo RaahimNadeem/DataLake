@@ -19,7 +19,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", 'Helvetica', 'Arial', 'sans-serif'],
+        sans: ["var(--font-sans)", 'Roboto', 'Arial', 'sans-serif'],
         serif: ["var(--font-serif)"],
         arabic: ["var(--font-arabic)", 'IBM Plex Sans Arabic', 'Arial', 'sans-serif'],
       },
