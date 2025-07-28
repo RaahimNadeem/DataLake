@@ -133,13 +133,13 @@ const Hero = () => {
           style={{ scale: backgroundScale, borderRadius }}
         />
         
-        {/* Content */}
+        {/* Content - Perfectly centered vertically, horizontal alignment preserved */}
         <motion.div
           style={{ opacity, scale: contentScale }}
           className={`relative z-20 flex flex-col items-${language === 'ar' ? 'end' : 'start'} justify-center h-full px-4 md:px-24 max-w-full md:max-w-[65rem] w-full`}
         >
           <motion.h1
-            className={`text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-4 sm:mb-6 break-words flex flex-wrap ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
+            className={`text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 break-words flex flex-wrap ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
             initial="hidden"
             animate={heroVisible ? "visible" : "hidden"}
             variants={{
@@ -180,7 +180,7 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Scroll below message */}
+        {/* Scroll below message - Absolutely positioned, doesn't affect centering */}
         <motion.div
           style={{ opacity }}
           className={`absolute bottom-16 z-20 px-4 md:px-24 ${language === 'ar' ? 'left-0' : 'right-0'}`}
