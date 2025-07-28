@@ -9,7 +9,7 @@ import { FontProvider } from '@/components/FontProvider'
 import CookieBanner from '@/components/ui/CookieBanner'
 
 const roboto = Roboto({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["100", "300", "400", "500", "700", "900"],
   subsets: ["latin"],
   variable: "--font-sans",
 })
@@ -43,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/Logo.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/Logo.svg" type="image/svg+xml" />
