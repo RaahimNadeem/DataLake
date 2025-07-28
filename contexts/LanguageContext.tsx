@@ -59,6 +59,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   // Load language preference and cookie settings from localStorage on mount
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+
     const savedLanguage = localStorage.getItem('datalake-language');
     if (savedLanguage === 'ar' || savedLanguage === 'en') {
       setLanguage(savedLanguage);
@@ -93,7 +96,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const newLanguage = language === 'en' ? 'ar' : 'en';
     setLanguage(newLanguage);
     // Save to localStorage if functional cookies are accepted
-    if (cookiePreferences.functional) {
+    if (cookiePreferences.functional && typeof window !== 'undefined') {
       localStorage.setItem('datalake-language', newLanguage);
       
       // Log language preference change
@@ -110,7 +113,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const handleSetCookieConsent = (consent: boolean) => {
     setCookieConsent(consent);
     setShowCookieBanner(false);
-    localStorage.setItem('datalake-cookie-consent', consent.toString());
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('datalake-cookie-consent', consent.toString());
+    }
     
     // Log cookie consent decision
     logDataActivity({
@@ -122,7 +127,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     });
     
     // If consent is given, save current language preference
-    if (consent) {
+    if (consent && typeof window !== 'undefined') {
       localStorage.setItem('datalake-language', language);
       
       // Log initial language preference
@@ -145,13 +150,17 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     setCookiePreferencesState(preferences);
     
     // Save preferences to localStorage
-    localStorage.setItem('datalake-cookie-preferences', JSON.stringify(preferences));
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('datalake-cookie-preferences', JSON.stringify(preferences));
+    }
     
     // Set consent based on essential cookies (always required)
     const hasConsent = preferences.essential;
     setCookieConsent(hasConsent);
     setShowCookieBanner(false);
-    localStorage.setItem('datalake-cookie-consent', hasConsent.toString());
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('datalake-cookie-consent', hasConsent.toString());
+    }
     
     // Log detailed cookie preferences
     logDataActivity({
@@ -163,7 +172,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     });
     
     // Save language preference if functional cookies are accepted
-    if (preferences.functional) {
+    if (preferences.functional && typeof window !== 'undefined') {
       localStorage.setItem('datalake-language', language);
     }
   };

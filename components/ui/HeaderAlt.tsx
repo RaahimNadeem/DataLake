@@ -55,6 +55,9 @@ const HeaderAlt = () => {
   const currentLang = translations[language];
 
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       const heroHeight = window.innerHeight; // Approximate hero height

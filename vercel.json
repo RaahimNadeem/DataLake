@@ -1,0 +1,13 @@
+{
+  "buildCommand": "pnpm build",
+  "installCommand": "pnpm install",
+  "framework": "nextjs",
+  "functions": {
+    "app/not-found.tsx": {
+      "maxDuration": 10
+    },
+    "app/global-error.tsx": {
+      "maxDuration": 10
+    }
+  }
+} 

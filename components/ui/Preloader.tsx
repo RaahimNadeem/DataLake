@@ -25,6 +25,9 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   const [loadingText, setLoadingText] = useState(currentLang.loading);
 
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+
     // Simulate loading progress
     const interval = setInterval(() => {
       setProgress(prev => {

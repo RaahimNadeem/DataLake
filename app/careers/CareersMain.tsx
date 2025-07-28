@@ -43,6 +43,8 @@ const Careers = () => {
 
   // Scroll to JobListings section
   const scrollToJobListings = () => {
+    if (typeof window === 'undefined') return;
+    
     const jobListingsSection = document.querySelector('[data-section="job-listings"]');
     if (jobListingsSection) {
       jobListingsSection.scrollIntoView({ behavior: 'smooth' });
