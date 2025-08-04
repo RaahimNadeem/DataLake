@@ -46,7 +46,7 @@ const CloudWhyUS = () => {
                 className="w-10 h-10 rounded-full bg-[#eaf1f7] text-[#4a6d8c] flex items-center justify-center text-2xl font-bold hover:bg-[#dbeafe] transition"
                 aria-label={language === 'ar' ? 'الشريحة السابقة' : 'Previous slide'}
               >
-                &#8592;
+                {language === 'ar' ? '→' : '←'}
               </button>
               <div className="flex gap-2">
                 {slides.map((_, idx) => (
@@ -65,7 +65,7 @@ const CloudWhyUS = () => {
                 className="w-10 h-10 rounded-full bg-[#eaf1f7] text-[#4a6d8c] flex items-center justify-center text-2xl font-bold hover:bg-[#dbeafe] transition"
                 aria-label={language === 'ar' ? 'الشريحة التالية' : 'Next slide'}
               >
-                &#8594;
+                {language === 'ar' ? '←' : '→'}
               </button>
             </div>
           </div>
