@@ -36,14 +36,14 @@
     "servicesWeOffer": "Services We Offer",
     "faq": {
       "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know about working with DataLake",
+      "subtitle": "Everything you need to know about working with Datalake",
       "items": [
         {
-          "question": "What services does DataLake offer?",
+          "question": "What services does Datalake offer?",
           "answer": "We offer comprehensive digital solutions including AI, Cloud Services, Business Automation, Cybersecurity, Data Analytics, Digital Business & Products, and Sustainability services."
         },
         {
-          "question": "How can I get started with DataLake?",
+          "question": "How can I get started with Datalake?",
           "answer": "Simply reach out to us via email or phone, and our team will schedule a consultation to understand your needs and provide tailored solutions."
         },
         {
@@ -102,14 +102,14 @@
     "servicesWeOffer": "الخدمات التي نقدمها",
     "faq": {
       "title": "الأسئلة الشائعة",
-      "subtitle": "كل ما تحتاج لمعرفته حول العمل مع DataLake",
+      "subtitle": "كل ما تحتاج لمعرفته حول العمل مع Datalake",
       "items": [
         {
-          "question": "ما هي الخدمات التي تقدمها DataLake؟",
+          "question": "ما هي الخدمات التي تقدمها Datalake؟",
           "answer": "نقدم حلول رقمية شاملة تشمل الذكاء الاصطناعي، خدمات السحابة، أتمتة الأعمال، الأمن السيبراني، تحليل البيانات، الأعمال الرقمية والمنتجات، وخدمات الاستدامة."
         },
         {
-          "question": "كيف يمكنني البدء مع DataLake؟",
+          "question": "كيف يمكنني البدء مع Datalake؟",
           "answer": "ما عليك سوى التواصل معنا عبر البريد الإلكتروني أو الهاتف، وسيقوم فريقنا بجدولة استشارة لفهم احتياجاتك وتقديم حلول مخصصة."
         },
         {

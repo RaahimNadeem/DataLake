@@ -155,7 +155,7 @@ const Contact = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="DataLake Location"
+                  title="Datalake Location"
                 ></iframe>
               </div>
               

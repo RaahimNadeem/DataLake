@@ -15,7 +15,7 @@ const PrivacyPolicy = () => {
       version: "Version 2.1",
       compliance: "Designed to comply with: GDPR, ISO 27001, Saudi Data Protection Law, NCA Regulations",
       
-      intro: "DataLake AI Solutions ('we', 'our', 'us', or 'DataLake') is committed to protecting your privacy and ensuring the security of your personal data in accordance with international standards and Saudi Arabian regulations. This comprehensive Privacy Policy outlines our data protection practices, your rights, and our commitment to compliance with ISO 27001, GDPR, and the Saudi Data Protection Law.",
+      intro: "Datalake ('we', 'our', 'us', or 'Datalake') is committed to protecting your privacy and ensuring the security of your personal data in accordance with international standards and Saudi Arabian regulations. This comprehensive Privacy Policy outlines our data protection practices, your rights, and our commitment to compliance with ISO 27001, GDPR, and the Saudi Data Protection Law.",
       
       sections: [
         {
@@ -24,7 +24,7 @@ const PrivacyPolicy = () => {
         },
         {
           title: "2. Data Controller Information",
-          content: "DataLake AI Solutions is the data controller responsible for processing your personal data. Our registered address is in Saudi Arabia, and we maintain appropriate data protection officer (DPO) oversight. For data protection inquiries, contact our DPO at dpo@datalake.sa"
+          content: "Datalake is the data controller responsible for processing your personal data. Our registered address is in Saudi Arabia, and we maintain appropriate data protection officer (DPO) oversight. For data protection inquiries, contact our DPO at dpo@datalake.sa"
         },
         {
           title: "3. Categories of Personal Data We Process",
@@ -98,7 +98,7 @@ const PrivacyPolicy = () => {
       version: "الإصدار 2.1",
       compliance: "مصمم للامتثال لـ: GDPR، ISO 27001، قانون حماية البيانات السعودي، لوائح الهيئة الوطنية للأمن السيبراني",
       
-      intro: "تلتزم DataLake AI Solutions ('نحن' أو 'لنا' أو 'DataLake') بحماية خصوصيتك وضمان أمان بياناتك الشخصية وفقًا للمعايير الدولية واللوائح السعودية. توضح سياسة الخصوصية الشاملة هذه ممارسات حماية البيانات وحقوقك والتزامنا بالامتثال لـ ISO 27001 و GDPR وقانون حماية البيانات السعودي.",
+      intro: "تلتزم Datalake ('نحن' أو 'لنا' أو 'Datalake') بحماية خصوصيتك وضمان أمان بياناتك الشخصية وفقًا للمعايير الدولية واللوائح السعودية. توضح سياسة الخصوصية الشاملة هذه ممارسات حماية البيانات وحقوقك والتزامنا بالامتثال لـ ISO 27001 و GDPR وقانون حماية البيانات السعودي.",
       
       sections: [
         {
@@ -107,7 +107,7 @@ const PrivacyPolicy = () => {
         },
         {
           title: "2. معلومات مسؤول البيانات",
-          content: "DataLake AI Solutions هو مسؤول البيانات المسؤول عن معالجة بياناتك الشخصية. عنواننا المسجل في المملكة العربية السعودية، ونحافظ على الإشراف المناسب لمسؤول حماية البيانات (DPO). للاستفسارات حول حماية البيانات، اتصل بمسؤول حماية البيانات على dpo@datalake.sa"
+          content: "Datalake هو مسؤول البيانات المسؤول عن معالجة بياناتك الشخصية. عنواننا المسجل في المملكة العربية السعودية، ونحافظ على الإشراف المناسب لمسؤول حماية البيانات (DPO). للاستفسارات حول حماية البيانات، اتصل بمسؤول حماية البيانات على dpo@datalake.sa"
         },
         {
           title: "3. فئات البيانات الشخصية التي نعالجها",

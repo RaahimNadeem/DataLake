@@ -90,14 +90,14 @@ const HeaderAlt = () => {
         <div className="flex items-center gap-2">
           {/* <img src="/logo.svg" alt="Trident Logo" className="h-10" /> */}
           {/* <Link href="/" className="text-white text-3xl font-bold tracking-widest">
-            <img src="/Logo.svg" alt="DataLake Logo" className="h-16" />
+            <img src="/Logo.svg" alt="Datalake Logo" className="h-16" />
           </Link> */}
           {/* <Link href="/" className="text-black text-3xl font-bold tracking-widest"> */}
-            {/* <img src="/Logo.svg" alt="DataLake Logo" className="h-12 md:h-16" /> */}
+            {/* <img src="/Logo.svg" alt="Datalake Logo" className="h-12 md:h-16" /> */}
             {/* <h1>DATALAKE</h1> */}
           {/* </Link>         */}
           <Link href="/" className="cursor-pointer">
-            <img src="/DataLakeLogo.svg" alt="DataLake Logo" className="h-12 sm:h-16 md:h-24" />
+            <img src="/DataLakeLogo.svg" alt="Datalake Logo" className="h-12 sm:h-16 md:h-24" />
           </Link>
         </div>
         {/* Desktop Nav */}

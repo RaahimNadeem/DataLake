@@ -168,7 +168,7 @@ const JobListings = () => {
                       onClick={(e) => {
                         e.stopPropagation();
                         const subject = encodeURIComponent(`Job Application: ${job.title}`);
-                        const body = encodeURIComponent(`Dear HR Team,\n\nI am interested in applying for the position of ${job.title} at DataLake.\n\nPlease find my application attached.\n\nBest regards,\n[Your Name]`);
+                        const body = encodeURIComponent(`Dear HR Team,\n\nI am interested in applying for the position of ${job.title} at Datalake.\n\nPlease find my application attached.\n\nBest regards,\n[Your Name]`);
                         window.open(`mailto:HR@datalake.sa?subject=${subject}&body=${body}`, '_blank');
                       }}
                     >

@@ -15,7 +15,7 @@ const CookiePolicy = () => {
       version: "Version 2.1",
       compliance: "Designed to comply with: GDPR, ISO 27001, Saudi Data Protection Law, ePrivacy Directive",
       
-      intro: "This comprehensive Cookie Policy explains how DataLake AI Solutions ('we', 'our', 'us', or 'DataLake') uses cookies and similar tracking technologies when you visit our website. This policy is designed to comply with GDPR, ISO 27001, Saudi Data Protection Law, and the ePrivacy Directive.",
+      intro: "This comprehensive Cookie Policy explains how Datalake ('we', 'our', 'us', or 'Datalake') uses cookies and similar tracking technologies when you visit our website. This policy is designed to comply with GDPR, ISO 27001, Saudi Data Protection Law, and the ePrivacy Directive.",
       
       sections: [
         {
@@ -133,7 +133,7 @@ const CookiePolicy = () => {
       version: "الإصدار 2.1",
       compliance: "مصمم للامتثال لـ: GDPR، ISO 27001، قانون حماية البيانات السعودي، توجيه الخصوصية الإلكترونية",
       
-      intro: "توضح سياسة ملفات تعريف الارتباط الشاملة هذه كيفية استخدام DataLake AI Solutions ('نحن' أو 'لنا' أو 'DataLake') لملفات تعريف الارتباط وتقنيات التتبع المماثلة عند زيارة موقعنا الإلكتروني. هذه السياسة مصممة للامتثال لـ GDPR و ISO 27001 وقانون حماية البيانات السعودي وتوجيه الخصوصية الإلكترونية.",
+      intro: "توضح سياسة ملفات تعريف الارتباط الشاملة هذه كيفية استخدام Datalake ('نحن' أو 'لنا' أو 'Datalake') لملفات تعريف الارتباط وتقنيات التتبع المماثلة عند زيارة موقعنا الإلكتروني. هذه السياسة مصممة للامتثال لـ GDPR و ISO 27001 وقانون حماية البيانات السعودي وتوجيه الخصوصية الإلكترونية.",
       
       sections: [
         {

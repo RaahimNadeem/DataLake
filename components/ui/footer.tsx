@@ -76,7 +76,7 @@ const Footer = () => {
             <Link href="/cookies" className="hover:text-white transition-colors duration-300">{currentLang.cookiePolicy}</Link>
           </motion.div>
           <div className="mt-6 text-sm text-gray-400">
-            <span className="block">DataLake AI Solutions</span>
+            <span className="block">Datalake</span>
             <span className="block">{currentLang.address}</span>
             <span className="block">{currentLang.email} <a href="mailto:HR@datalake.sa" className="underline hover:text-white">HR@datalake.sa</a></span>
           </div>

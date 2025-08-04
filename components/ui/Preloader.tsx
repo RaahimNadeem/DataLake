@@ -74,7 +74,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
           className="mb-12"
         >
           <div className="text-white text-5xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight">
-            DataLake
+            Datalake
           </div>
           <div className="text-white/70 text-lg md:text-xl font-medium">
             Enterprise Data Solutions

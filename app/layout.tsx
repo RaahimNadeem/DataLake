@@ -28,7 +28,7 @@ const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
 })
 
 export const metadata: Metadata = {
-  title: "DataLake - Data Analytics for Modern Enterprises",
+  title: "Datalake",
   description: "Enterprise-grade data solutions for innovators and industry leaders",
   icons: {
     icon: '/Logo.svg',
