@@ -42,7 +42,7 @@ const ProjectsLanding = () => {
   };
 
   return (
-    <section id="projects" className={`w-full min-h-[60vh] py-16 md:py-24 ${language === 'ar' ? 'font-arabic' : 'font-sans'} bg-white`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section id="projects" className={`w-full min-h-[60vh] py-12 md:py-16 ${language === 'ar' ? 'font-arabic' : 'font-sans'} bg-white`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <div className="max-w-[1800px] mx-auto px-4 md:px-24">
         {/* Header Section - Consistent with other components */}
         <motion.div
@@ -81,7 +81,7 @@ const ProjectsLanding = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-xl md:text-2xl text-gray-600 max-w-3xl mt-6 leading-relaxed"
+              className="text-lg text-gray-700 max-w-xl mt-6"
             >
               {currentLang.header.description}
             </motion.p>
