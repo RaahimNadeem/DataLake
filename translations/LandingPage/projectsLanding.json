@@ -1,0 +1,70 @@
+{
+  "en": {
+    "header": {
+      "subtitle": "Our Projects",
+      "title": "Enterprise Solutions Portfolio",
+      "description": "Delivering cutting-edge digital solutions that transform businesses and drive innovation across global enterprises"
+    },
+    "technologies": "Technologies Used",
+    "projects": [
+      {
+        "id": 1,
+        "client": "Societe Generale",
+        "title": "Cloud Migration Factory (CMF)",
+        "description": "Designed to accelerate cloud migrations across all businesses of the group by simplifying the aspects of cloud transition like infrastructure, lifecycle management, repeatable application deployment. CMF provides CI/CD pipelines using Jenkins to improve software delivery through automation.",
+        "tech": ["Terraform", "Docker", "Kubernetes", "CI/CD", "Jenkins"],
+        "image": "/Projects/SocieteGeneral.png"
+      },
+      {
+        "id": 2,
+        "client": "Renault",
+        "title": "Internal Renault Product Auditing",
+        "description": "Web and mobile project aiming to enhance efficiency and transparency of Renault's internal auditing procedures and incident management. The web platform serves as a back-office system to facilitate internal audits of company products with dynamic forms, while the mobile app enables internal auditors to report and track incidents in real-time.",
+        "tech": ["Angular", "Java Spring Boot", "React Native"],
+        "image": "/Projects/Renault.png"
+      },
+      {
+        "id": 3,
+        "client": "L'Oreal Paris",
+        "title": "ServiceNow Integration Project",
+        "description": "Integration of ServiceNow with external applications of the group via APIs and automating business workflows through Workflow Designer. Includes ITSM applications, end-user access portals, IT applications, and business ticketing applications for multiple production instances.",
+        "tech": ["ServiceNow", "APIs", "Workflow Designer", "ITSM", "Agile"],
+        "image": "/Projects/Loreal.png"
+      }
+    ]
+  },
+  "ar": {
+    "header": {
+      "subtitle": "مشاريعنا",
+      "title": "محفظة حلول المؤسسات",
+      "description": "نقدم حلول رقمية متطورة تحول الأعمال وتدفع الابتكار عبر المؤسسات العالمية"
+    },
+    "technologies": "التقنيات المستخدمة",
+    "projects": [
+      {
+        "id": 1,
+        "client": "سوسيتيه جنرال",
+        "title": "مصنع الهجرة السحابية (CMF)",
+        "description": "مصمم لتسريع عمليات الهجرة السحابية عبر جميع أعمال المجموعة من خلال تبسيط جوانب الانتقال السحابي مثل البنية التحتية وإدارة دورة الحياة ونشر التطبيقات القابلة للتكرار. يوفر CMF خطوط أنابيب CI/CD باستخدام Jenkins لتحسين تسليم البرامج من خلال الأتمتة.",
+        "tech": ["Terraform", "Docker", "Kubernetes", "CI/CD", "Jenkins"],
+        "image": "/Projects/SocieteGeneral.png"
+      },
+      {
+        "id": 2,
+        "client": "رينو",
+        "title": "مراجعة المنتجات الداخلية لرينو",
+        "description": "مشروع ويب وموبايل يهدف إلى تعزيز كفاءة وشفافية إجراءات المراجعة الداخلية لرينو وإدارة الحوادث. تعمل منصة الويب كنظام مكتب خلفي لتسهيل المراجعات الداخلية لمنتجات الشركة بنماذج ديناميكية، بينما تمكن التطبيق المحمول المراجعين الداخليين من الإبلاغ عن الحوادث وتتبعها في الوقت الفعلي.",
+        "tech": ["Angular", "Java Spring Boot", "React Native"],
+        "image": "/Projects/Renault.png"
+      },
+      {
+        "id": 3,
+        "client": "لوريال باريس",
+        "title": "مشروع تكامل ServiceNow",
+        "description": "تكامل ServiceNow مع التطبيقات الخارجية للمجموعة عبر APIs وأتمتة سير العمل التجارية من خلال Workflow Designer. يشمل تطبيقات ITSM ومنافذ الوصول للمستخدم النهائي والتطبيقات التقنية وتطبيقات التذاكر التجارية لعدة حالات إنتاج.",
+        "tech": ["ServiceNow", "APIs", "Workflow Designer", "ITSM", "Agile"],
+        "image": "/Projects/Loreal.png"
+      }
+    ]
+  }
+} 

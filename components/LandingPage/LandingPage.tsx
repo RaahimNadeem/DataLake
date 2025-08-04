@@ -5,6 +5,7 @@ import Header from '../ui/Header';
 import Hero from './Hero';
 import AboutUsLanding from './AboutUsLanding';
 import ServicesLanding from './ServicesLanding';
+import ProjectsLanding from './ProjectsLanding';
 import Footer from '../ui/footer';
 import LocationsAlt from '../LocationsAlt';
 import ClientLogosMarquee from '../ClientLogosMarquee';
@@ -18,6 +19,7 @@ const LandingPage = () => {
       <ServicesLanding />
       <LocationsAlt />
       <ClientLogosMarquee />
+      <ProjectsLanding />
 
       <Footer />
     </main>
