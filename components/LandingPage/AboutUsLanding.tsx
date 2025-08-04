@@ -118,9 +118,11 @@ import aboutUsLandingTranslations from '@/translations/LandingPage/aboutUsLandin
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-black mb-3 text-left">Global Expertise</h3>
-            <p className="text-sm text-gray-600 leading-relaxed text-left">
-              French innovation meets Saudi ambition — delivering world-class solutions with international standards and local insight.
+            <h3 className={`text-xl font-bold text-black mb-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+              {currentLang.features.globalExpertise.title}
+            </h3>
+            <p className={`text-sm text-gray-600 leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+              {currentLang.features.globalExpertise.description}
             </p>
           </motion.div>
 
@@ -136,9 +138,11 @@ import aboutUsLandingTranslations from '@/translations/LandingPage/aboutUsLandin
                 <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 0 1 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/>
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-black mb-3 text-left">Data-Driven Intelligence</h3>
-            <p className="text-sm text-gray-600 leading-relaxed text-left">
-              Advanced analytics and AI-powered insights transform raw data into actionable business intelligence and strategic decisions.
+            <h3 className={`text-xl font-bold text-black mb-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+              {currentLang.features.dataDrivenIntelligence.title}
+            </h3>
+            <p className={`text-sm text-gray-600 leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+              {currentLang.features.dataDrivenIntelligence.description}
             </p>
           </motion.div>
 
@@ -154,9 +158,11 @@ import aboutUsLandingTranslations from '@/translations/LandingPage/aboutUsLandin
                 <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-black mb-3 text-left">Tailored Solutions</h3>
-            <p className="text-sm text-gray-600 leading-relaxed text-left">
-              Every solution adapts to your unique business needs, industry requirements, and organizational culture — not generic templates.
+            <h3 className={`text-xl font-bold text-black mb-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+              {currentLang.features.tailoredSolutions.title}
+            </h3>
+            <p className={`text-sm text-gray-600 leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+              {currentLang.features.tailoredSolutions.description}
             </p>
           </motion.div>
 
@@ -172,9 +178,11 @@ import aboutUsLandingTranslations from '@/translations/LandingPage/aboutUsLandin
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-black mb-3 text-left">Continuous Innovation</h3>
-            <p className="text-sm text-gray-600 leading-relaxed text-left">
-              With each project, we evolve and improve. You see what's changing — and why it matters for your digital transformation journey.
+            <h3 className={`text-xl font-bold text-black mb-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+              {currentLang.features.continuousInnovation.title}
+            </h3>
+            <p className={`text-sm text-gray-600 leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+              {currentLang.features.continuousInnovation.description}
             </p>
           </motion.div>
         </div>
