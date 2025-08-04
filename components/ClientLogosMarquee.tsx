@@ -74,7 +74,7 @@ export default function ClientLogosMarquee() {
   ];
 
   return (
-    <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} relative w-full py-16 md:py-24 bg-white overflow-hidden`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} relative w-full py-12 md:py-16 pb-20 md:pb-24 bg-white overflow-hidden`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Header Section */}
       <motion.div
         initial={{ x: language === 'ar' ? 60 : -60, opacity: 0 }}
@@ -121,13 +121,13 @@ export default function ClientLogosMarquee() {
           {firstRowLogos.map((logo, index) => (
             <div
               key={`first-${index}`}
-              className="flex-shrink-0 w-32 md:w-40 h-16 md:h-20 bg-white rounded-lg shadow-md p-4 flex items-center justify-center hover:shadow-lg transition-shadow duration-300"
+              className="flex-shrink-0 w-40 md:w-48 h-20 md:h-24 bg-white rounded-lg shadow-md p-4 flex items-center justify-center hover:shadow-lg transition-shadow duration-300"
             >
               <Image
                 src={logo.src}
                 alt={`${logo.name} logo`}
-                width={120}
-                height={60}
+                width={160}
+                height={80}
                 className="max-w-full max-h-full object-contain transition-all duration-300"
                 onError={(e) => {
                   console.error(`Failed to load logo: ${logo.src}`);
@@ -146,19 +146,19 @@ export default function ClientLogosMarquee() {
             repeat: Infinity,
             ease: 'linear'
           }}
-          className="flex items-center gap-12 md:gap-16 whitespace-nowrap mt-8"
+          className="flex items-center gap-12 md:gap-16 whitespace-nowrap mt-8 mb-8"
           style={{ direction: 'ltr' }}
         >
           {secondRowLogos.map((logo, index) => (
             <div
               key={`second-${index}`}
-              className="flex-shrink-0 w-32 md:w-40 h-16 md:h-20 bg-white rounded-lg shadow-md p-4 flex items-center justify-center hover:shadow-lg transition-shadow duration-300"
+              className="flex-shrink-0 w-40 md:w-48 h-20 md:h-24 bg-white rounded-lg shadow-md p-4 flex items-center justify-center hover:shadow-lg transition-shadow duration-300"
             >
               <Image
                 src={logo.src}
                 alt={`${logo.name} logo`}
-                width={120}
-                height={60}
+                width={160}
+                height={80}
                 className="max-w-full max-h-full object-contain transition-all duration-300"
                 onError={(e) => {
                   console.error(`Failed to load logo: ${logo.src}`);
