@@ -54,13 +54,18 @@ export default function ClientLogosMarquee() {
   };
 
   // Create different logo sets for each row to avoid overlap
-  const firstRowLogos = [...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos];
+  // Duplicate logos multiple times to ensure seamless infinite scrolling
+  const firstRowLogos = [...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos];
   
   // Second row uses a different arrangement - start from middle and wrap around
   const secondRowLogos = [
     ...clientLogos.slice(8), // Start from middle
     ...clientLogos.slice(0, 8), // Then first half
     ...clientLogos.slice(8), // Repeat pattern
+    ...clientLogos.slice(0, 8),
+    ...clientLogos.slice(8),
+    ...clientLogos.slice(0, 8),
+    ...clientLogos.slice(8),
     ...clientLogos.slice(0, 8),
     ...clientLogos.slice(8),
     ...clientLogos.slice(0, 8),
@@ -101,16 +106,9 @@ export default function ClientLogosMarquee() {
       </motion.div>
 
       {/* Marquee Container */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.8 }}
-        className="relative"
-      >
+      <div className="relative overflow-hidden">
         {/* First row - moving left */}
         <motion.div
-          initial={{ x: 0 }}
           animate={{ x: '-50%' }}
           transition={{
             duration: 40,
@@ -118,6 +116,7 @@ export default function ClientLogosMarquee() {
             ease: 'linear'
           }}
           className="flex items-center gap-12 md:gap-16 whitespace-nowrap"
+          style={{ direction: 'ltr' }}
         >
           {firstRowLogos.map((logo, index) => (
             <div
@@ -141,13 +140,14 @@ export default function ClientLogosMarquee() {
         {/* Second row - moving right */}
         <motion.div
           initial={{ x: '-50%' }}
-          animate={{ x: 0 }}
+          animate={{ x: '0%' }}
           transition={{
             duration: 35,
             repeat: Infinity,
             ease: 'linear'
           }}
           className="flex items-center gap-12 md:gap-16 whitespace-nowrap mt-8"
+          style={{ direction: 'ltr' }}
         >
           {secondRowLogos.map((logo, index) => (
             <div
@@ -167,7 +167,7 @@ export default function ClientLogosMarquee() {
             </div>
           ))}
         </motion.div>
-      </motion.div>
+      </div>
 
       {/* Gradient overlays for smooth fade effect */}
       <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10" />
