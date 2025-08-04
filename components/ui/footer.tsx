@@ -8,20 +8,20 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import footerTranslations from '@/translations/common/footer.json';
 
 const services = [
-  { name: 'sustainability', path: '/services/Sustainability', en: 'Sustainability', ar: 'الاستدامة' },
-  { name: 'digitalBusiness', path: '/services/DigitalBusinessProducts', en: 'Digital Business & Products', ar: 'الأعمال الرقمية والمنتجات' },
-  { name: 'dataIntelligence', path: '/services/Data', en: 'Data-driven Intelligence', ar: 'الذكاء القائم على البيانات' },
-  { name: 'cloud', path: '/services/Cloud', en: 'Distributed Cloud', ar: 'الحوسبة السحابية الموزعة' },
-  { name: 'automation', path: '/services/BusinessAutomation', en: 'Business Automation', ar: 'أتمتة الأعمال' },
-  { name: 'cybersecurity', path: '/services/Cyber', en: 'Trust & Cybersecurity', ar: 'الثقة والأمن السيبراني' },
-  { name: 'ai', path: '/services/AI', en: 'AI Services', ar: 'خدمات الذكاء الاصطناعي' }
+  { name: 'ai', path: '/services/AI', translationKey: 'ai' },
+  { name: 'automation', path: '/services/BusinessAutomation', translationKey: 'automation' },
+  { name: 'cloud', path: '/services/Cloud', translationKey: 'cloud' },
+  { name: 'cybersecurity', path: '/services/Cyber', translationKey: 'cybersecurity' },
+  { name: 'dataIntelligence', path: '/services/Data', translationKey: 'dataIntelligence' },
+  { name: 'digitalBusiness', path: '/services/DigitalBusinessProducts', translationKey: 'digitalBusiness' },
+  { name: 'sustainability', path: '/services/Sustainability', translationKey: 'sustainability' }
 ];
 
 const company = [
-  { name: 'about', path: '/about', en: 'About', ar: 'من نحن' },
-  { name: 'consulting', path: '/consulting', en: 'Consulting', ar: 'الاستشارات' },
-  { name: 'careers', path: '/careers', en: 'Careers', ar: 'وظائف' },
-  { name: 'contact', path: '/contact', en: 'Contact', ar: 'اتصل بنا' },
+  { name: 'about', path: '/about', translationKey: 'about' },
+  { name: 'careers', path: '/careers', translationKey: 'careers' },
+  { name: 'consulting', path: '/consulting', translationKey: 'consulting' },
+  { name: 'contact', path: '/contact', translationKey: 'contact' },
 ];
 
 const Footer = () => {
@@ -108,7 +108,7 @@ const Footer = () => {
                     transition={{ duration: 0.3, delay: 0.1 * index }}
                     className="hover:text-white transition-colors duration-300 cursor-pointer"
                   >
-                    <Link href={item.path}>{language === 'ar' ? item.ar : item.en}</Link>
+                    <Link href={item.path}>{currentLang[item.translationKey as keyof typeof currentLang]}</Link>
                   </motion.li>
                 ))}
               </ul>
@@ -130,7 +130,7 @@ const Footer = () => {
                     transition={{ duration: 0.3, delay: 0.1 * index }}
                     className="hover:text-white transition-colors duration-300 cursor-pointer"
                   >
-                    <Link href={item.path}>{language === 'ar' ? item.ar : item.en}</Link>
+                    <Link href={item.path}>{currentLang[item.translationKey as keyof typeof currentLang]}</Link>
                   </motion.li>
                 ))}
               </ul>
