@@ -102,6 +102,15 @@ export default function ClientLogosMarquee() {
           >
             {renderTitle(currentLang.header.title)}
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="text-lg text-gray-700 max-w-xl mt-6"
+          >
+            {currentLang.header.description}
+          </motion.p>
         </div>
       </motion.div>
 

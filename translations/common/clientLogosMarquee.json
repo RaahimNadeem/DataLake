@@ -2,13 +2,15 @@
   "en": {
     "header": {
       "subtitle": "OUR CLIENTS",
-      "title": "Our Trusted Clients\nPartners in Success"
+      "title": "Our Trusted Clients\nPartners in Success",
+      "description": "We collaborate with leading global enterprises to deliver innovative solutions that drive digital transformation"
     }
   },
   "ar": {
     "header": {
       "subtitle": "عملاؤنا",
-      "title": "عملاؤنا الموثوقون\nشركاء في النجاح"
+      "title": "عملاؤنا الموثوقون\nشركاء في النجاح",
+      "description": "نتعاون مع المؤسسات العالمية الرائدة لتقديم حلول مبتكرة تدفع التحول الرقمي"
     }
   }
 } 

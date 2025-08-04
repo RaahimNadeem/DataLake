@@ -2,7 +2,8 @@
   "en": {
     "header": {
       "subtitle": "OUR SERVICES",
-      "title": "Empowering Your Data\nWith Enterprise Solutions"
+      "title": "Empowering Your Data\nWith Enterprise Solutions",
+      "description": "Comprehensive digital solutions designed to transform your business operations and drive innovation across all industries"
     },
     "services": [
       {
@@ -52,7 +53,8 @@
   "ar": {
     "header": {
       "subtitle": "خدماتنا",
-      "title": "تمكين بياناتك\nبحلول المؤسسات المتطورة"
+      "title": "تمكين بياناتك\nبحلول المؤسسات المتطورة",
+      "description": "حلول رقمية شاملة مصممة لتحويل عمليات عملك ودفع الابتكار عبر جميع الصناعات"
     },
     "services": [
       {
