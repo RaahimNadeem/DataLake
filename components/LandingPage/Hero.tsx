@@ -31,7 +31,24 @@ const Hero = () => {
   useEffect(() => {
     // Start preloading video immediately when component mounts
     if (videoRef.current) {
-      videoRef.current.load();
+      // Use intersection observer to only load video when in viewport
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && videoRef.current) {
+              videoRef.current.load();
+              observer.disconnect();
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+
+      return () => observer.disconnect();
     }
   }, []);
 
@@ -100,42 +117,46 @@ const Hero = () => {
         animate={{ opacity: heroVisible ? 1 : 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
-        {/* Background Video - Always load but only show when ready */}
+        {/* Background Video - Optimized loading with multiple formats */}
         <motion.video
           ref={videoRef}
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
-          src="/Hero.webm"
-          poster="/hero-poster.jpg"
           autoPlay
           loop
           muted
           playsInline
-          preload="auto" // Preload the entire video
+          preload="metadata" // Only load metadata initially for faster page load
           style={{ 
             scale: backgroundScale, 
-            borderRadius 
+            borderRadius: borderRadius as any
           }}
           onLoadedData={handleVideoLoad}
           onError={handleVideoError}
-        />
+        >
+          {/* Multiple video sources for better browser compatibility */}
+          <source src="/Hero.webm" type="video/webm" />
+          <source src="/Hero.mp4" type="video/mp4" />
+          {/* Fallback for browsers that don't support video */}
+          <img src="/hero-poster.jpg" alt="Hero background" className="w-full h-full object-cover" />
+        </motion.video>
         
         {/* Fallback background for video error */}
         {videoError && (
           <motion.div 
             className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 z-0"
-            style={{ scale: backgroundScale, borderRadius }}
+            style={{ scale: backgroundScale, borderRadius: borderRadius as any }}
           />
         )}
         
         {/* Overlay */}
         <motion.div 
           className="absolute top-0 left-0 w-full h-full bg-black/80 z-10"
-          style={{ scale: backgroundScale, borderRadius }}
+          style={{ scale: backgroundScale, borderRadius: borderRadius as any }}
         />
         
         {/* Content - Perfectly centered vertically, horizontal alignment preserved */}
         <motion.div
-          style={{ opacity, scale: contentScale }}
+          style={{ opacity: opacity as any, scale: contentScale }}
           className={`relative z-20 flex flex-col items-${language === 'ar' ? 'end' : 'start'} justify-center h-full px-4 md:px-24 max-w-full md:max-w-[65rem] w-full`}
         >
           <motion.h1
@@ -182,7 +203,7 @@ const Hero = () => {
 
         {/* Scroll below message - Absolutely positioned, doesn't affect centering */}
         <motion.div
-          style={{ opacity }}
+          style={{ opacity: opacity as any }}
           className={`absolute bottom-16 z-20 px-4 md:px-24 ${language === 'ar' ? 'left-0' : 'right-0'}`}
           initial={{ opacity: 0, y: 20 }}
           animate={heroVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
