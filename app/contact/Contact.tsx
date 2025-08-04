@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import HeaderAlt from '@/components/ui/HeaderAlt';
 import Footer from '@/components/ui/footer';
@@ -9,8 +9,14 @@ const Contact = () => {
   const { language } = useLanguage();
   const currentLang = contactTranslations[language as keyof typeof contactTranslations];
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
   const faqRef = React.useRef(null);
   const isFaqInView = useInView(faqRef, { once: true, margin: "-100px" });
+
+  useEffect(() => {
+    // Trigger animations when component mounts
+    setIsVisible(true);
+  }, []);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -35,8 +41,7 @@ const Contact = () => {
         {/* Left: Semi-circle Card */}
         <motion.div 
           initial={{ opacity: 0, x: language === 'ar' ? 50 : -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: language === 'ar' ? 50 : -50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="md:w-1/3 flex flex-col items-start justify-start"
         >
@@ -57,8 +62,7 @@ const Contact = () => {
         {/* Right: Contact Information */}
         <motion.div 
           initial={{ opacity: 0, x: language === 'ar' ? -50 : 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: language === 'ar' ? -50 : 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="md:w-2/3 flex flex-col"
         >
@@ -69,8 +73,7 @@ const Contact = () => {
             <div className="space-y-4 sm:space-y-6">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="flex items-start space-x-3 sm:space-x-4 rtl:space-x-reverse"
               >
@@ -89,8 +92,7 @@ const Contact = () => {
 
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="flex items-start space-x-3 sm:space-x-4 rtl:space-x-reverse"
               >
@@ -99,8 +101,7 @@ const Contact = () => {
 
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="flex items-start space-x-3 sm:space-x-4 rtl:space-x-reverse"
               >
@@ -117,8 +118,7 @@ const Contact = () => {
 
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="flex items-start space-x-3 sm:space-x-4 rtl:space-x-reverse"
               >
@@ -140,8 +140,7 @@ const Contact = () => {
             {/* Google Maps */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               className="space-y-4 sm:space-y-6"
             >
@@ -167,8 +166,7 @@ const Contact = () => {
                     <motion.div 
                       key={service} 
                       initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
+                      animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
                       transition={{ duration: 0.3, delay: 0.1 * index }}
                       className="flex items-center space-x-2 rtl:space-x-reverse"
                     >
