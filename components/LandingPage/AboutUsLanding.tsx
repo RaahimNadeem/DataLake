@@ -1,12 +1,120 @@
 "use client";
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Image from 'next/image';
 import aboutUsLandingTranslations from '@/translations/LandingPage/aboutUsLanding.json';
 
-    const AboutUsLanding = () => {
+// Interactive Icon Components
+const GlobalExpertiseIcon = ({ isHovered }: { isHovered: boolean }) => (
+  <motion.div
+    className="relative w-16 h-16"
+    animate={{ rotate: isHovered ? 360 : 0 }}
+    transition={{ duration: 1.5, ease: "easeInOut" }}
+  >
+    <motion.div
+      className="absolute inset-0 bg-white border-2 border-gray-200 rounded-full"
+      animate={{ 
+        scale: isHovered ? 1.05 : 1,
+        borderColor: isHovered ? "#374151" : "#e5e7eb"
+      }}
+      transition={{ duration: 0.4 }}
+    />
+    <motion.div
+      className="absolute inset-2 bg-gray-50 rounded-full flex items-center justify-center"
+      animate={{ scale: isHovered ? 0.95 : 1 }}
+      transition={{ duration: 0.4 }}
+    >
+      <svg className="w-8 h-8 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+      </svg>
+    </motion.div>
+  </motion.div>
+);
+
+const DataIntelligenceIcon = ({ isHovered }: { isHovered: boolean }) => (
+  <motion.div
+    className="relative w-16 h-16"
+    animate={{ y: isHovered ? -2 : 0 }}
+    transition={{ duration: 0.4, ease: "easeInOut" }}
+  >
+    <motion.div
+      className="absolute inset-0 bg-white border-2 border-gray-200 rounded-lg"
+      animate={{ 
+        scale: isHovered ? 1.05 : 1,
+        rotate: isHovered ? 1 : 0,
+        borderColor: isHovered ? "#374151" : "#e5e7eb"
+      }}
+      transition={{ duration: 0.4 }}
+    />
+    <motion.div
+      className="absolute inset-2 bg-gray-50 rounded-lg flex items-center justify-center"
+      animate={{ scale: isHovered ? 0.95 : 1 }}
+      transition={{ duration: 0.4 }}
+    >
+      <svg className="w-8 h-8 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+      </svg>
+    </motion.div>
+  </motion.div>
+);
+
+const TailoredSolutionsIcon = ({ isHovered }: { isHovered: boolean }) => (
+  <motion.div
+    className="relative w-16 h-16"
+    animate={{ scale: isHovered ? 1.02 : 1 }}
+    transition={{ duration: 0.4 }}
+  >
+    <motion.div
+      className="absolute inset-0 bg-white border-2 border-gray-200 rounded-lg"
+      animate={{ 
+        rotate: isHovered ? -1 : 0,
+        borderColor: isHovered ? "#374151" : "#e5e7eb"
+      }}
+      transition={{ duration: 0.4 }}
+    />
+    <motion.div
+      className="absolute inset-2 bg-gray-50 rounded-lg flex items-center justify-center"
+      animate={{ 
+        rotate: isHovered ? 1 : 0
+      }}
+      transition={{ duration: 0.4 }}
+    >
+      <svg className="w-8 h-8 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2zm0 3.24L9.91 9.5 12 13.77l2.09-4.27L12 5.24z"/>
+      </svg>
+    </motion.div>
+  </motion.div>
+);
+
+const InnovationIcon = ({ isHovered }: { isHovered: boolean }) => (
+  <motion.div
+    className="relative w-16 h-16"
+    animate={{ rotate: isHovered ? 180 : 0 }}
+    transition={{ duration: 1, ease: "easeInOut" }}
+  >
+    <motion.div
+      className="absolute inset-0 bg-white border-2 border-gray-200 rounded-full"
+      animate={{ 
+        scale: isHovered ? 1.05 : 1,
+        borderColor: isHovered ? "#374151" : "#e5e7eb"
+      }}
+      transition={{ duration: 0.4 }}
+    />
+    <motion.div
+      className="absolute inset-2 bg-gray-50 rounded-full flex items-center justify-center"
+      animate={{ scale: isHovered ? 0.95 : 1 }}
+      transition={{ duration: 0.4 }}
+    >
+      <svg className="w-8 h-8 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+      </svg>
+    </motion.div>
+  </motion.div>
+);
+
+const AboutUsLanding = () => {
 
   const slides = [
     '/LandingPage/Slide1.jpg',
@@ -16,11 +124,13 @@ import aboutUsLandingTranslations from '@/translations/LandingPage/aboutUsLandin
     '/LandingPage/Slide5.jpg',
   ];
 
-
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { language } = useLanguage();
   const currentLang = aboutUsLandingTranslations[language as keyof typeof aboutUsLandingTranslations];
+  
+  // State for icon hover effects
+  const [hoveredIcon, setHoveredIcon] = useState<number | null>(null);
 
   const renderHeading = (text: string) => {
     if (language === 'en') {
@@ -105,23 +215,27 @@ import aboutUsLandingTranslations from '@/translations/LandingPage/aboutUsLandin
         transition={{ duration: 0.8, delay: 0.8 }}
         className="w-full pt-32"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-t  border-dashed border-gray-300">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-dashed border-gray-300">
           {/* Feature 1: Global Expertise */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 1.0 }}
-            className="p-8 border-r border-dashed border-gray-300"
+            className="p-8 border-r border-dashed border-gray-300 group cursor-pointer"
+            onMouseEnter={() => setHoveredIcon(0)}
+            onMouseLeave={() => setHoveredIcon(null)}
+            whileHover={{ 
+              backgroundColor: "rgba(0, 0, 0, 0.02)",
+              y: -1
+            }}
           >
             <div className="w-16 h-16 mb-16 flex items-center justify-center">
-              <svg className="w-14 h-14 text-black" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
+              <GlobalExpertiseIcon isHovered={hoveredIcon === 0} />
             </div>
-            <h3 className={`text-xl font-bold text-black mb-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+            <h3 className={`text-xl font-bold text-slate-800 mb-3 ${language === 'ar' ? 'text-right' : 'text-left'} group-hover:text-slate-900 transition-colors duration-300`}>
               {currentLang.features.globalExpertise.title}
             </h3>
-            <p className={`text-sm text-gray-600 leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+            <p className={`text-sm text-gray-600 leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'} group-hover:text-gray-800 transition-colors duration-300`}>
               {currentLang.features.globalExpertise.description}
             </p>
           </motion.div>
@@ -131,17 +245,21 @@ import aboutUsLandingTranslations from '@/translations/LandingPage/aboutUsLandin
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 1.2 }}
-            className="p-8 border-r border-dashed border-gray-300"
+            className="p-8 border-r border-dashed border-gray-300 group cursor-pointer"
+            onMouseEnter={() => setHoveredIcon(1)}
+            onMouseLeave={() => setHoveredIcon(null)}
+            whileHover={{ 
+              backgroundColor: "rgba(0, 0, 0, 0.02)",
+              y: -1
+            }}
           >
             <div className="w-16 h-16 mb-16 flex items-center justify-center">
-              <svg className="w-14 h-14 text-black" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 0 1 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/>
-              </svg>
+              <DataIntelligenceIcon isHovered={hoveredIcon === 1} />
             </div>
-            <h3 className={`text-xl font-bold text-black mb-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+            <h3 className={`text-xl font-bold text-slate-800 mb-3 ${language === 'ar' ? 'text-right' : 'text-left'} group-hover:text-slate-900 transition-colors duration-300`}>
               {currentLang.features.dataDrivenIntelligence.title}
             </h3>
-            <p className={`text-sm text-gray-600 leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+            <p className={`text-sm text-gray-600 leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'} group-hover:text-gray-800 transition-colors duration-300`}>
               {currentLang.features.dataDrivenIntelligence.description}
             </p>
           </motion.div>
@@ -151,17 +269,21 @@ import aboutUsLandingTranslations from '@/translations/LandingPage/aboutUsLandin
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 1.4 }}
-            className="p-8 border-r border-dashed border-gray-300"
+            className="p-8 border-r border-dashed border-gray-300 group cursor-pointer"
+            onMouseEnter={() => setHoveredIcon(2)}
+            onMouseLeave={() => setHoveredIcon(null)}
+            whileHover={{ 
+              backgroundColor: "rgba(0, 0, 0, 0.02)",
+              y: -1
+            }}
           >
             <div className="w-16 h-16 mb-16 flex items-center justify-center">
-              <svg className="w-14 h-14 text-black" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-              </svg>
+              <TailoredSolutionsIcon isHovered={hoveredIcon === 2} />
             </div>
-            <h3 className={`text-xl font-bold text-black mb-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+            <h3 className={`text-xl font-bold text-slate-800 mb-3 ${language === 'ar' ? 'text-right' : 'text-left'} group-hover:text-slate-900 transition-colors duration-300`}>
               {currentLang.features.tailoredSolutions.title}
             </h3>
-            <p className={`text-sm text-gray-600 leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+            <p className={`text-sm text-gray-600 leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'} group-hover:text-gray-800 transition-colors duration-300`}>
               {currentLang.features.tailoredSolutions.description}
             </p>
           </motion.div>
@@ -171,17 +293,21 @@ import aboutUsLandingTranslations from '@/translations/LandingPage/aboutUsLandin
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 1.6 }}
-            className="p-8"
+            className="p-8 group cursor-pointer"
+            onMouseEnter={() => setHoveredIcon(3)}
+            onMouseLeave={() => setHoveredIcon(null)}
+            whileHover={{ 
+              backgroundColor: "rgba(0, 0, 0, 0.02)",
+              y: -1
+            }}
           >
             <div className="w-16 h-16 mb-16 flex items-center justify-center">
-              <svg className="w-14 h-14 text-black" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
+              <InnovationIcon isHovered={hoveredIcon === 3} />
             </div>
-            <h3 className={`text-xl font-bold text-black mb-3 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+            <h3 className={`text-xl font-bold text-slate-800 mb-3 ${language === 'ar' ? 'text-right' : 'text-left'} group-hover:text-slate-900 transition-colors duration-300`}>
               {currentLang.features.continuousInnovation.title}
             </h3>
-            <p className={`text-sm text-gray-600 leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+            <p className={`text-sm text-gray-600 leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'} group-hover:text-gray-800 transition-colors duration-300`}>
               {currentLang.features.continuousInnovation.description}
             </p>
           </motion.div>
