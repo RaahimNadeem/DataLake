@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from '@/contexts/LanguageContext';
 import mainAboutTranslations from '@/translations/AboutPage/mainAbout.json';
@@ -6,21 +6,6 @@ import mainAboutTranslations from '@/translations/AboutPage/mainAbout.json';
 const MainAbout = () => {
   const { language } = useLanguage();
   const currentLang = mainAboutTranslations[language as keyof typeof mainAboutTranslations];
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const slides = [
-    "/AboutUs/Slide1.jpg",
-    "/AboutUs/Slide2.jpg", 
-    "/AboutUs/Slide3.jpg"
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 3000); // Change slide every 3 seconds
-
-    return () => clearInterval(interval);
-  }, [slides.length]);
 
   return (
     <section className="w-full min-h-screen flex items-center "  dir={language === 'ar' ? 'rtl' : 'ltr'}>
@@ -46,7 +31,7 @@ const MainAbout = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className={`text-5xl md:text-8xl font-bold text-black leading-tight mb-8 ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
+              className={`text-4xl md:text-6xl font-bold text-black leading-tight mb-8 ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
             >
               {currentLang.title}
             </motion.h2>
@@ -60,7 +45,7 @@ const MainAbout = () => {
             </motion.p>
           </div>
         </motion.div>
-        {/* Right: Slideshow */}
+        {/* Right: Static Image */}
         <motion.div 
           initial={{ opacity: 0, x: language === 'ar' ? -50 : 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -68,37 +53,11 @@ const MainAbout = () => {
           className="w-full md:w-[50vw] h-[340px] md:h-[520px] flex flex-col items-center md:items-start md:pt-20 relative"
         >
           <div className="w-full h-[340px] md:h-[520px] relative overflow-hidden rounded-l-3xl md:rounded-l-3xl md:rounded-r-none md:rounded-t-none md:rounded-b-none">
-            {slides.map((slide, index) => (
-              <motion.img
-                key={index}
-                src={slide}
-                alt={`Slide ${index + 1}`}
-                className="absolute inset-0 w-full h-full object-cover"
-                initial={{ opacity: 0 }}
-                animate={{ 
-                  opacity: currentSlide === index ? 1 : 0,
-                  scale: currentSlide === index ? 1 : 1.05
-                }}
-                transition={{ 
-                  opacity: { duration: 0.8, ease: "easeInOut" },
-                  scale: { duration: 0.8, ease: "easeInOut" }
-                }}
-              />
-            ))}
-            {/* Slide indicators */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-              {slides.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    currentSlide === index 
-                      ? 'bg-white scale-110' 
-                      : 'bg-white/50 hover:bg-white/75'
-                  }`}
-                />
-              ))}
-            </div>
+            <img
+              src="/AboutUs/Slide1.jpg"
+              alt="About Us"
+              className="w-full h-full object-cover"
+            />
           </div>
         </motion.div>
       </div>
