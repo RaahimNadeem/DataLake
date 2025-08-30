@@ -8,7 +8,7 @@ export default function ConsultingHero() {
   const currentLang = consultingHeroTranslations[language as keyof typeof consultingHeroTranslations];
 
   return (
-    <section className={`w-full max-w-7xl mx-auto flex flex-col items-center justify-center py-16 md:py-24 lg:py-32 px-4 md:px-6 min-h-[500px] ${language === 'ar' ? 'font-arabic' : 'font-sans'}`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section className={`w-full max-w-7xl mx-auto flex flex-col items-center justify-center py-8 md:py-12 lg:py-24 px-4 md:px-6 min-h-[500px] ${language === 'ar' ? 'font-arabic' : 'font-sans'}`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Text Content */}
       <motion.div 
         initial={{ opacity: 0, y: 50 }}
