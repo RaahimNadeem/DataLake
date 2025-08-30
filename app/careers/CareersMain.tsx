@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { FaRobot, FaBrain, FaRocket, FaUsers } from 'react-icons/fa';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -23,23 +23,6 @@ const cardVariants = {
 const Careers = () => {
   const { language } = useLanguage();
   const currentLang = careersMainTranslations[language as keyof typeof careersMainTranslations];
-  
-  // Slideshow state
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [
-    '/Careers/Slide1.jpg',
-    '/Careers/Slide2.jpg',
-    '/Careers/Slide3.jpg'
-  ];
-
-  // Auto-advance slideshow
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000); // Change slide every 5 seconds
-
-    return () => clearInterval(interval);
-  }, [slides.length]);
 
   // Scroll to JobListings section
   const scrollToJobListings = () => {
@@ -53,36 +36,14 @@ const Careers = () => {
 
   return (
     <div dir={language === 'ar' ? 'rtl' : 'ltr'} className={`${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
-      {/* Hero Section with Slideshow Background */}
+      {/* Hero Section with Background */}
       <section className="relative w-full min-h-[60vh] flex items-center justify-center bg-cover bg-center overflow-hidden">
-        {/* Slideshow Background */}
-        <div className="absolute inset-0 transition-all duration-1000 ease-in-out">
-          {slides.map((slide, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
-                index === currentSlide ? 'opacity-100' : 'opacity-0'
-              }`}
-              style={{ backgroundImage: `url('${slide}')` }}
-            />
-          ))}
-        </div>
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url('/Careers/Slide2.jpg')` }}
+        />
         <div className="absolute inset-0 bg-black/60" />
-        
-        {/* Slide Indicators */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide 
-                  ? 'bg-white scale-110' 
-                  : 'bg-white/50 hover:bg-white/75'
-              }`}
-            />
-          ))}
-        </div>
 
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
           <motion.h1
