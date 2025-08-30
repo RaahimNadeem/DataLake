@@ -127,14 +127,16 @@ export default function InternationalTeam() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1, margin: "-100px" }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="text-center py-12 md:py-20"
+          className="py-12 md:py-20 px-4 md:px-8 lg:px-16 xl:px-24 "
         >
-          <h2 className={`text-4xl md:text-5xl font-bold text-black leading-tight mb-4 md:mb-8  ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
-            {currentLang.header.title}
-          </h2>
-          <p className={`text-xl text-gray-600 max-w-3xl mx-auto ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
-            {currentLang.description}
-          </p>
+          <div className="max-w-7xl mx-auto">
+            <h2 className={`text-4xl md:text-5xl font-bold text-black leading-tight mb-4 md:mb-8 text-right ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
+              {currentLang.header.title}
+            </h2>
+            <p className={`text-xl text-gray-600 max-w-3xl ml-auto text-right ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}>
+              {currentLang.description}
+            </p>
+          </div>
         </motion.div>
 
         {/* Features Grid Section */}
