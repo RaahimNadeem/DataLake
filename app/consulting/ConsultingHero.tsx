@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import consultingHeroTranslations from '@/translations/ConsultingPage/consultingHero.json';
@@ -6,31 +6,16 @@ import consultingHeroTranslations from '@/translations/ConsultingPage/consulting
 export default function ConsultingHero() {
   const { language } = useLanguage();
   const currentLang = consultingHeroTranslations[language as keyof typeof consultingHeroTranslations];
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const slides = [
-    "/Consulting/Slide1.jpg",
-    "/Consulting/Slide2.jpg", 
-    "/Consulting/Slide3.jpg"
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 3000); // Change slide every 3 seconds
-
-    return () => clearInterval(interval);
-  }, [slides.length]);
 
   return (
-    <section className={`w-full max-w-7xl mx-auto flex flex-col md:flex-row items-stretch gap-12 md:gap-24 py-16 md:py-24 lg:py-32 px-4 md:px-6 min-h-[500px] ${language === 'ar' ? 'font-arabic' : 'font-sans'}`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
-      {/* Left: Text Content */}
+    <section className={`w-full max-w-7xl mx-auto flex flex-col items-center justify-center py-16 md:py-24 lg:py-32 px-4 md:px-6 min-h-[500px] ${language === 'ar' ? 'font-arabic' : 'font-sans'}`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+      {/* Text Content */}
       <motion.div 
-        initial={{ opacity: 0, x: language === 'ar' ? 50 : -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="md:w-1/2 flex flex-col justify-center h-full"
+        className="w-full max-w-4xl text-center"
       >
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -63,49 +48,6 @@ export default function ConsultingHero() {
             {text}
           </motion.p>
         ))}
-       
-      </motion.div>
-      {/* Right: Slideshow */}
-      <motion.div 
-        initial={{ opacity: 0, x: language === 'ar' ? -50 : 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="md:w-1/2 flex items-center justify-center"
-      >
-        <div className="w-full max-w-[600px] aspect-[4/5] h-full flex items-center justify-center relative overflow-hidden rounded-3xl shadow-lg">
-          {slides.map((slide, index) => (
-            <motion.img
-              key={index}
-              src={slide}
-              alt={`Consulting Slide ${index + 1}`}
-              className="absolute inset-0 w-full h-full object-cover"
-              initial={{ opacity: 0 }}
-              animate={{ 
-                opacity: currentSlide === index ? 1 : 0,
-                scale: currentSlide === index ? 1 : 1.05
-              }}
-              transition={{ 
-                opacity: { duration: 0.8, ease: "easeInOut" },
-                scale: { duration: 0.8, ease: "easeInOut" }
-              }}
-            />
-          ))}
-          {/* Slide indicators */}
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  currentSlide === index 
-                    ? 'bg-white scale-110' 
-                    : 'bg-white/50 hover:bg-white/75'
-                }`}
-              />
-            ))}
-          </div>
-        </div>
       </motion.div>
     </section>
   );
