@@ -19,7 +19,7 @@ export default function DigitalBusinessProductsPage() {
       <DigitalHero />
       <DigitalDesc />
       <DigitalProcess />
-      <DigitalSlogan />
+      {/* <DigitalSlogan /> */}
       <DigitalCTA />
       <DigitalWhyUS />
       <Footer />

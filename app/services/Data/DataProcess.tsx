@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaSearch, FaLightbulb, FaCogs, FaRocket, FaHandsHelping } from 'react-icons/fa';
-import RevealAnimation from '../../components/ui/RevealAnimation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import translations from '@/translations/Services/Data/dataProcess.json';
 
@@ -17,44 +16,75 @@ const DataProcess = () => {
   const currentLang = translations[language];
 
   return (
-    <section className="w-full flex flex-col items-center py-16 px-4 bg-white" dir={language === 'ar' ? 'rtl' : 'ltr'}>
-      <RevealAnimation direction="up" delay={0.2}>
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-14 text-[#101424]">
-          {currentLang.mainTitle}
-        </h2>
-      </RevealAnimation>
-      <div className="relative w-full max-w-3xl mx-auto flex flex-col items-center">
-        {/* Vertical timeline line */}
-        <div className="absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-blue-300 via-blue-100 to-blue-300 z-0" style={{ transform: 'translateX(-50%)' }} />
-        <div className="flex flex-col gap-16 w-full z-10">
-          {currentLang.steps.map((step, idx) => (
-            <RevealAnimation
-              key={step.title}
-              direction={idx % 2 === 0 ? "right" : "left"}
-              delay={0.2 * idx}
-              className={`flex items-center w-full ${idx % 2 === 0 ? 'justify-start' : 'justify-end'}`}
-            >
-              <div className={`relative flex items-center ${idx % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`} style={{ minWidth: 0 }}>
-                {/* Icon in circle */}
-                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-white shadow-lg flex items-center justify-center border-4 border-blue-200 z-10">
-                  {React.createElement(iconMap[step.icon as keyof typeof iconMap], { size: 24, className: "text-blue-700" })}
-                </div>
-                {/* Connecting arrow */}
-                {idx < currentLang.steps.length - 1 && (
-                  <div className={`absolute ${idx % 2 === 0 ? 'right-[-60px]' : 'left-[-60px]'} top-1/2 transform -translate-y-1/2`}> 
-                    <svg width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 12 Q30 0 60 12 Q30 24 0 12" stroke="#60a5fa" strokeWidth="3" fill="none" />
-                    </svg>
+    <section className="w-full py-12 md:py-20 px-4 md:px-6 from-gray-50 via-white to-blue-50" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            {currentLang.mainTitle}
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-[#2454a1] to-[#4a6d8c] mx-auto rounded-full"></div>
+        </div>
+
+        {/* Process Steps */}
+        <div className="relative">
+          {/* Central Timeline */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#2454a1] via-[#4a6d8c] to-[#2454a1] transform -translate-x-1/2 z-0"></div>
+          
+          <div className="space-y-8 md:space-y-12">
+            {currentLang.steps.map((step, idx) => (
+              <div
+                key={step.title}
+                className={`relative flex items-center ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col md:gap-8 gap-6`}
+                style={{ direction: 'ltr' }} // Force LTR for layout consistency
+              >
+                {/* Step Number Badge */}
+                <div className="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 z-20">
+                  <div className="w-10 h-10 rounded-full bg-white border-3 border-[#2454a1] shadow-lg flex items-center justify-center">
+                    <span className="text-base font-bold text-[#2454a1]">{idx + 1}</span>
                   </div>
-                )}
-                {/* Step content */}
-                <div className={`ml-8 mr-8 max-w-xs bg-[#fafafb] rounded-2xl shadow-md px-6 py-4 ${idx % 2 === 0 ? '' : 'order-first'}`}> 
-                  <h3 className="text-xl font-bold mb-2 text-[#101424]">{step.title}</h3>
-                  <p className="text-md text-[#4a6d8c]">{step.desc}</p>
                 </div>
+
+                {/* Content Card */}
+                <div className={`md:w-1/2 ${idx % 2 === 0 ? 'md:pr-8' : 'md:pl-8'} text-center md:text-left`}>
+                  <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    {/* Icon */}
+                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br from-[#eff6ff] to-[#dbeafe] mb-4">
+                      {React.createElement(iconMap[step.icon as keyof typeof iconMap], { 
+                        size: 24, 
+                        className: "text-[#2454a1]" 
+                      })}
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                      {step.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Connecting Line - Only show if not the last step */}
+                {idx < currentLang.steps.length - 1 && (
+                  <div className="absolute left-1/2 top-full w-1 h-8 md:h-12 bg-gradient-to-b from-[#2454a1] to-[#4a6d8c] transform -translate-x-1/2 z-0"></div>
+                )}
               </div>
-            </RevealAnimation>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-12 md:mt-16">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#2454a1] to-[#4a6d8c] shadow-lg">
+            <FaRocket size={24} className="text-white" />
+          </div>
+          <p className="text-lg text-gray-600 mt-4 font-medium">
+            {language === 'ar' ? 'جاهز لتحويل استراتيجية البيانات الخاصة بك؟' : 'Ready to transform your data strategy?'}
+          </p>
         </div>
       </div>
     </section>

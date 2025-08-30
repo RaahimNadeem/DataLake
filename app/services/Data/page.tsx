@@ -19,7 +19,7 @@ export default function DataPage() {
       <DataHero />
       <DataDesc />
       <DataProcess />
-      <DataSlogan />
+      {/* <DataSlogan /> */}
       <DataCTA />
       <DataWhyUS />
       <Footer />

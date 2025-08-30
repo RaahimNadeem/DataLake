@@ -19,7 +19,7 @@ export default function SustainabilityPage() {
       <SustainabilityHero />
       <SustainabilityDesc />
       <SustainabilityProcess />
-      <SustainabilitySlogan />
+      {/* <SustainabilitySlogan /> */}
       <SustainabilityCTA />
       <SustainabilityWhyUS />
       <Footer />
