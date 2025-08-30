@@ -59,7 +59,7 @@ export default function ConsultingExpertise() {
   const currentLang = consultingExpertiseTranslations[language as keyof typeof consultingExpertiseTranslations];
 
   return (
-    <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} relative w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20 py-16 md:py-24 lg:py-36 px-4 md:px-10 overflow-hidden rounded-3xl mt-8 md:mt-16 shadow-2xl mb-16 md:mb-24 bg-gradient-to-br from-[#eaf1f7] via-[#f7fafc] to-[#dbeafe]`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <section className={`${language === 'ar' ? 'font-arabic' : 'font-sans'} relative w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20 py-16 md:py-24 lg:py-32 px-4 md:px-10 overflow-hidden rounded-3xl mt-8 md:mt-16 shadow-2xl mb-16 md:mb-24 bg-gradient-to-br from-[#eaf1f7] via-[#f7fafc] to-[#dbeafe]`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Large faint SVG background */}
       <motion.svg 
         initial={{ opacity: 0, scale: 0.8 }}
@@ -80,7 +80,7 @@ export default function ConsultingExpertise() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="md:w-2/3 flex flex-wrap gap-4 md:gap-8 z-10 justify-center md:justify-start"
+        className="md:w-2/3 flex flex-wrap gap-6 md:gap-8 z-10 justify-center md:justify-start"
       >
         {currentLang.expertise.map((item, i) => (
           <motion.div

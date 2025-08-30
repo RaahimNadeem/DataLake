@@ -3,7 +3,6 @@
     "title": "Our Experts",
     "expertise": [
       { "label": "Big Data Architect" },
-      { "label": "Administrator" },
       { "label": "Hadoop" },
       { "label": "DevOps" },
       { "label": "Project Manager" },
@@ -17,7 +16,6 @@
     "title": "خبراؤنا",
     "expertise": [
       { "label": "Big Data Architect" },
-      { "label": "Administrator" },
       { "label": "Hadoop" },
       { "label": "DevOps" },
       { "label": "Project Manager" },
