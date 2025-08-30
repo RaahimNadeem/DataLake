@@ -253,7 +253,9 @@ const LocationsAlt = () => {
           </p>
           <ul className={`text-lg text-gray-700 space-y-2 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
             {currentLang.countries.map((country, index) => {
-              const countryCodes = ['SAU', 'FRA', 'MAR', 'TUN'];
+              // Same flag codes for both languages since country order is now the same
+              const countryCodes = ['SAU', 'FRA', 'MAR', 'TUN']; // Saudi Arabia, France, Morocco, Tunisia
+              
               return (
                 <li key={index} className={`flex items-center ${language === 'ar' ? 'flex-row-reverse' : 'flex-row'}`}>
                   <div className={`${language === 'ar' ? 'ml-3' : 'mr-3'} w-6 h-4`}>
