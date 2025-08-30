@@ -50,7 +50,7 @@ const Careers = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="text-3xl md:text-5xl font-extrabold text-white mb-6 drop-shadow-lg"
+            className="text-3xl md:text-5xl pt-20 font-extrabold text-white mb-6 drop-shadow-lg"
           >
             {currentLang.hero.title}
           </motion.h1>
@@ -78,42 +78,31 @@ const Careers = () => {
       </section>
 
       {/* Culture Section */}
-      <section className="w-full flex flex-col md:flex-row items-stretch py-20 px-4 md:px-20">
-        <div className="md:w-2/3 flex flex-col justify-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1, margin: "-100px" }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight"
-          >
-            {currentLang.culture.title}
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1, margin: "-100px" }}
-            transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
-            className="text-lg md:text-xl mb-8 max-w-2xl"
-          >
-            {currentLang.culture.description}
-          </motion.p>
-         
-        </div>
-        <div className="md:w-1/3 flex items-center justify-center mt-12 md:mt-0">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.1, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="w-full h-72 md:h-96 rounded-3xl overflow-hidden shadow-2xl"
-          >
-            <img 
-              src="Careers/Careers2.jpg" 
-              alt={language === 'ar' ? "وظائف" : "Career"} 
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
+      <section className="w-full py-20 px-4 md:px-20 bg-white">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-24">
+          <div className="flex-1 w-full md:w-1/2">
+            <motion.h2
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1, margin: "-100px" }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+              className={`text-4xl md:text-5xl font-bold text-black leading-tight mb-8 ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
+            >
+              {currentLang.culture.title}
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
+              className={`text-lg md:text-xl text-gray-700 max-w-2xl ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
+            >
+              {currentLang.culture.description}
+            </motion.p>
+          </div>
+          <div className="w-full md:w-1/2">
+            {/* Empty space for symmetry */}
+          </div>
         </div>
       </section>
     </div>
