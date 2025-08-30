@@ -50,7 +50,7 @@ const Careers = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="text-4xl md:text-7xl font-extrabold text-white mb-6 drop-shadow-lg"
+            className="text-3xl md:text-5xl font-extrabold text-white mb-6 drop-shadow-lg"
           >
             {currentLang.hero.title}
           </motion.h1>
@@ -58,7 +58,7 @@ const Careers = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="text-xl md:text-2xl text-white max-w-2xl mb-8 drop-shadow"
+            className="text-lg md:text-xl text-white max-w-2xl mb-8 drop-shadow"
           >
             {currentLang.hero.subtitle}
           </motion.p>
@@ -69,7 +69,7 @@ const Careers = () => {
           >
             <button 
               onClick={scrollToJobListings}
-              className="bg-white text-[#19232e] px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="bg-white text-[#19232e] px-6 py-3 rounded-full font-bold text-base hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               {currentLang.hero.exploreButton}
             </button>
