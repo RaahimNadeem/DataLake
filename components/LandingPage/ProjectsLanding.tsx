@@ -57,13 +57,13 @@ const ProjectsLanding = () => {
           <div className="w-full md:w-1/2"></div>
 
           {/* Header Content - Right Side */}
-          <div className="w-full md:w-1/2 md:pl-12">
+          <div className={`w-full md:w-1/2 lg:w-3/4 md:pl-12`}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-sm font-semibold text-gray-700 mb-4 tracking-widest uppercase"
+              className={`text-sm font-semibold text-gray-700 mb-4 ${language === 'ar' ? 'text-right' : 'tracking-widest uppercase'}`}
             >
               {currentLang.header.subtitle}
             </motion.div>

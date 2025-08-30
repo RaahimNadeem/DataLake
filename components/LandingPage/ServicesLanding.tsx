@@ -54,7 +54,7 @@ const ServicesLanding = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-sm font-semibold text-gray-700 mb-4 tracking-widest uppercase"
+            className={`text-sm font-semibold text-gray-700 mb-4 ${language === 'ar' ? 'text-right' : 'tracking-widest uppercase'}`}
           >
             {currentLang.header.subtitle}
           </motion.div>

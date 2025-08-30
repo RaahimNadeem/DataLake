@@ -89,7 +89,7 @@ export default function ClientLogosMarquee() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-sm font-semibold text-gray-700 mb-4 tracking-widest uppercase"
+            className={`text-sm font-semibold text-gray-700 mb-4 ${language === 'ar' ? 'text-right' : 'tracking-widest uppercase'}`}
           >
             {currentLang.header.subtitle}
           </motion.div>
@@ -98,7 +98,7 @@ export default function ClientLogosMarquee() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-3xl md:text-6xl font-bold text-black leading-tight max-w-3xl whitespace-pre-line"
+            className={`text-3xl md:text-6xl font-bold text-black leading-tight max-w-3xl whitespace-pre-line ${language === 'ar' ? 'text-right' : 'text-left'}`}
           >
             {renderTitle(currentLang.header.title)}
           </motion.h1>
@@ -107,7 +107,7 @@ export default function ClientLogosMarquee() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="text-lg text-gray-700 max-w-xl mt-6"
+            className={`text-lg text-gray-700 max-w-xl mt-6 ${language === 'ar' ? 'text-right' : 'text-left'}`}
           >
             {currentLang.header.description}
           </motion.p>

@@ -177,7 +177,7 @@ const AboutUsLanding = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-sm font-semibold text-gray-700 mb-4 tracking-widest uppercase w-full"
+            className={`text-sm font-semibold text-gray-700 mb-4 w-full ${language === 'ar' ? 'text-right' : 'tracking-widest uppercase'}`}
           >
             {currentLang.journey}
           </motion.span>

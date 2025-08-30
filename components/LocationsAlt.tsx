@@ -227,7 +227,7 @@ const LocationsAlt = () => {
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
           className={`flex flex-col gap-6 justify-center ${language === 'ar' ? 'md:pr-8 order-1 md:order-1' : 'md:pl-8 order-1 md:order-2'}`}
         >
-          <div className={`text-sm font-semibold text-gray-700 mb-2 tracking-widest uppercase ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+          <div className={`text-sm font-semibold text-gray-700 mb-2 ${language === 'ar' ? 'text-right' : 'tracking-widest uppercase'} ${language === 'ar' ? 'text-right' : 'text-left'}`}>
             {currentLang.subtitle}
           </div>
           <h1 className={`text-4xl md:text-5xl font-bold text-gray-900 leading-tight ${language === 'ar' ? 'text-right' : 'text-left'}`}>
