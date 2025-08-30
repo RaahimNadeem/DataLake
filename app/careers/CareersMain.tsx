@@ -80,7 +80,7 @@ const Careers = () => {
       {/* Culture Section */}
       <section className="w-full py-20 px-4 md:px-20 bg-white">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-24">
-          <div className="flex-1 w-full md:w-1/2">
+          <div className="flex-1 w-full md:w-2/3">
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -95,12 +95,12 @@ const Careers = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1, margin: "-100px" }}
               transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
-              className={`text-lg md:text-xl text-gray-700 max-w-2xl ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
+              className={`text-lg md:text-xl text-gray-700 max-w-4xl ${language === 'ar' ? 'font-arabic' : 'font-sans'}`}
             >
               {currentLang.culture.description}
             </motion.p>
           </div>
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/3">
             {/* Empty space for symmetry */}
           </div>
         </div>
