@@ -2,6 +2,7 @@
   "en": {
     "title": "Open Positions",
     "subtitle": "Join our team and help shape the future of AI",
+    "searchPlaceholder": "Search jobs, teams, or keywords...",
     "filters": {
       "title": "Filters",
       "location": "Location",
@@ -15,11 +16,17 @@
     "apply": "Apply Now",
     "requirements": "Requirements",
     "viewDetails": "View Details",
-    "noJobsFound": "No jobs found matching your filters"
+    "viewLess": "View Less",
+    "description": "Job Description",
+    "noJobsFound": "No jobs found matching your filters",
+    "noJobsFoundTitle": "No jobs found",
+    "clearFiltersAndTryAgain": "Clear filters and try again",
+    "loading": "Loading opportunities..."
   },
   "ar": {
     "title": "الوظائف الشاغرة",
     "subtitle": "انضم إلى فريقنا وساعد في تشكيل مستقبل الذكاء الاصطناعي",
+    "searchPlaceholder": "البحث في الوظائف أو الفرق أو الكلمات المفتاحية...",
     "filters": {
       "title": "المرشحات",
       "location": "الموقع",
@@ -33,6 +40,11 @@
     "apply": "تقدم الآن",
     "requirements": "المتطلبات",
     "viewDetails": "عرض التفاصيل",
-    "noJobsFound": "لم يتم العثور على وظائف تطابق مرشحاتك"
+    "viewLess": "عرض أقل",
+    "description": "وصف الوظيفة",
+    "noJobsFound": "لم يتم العثور على وظائف تطابق مرشحاتك",
+    "noJobsFoundTitle": "لم يتم العثور على وظائف",
+    "clearFiltersAndTryAgain": "مسح المرشحات والمحاولة مرة أخرى",
+    "loading": "جاري تحميل الفرص..."
   }
 } 
